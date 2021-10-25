@@ -1,7 +1,14 @@
 ~*
 *~
-#*
+\#*
 *#
-/tramp/
-/straight/
+tramp/
+straight/
+backup/
+auto-save-list/
+transient/
+url/
+elpa/
+games/
+eln-cache/
 

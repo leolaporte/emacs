@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- toggle-fullscreen
  toggle-read-only
  sly
  magit
  ivy-mode
  customize-face
  load-theme
+ package-install
 )
 
 ;; ----- smex-data -----

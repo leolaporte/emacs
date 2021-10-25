@@ -63,7 +63,10 @@
  apropos-do-all t
 
  ;; Mouse yank commands yank at point instead of at click.
- mouse-yank-at-point t)
+ mouse-yank-at-point t
+
+ ;; copy mouse selected region automatically
+ mouse-drag-copy-region t)
 
 ;; No cursor blinking, it's distracting
 (blink-cursor-mode 0)
