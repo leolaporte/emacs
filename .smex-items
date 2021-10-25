@@ -2,12 +2,12 @@
 ;; ----- smex-history -----
 (
  toggle-fullscreen
+ toggle-read-only
  sly
  magit
  ivy-mode
  customize-face
  load-theme
- customize-themes
 )
 
 ;; ----- smex-data -----
@@ -55,5 +55,6 @@
  (customize-themes . 1)
  (customize-face . 3)
  (magit . 1)
- (toggle-fullscreen . 4)
+ (toggle-fullscreen . 5)
+ (toggle-read-only . 1)
 )
