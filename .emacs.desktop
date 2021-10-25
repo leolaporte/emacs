@@ -1,0 +1,115 @@
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Thu Oct 21 07:16:18 2021
+;; Desktop file format version 208
+;; Emacs version 27.2
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (24945 30258 711630 0) (desktop . "208") "leo@Leos-M1-MBP-13.localdomain" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-*-Iosevka Nerd Font Mono-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#eaeaea") (background-color . "#000000") (mouse-color . "OrangeRed") (border-color . "#2a2a2a") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (alpha) (scroll-bar-foreground . "dark turquoise") (scroll-bar-background . "gray20") (tab-bar-lines . 0) (height . 40) (tool-bar-lines . 0) (title) (inhibit-double-buffering) (menu-bar-lines . 0) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (scroll-bar-height . 15) (no-focus-on-map) (no-accept-focus) (fullscreen . fullboth) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#d54e53") (environment) (last-focus-update . t) (frameset--id . "D64E-C942-9E41-5887") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . "Mac") (explicit-name) (tool-bar-position . top) (width . 158) (left . 0) (top . 0)) ((min-height . 4) (min-width . 20) (min-height-ignore . 2) (min-width-ignore . 14) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 88) (min-pixel-width . 180) (min-pixel-height-ignore . 44) (min-pixel-width-ignore . 126) (min-pixel-height-safe . 22) (min-pixel-width-safe . 36)) hc (pixel-width . 1440) (pixel-height . 878) (total-width . 160) (total-height . 39) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 903) (pixel-height . 878) (total-width . 100) (total-height . 39) (normal-height . 1.0) (normal-width . 0.6252616887648282) (buffer "chap8-3.lisp" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins 3) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 3588) (start . 3035)) (prev-buffers ("chap8-3.lisp" 1402 2090) ("chap8-2.sync-conflict-20211016-103352-FNGYTVK.lisp" 26 52) ("chap8.lisp" 1 163) ("chap8-2.lisp" 8126 8822) ("ui.el" 1496 2179) ("init.el" 1 1203) ("lisp.tar" 1 37) ("chap4.lisp" 1 1))) (leaf (last . t) (pixel-width . 537) (pixel-height . 878) (total-width . 60) (total-height . 39) (normal-height . 1.0) (normal-width . 0.374738311235171) (buffer "*sly-mrepl for sbcl*" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins 3) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 14123) (start . 13258)) (prev-buffers ("*sly-mrepl for sbcl*" 11955 14123) ("*sly-compilation*" 1 77) ("chap8-3.lisp" 794 5126)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("/Users/leo/Source/lisp/gentle/chap8-3.lisp" "/Users/leo/Source/lisp/gentle/chap8-2.sync-conflict-20211016-103352-FNGYTVK.lisp" "/Users/leo/.emacs.d/init.el" "/Users/leo/.emacs.d/customizations/ui.el" "/Users/leo/Source/lisp/gentle/chap8-2.lisp" "/Users/leo/Source/lisp.tar" "/Users/leo/.emacs.d/init.el" "/Users/leo/Source/lisp/gentle/chap8-2.lisp" "/Users/leo/Source/lisp/gentle/chap8.lisp" "/Users/leo/.emacs.d/customizations/ui.el" "/Users/leo/.emacs.d/init.el" "/Users/leo/.emacs.d/customizations/ui.el" "/Users/leo/Source/lisp/gentle/chap8-2.lisp" "/Users/leo/.emacs.d/init.el" "/Users/leo/.emacs.d/customizations/ui.el" "/Users/leo/Source/lisp/gentle/chap4.lisp" "/Users/leo/Source/lisp/gentle/chap8-2.lisp" "/Users/leo/Source/lisp/gentle/dtrace.lisp" "/Users/leo/Source/lisp/gentle/chap8-2.lisp" "/Users/leo/.emacs.d/init.el" #("/Users/leo/Source/lisp/gentle/chap4.lisp" 11 17 (face flx-highlight-face) 18 23 (face flx-highlight-face)) "/Users/leo/.emacs.d/init.el" "/Users/leo/Source/lisp/gentle/tdd.lisp" "/Users/leo/Source/lisp/gentle/chap4.lisp" "/Users/leo/.emacs.d/customizations/ui.el" "/Users/leo/Source/lisp/gentle/chap4.lisp" "/Users/leo/.emacs.d/customizations/ui.el" "/Users/leo/.emacs.d/customizations/shell-integration.el" "/Users/leo/.emacs.d/customizations/elisp-editing.el" "/Users/leo/.emacs.d/init.el" "/Users/leo/.emacs.d/customizations/ui.el" "/Users/leo/Source/lisp/gentle/chap4.lisp" "/Users/leo/.emacs.d/init.el" #("/ssh:leo.fm:.ssh/authorized_keys" 12 16 (face flx-highlight-face)) "/Users/leo/.emacs.d/init.el" "/Users/leo/Source/lisp/gentle/chap6-2.lisp" "/Users/leo/Source/lisp/lol/adventure.lisp" "/Users/leo/.emacs.d/init.el" #("/Users/leo/Source/lisp/lol/chap1.lisp" 11 16 (face flx-highlight-face) 18 23 (face flx-highlight-face)) "/Users/leo/.emacs.d/init.el" "/Users/leo/Source/lisp/on-lisp/chap3.lsp" "/Users/leo/.emacs.d/init.el" "/Users/leo/Source/lisp/on-lisp/chap3.lsp" "/Users/leo/Source/lisp/on-lisp/chap2.lsp" "/Users/leo/.emacs.d/init.el" "/Users/leo/Source/lisp/on-lisp/chap2.lsp" "/Users/leo/.emacs.d/init.el" "/Users/leo/Source/lisp/on-lisp/chap2.lsp" "/Users/leo/.emacs.d/init.el" "/Users/leo/Source/lisp/99probs.lsp" "/Users/leo/.config/fish/config.fish" "/Users/leo/.config/fish/functions/e.fish" #("/Users/leo/Source/lisp/99probs.lsp" 11 17 (face flx-highlight-face) 18 22 (face flx-highlight-face)) "/Users/leo/.emacs.d/customizations/ui.el" "/Users/leo/.emacs.d/init.el" "/Users/leo/Sync/Obsidian/Personal/Daily Notes/2021-06-01.md" "/Users/leo/Sync/Obsidian/Personal/Black Truffle & Caviar Dinner.md" "/Users/leo/.emacs.d/customizations/editing.el" "/Users/leo/.emacs.d/init.el" "/Users/leo/Source/lisp/harmonic.lisp" "/Users/leo/.emacs.d/customizations/shell-integration.el" "/Users/leo/.emacs.d/init.el" "~/.emacs.d/ido.last" "/Volumes/Macintosh HD/Users/leo/.config/kitty/kitty.conf" "/Volumes/Macintosh HD/Users/leo/Source/lisp/lisp-koans/koans/scope-and-extent.lisp" "/Volumes/Macintosh HD/Users/leo/.emacs.d/init.el" "/Volumes/Macintosh HD/Users/leo/.emacs.d/customizations/shell-integration.el" "/ssh:leo.fm:/home/leo/www/leofm/content/posts/2021-03/gottheshot.md" "/ssh:leo.fm:/home/leo/www/leofm/content/posts/2021-03/amiafool.md" "/ssh:leo.fm:/home/leo/www/leofm/content/posts/2020-05/petalumapause.md" "/ssh:leo.fm:/home/leo/www/leofm/content/posts/2020-05/images.md" "/Volumes/Macintosh HD/Users/leo/.emacs.d/customizations/ui.el" "/Volumes/Macintosh HD/Users/leo/.emacs.d/customizations/editing.el" "/Volumes/Macintosh HD/Users/leo/Source/lisp/lisp-koans/koans/let.lisp" "/Volumes/Macintosh HD/Users/leo/Source/lisp/lisp-koans/koans/evaluation.lisp" "/ssh:leo.fm:/home/leo/www/leofm/config.toml" "/Volumes/Macintosh HD/Users/leo/Source/lisp/lisp-koans/koans/atoms-vs-lists.lisp" "/Volumes/Macintosh HD/Users/leo/.emacs.d/customizations/misc.el" "/Volumes/Macintosh HD/Users/leo/Source/lisp/input5.txt" "/ssh:leo.fm:/home/leo/www/leofm/content/posts/2021-02/qanon.md" "~/.config/fish/config.fish"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/Users/leo/Source/lisp/gentle/chap8-3.lisp"
+  "chap8-3.lisp"
+  'lisp-mode
+  '(eldoc-mode aggressive-indent-mode which-key-mode undo-tree-mode flx-ido-mode projectile-mode linum-mode paredit-mode)
+  3588
+  '(2832 nil)
+  nil
+  nil
+  '((buffer-display-time 24945 30255 250158 0) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (2887 2850 2548 2156 2145 2077 2044 1971 442 100 1309 1309 1309 427 1 3588))))
+
+(desktop-create-buffer 208
+  "/Users/leo/Source/lisp/gentle/chap8-2.sync-conflict-20211016-103352-FNGYTVK.lisp"
+  "chap8-2.sync-conflict-20211016-103352-FNGYTVK.lisp"
+  'lisp-mode
+  '(eldoc-mode aggressive-indent-mode which-key-mode undo-tree-mode flx-ido-mode projectile-mode linum-mode paredit-mode)
+  52
+  '(77 nil)
+  nil
+  nil
+  '((buffer-display-time 24944 56777 434726 0) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (77))))
+
+(desktop-create-buffer 208
+  "/Users/leo/Source/lisp/gentle/chap8.lisp"
+  "chap8.lisp"
+  'lisp-mode
+  '(eldoc-mode aggressive-indent-mode which-key-mode undo-tree-mode flx-ido-mode projectile-mode linum-mode paredit-mode)
+  163
+  '(91 nil)
+  nil
+  nil
+  '((buffer-display-time 24944 52061 128643 0) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (4795 5550 4248 5272 5550 4849 4795 91 163))))
+
+(desktop-create-buffer 208
+  "/Users/leo/Source/lisp/gentle/chap8-2.lisp"
+  "chap8-2.lisp"
+  'lisp-mode
+  '(eldoc-mode aggressive-indent-mode which-key-mode undo-tree-mode flx-ido-mode projectile-mode linum-mode paredit-mode)
+  8822
+  '(8613 nil)
+  nil
+  nil
+  '((buffer-display-time 24944 51976 346822 49000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (8627 8737 8661 8736 8652 8587 8736 8822))))
+
+(desktop-create-buffer 208
+  "/Users/leo/.emacs.d/customizations/ui.el"
+  "ui.el"
+  'emacs-lisp-mode
+  '(eldoc-mode aggressive-indent-mode which-key-mode undo-tree-mode flx-ido-mode projectile-mode linum-mode paredit-mode)
+  2179
+  '(552 nil)
+  nil
+  nil
+  '((buffer-display-time 24944 51961 201664 49000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring (368 828 998 369 1115 1232 1282 1299 1300 551 2179 2179))))
+
+(desktop-create-buffer 208
+  "/Users/leo/.emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(eldoc-mode aggressive-indent-mode which-key-mode undo-tree-mode flx-ido-mode projectile-mode linum-mode paredit-mode)
+  1203
+  '(6110 nil)
+  nil
+  nil
+  '((buffer-display-time 24944 51688 183057 329000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring (3677 6462))))
+
+(desktop-create-buffer 208
+  "/Users/leo/Source/lisp.tar"
+  "lisp.tar"
+  'tar-mode
+  '(which-key-mode undo-tree-mode flx-ido-mode projectile-mode linum-mode)
+  37
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 24944 51386 152839 171000) (buffer-file-coding-system . no-conversion))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/Users/leo/Source/lisp/gentle/chap4.lisp"
+  "chap4.lisp"
+  'lisp-mode
+  '(eldoc-mode aggressive-indent-mode which-key-mode undo-tree-mode flx-ido-mode projectile-mode linum-mode paredit-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 24944 52039 628260 0) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+

@@ -1,0 +1,31 @@
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sat Oct  2 09:08:03 2021
+;; Desktop file format version 208
+;; Emacs version 27.2
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (24920 33763 121154 0) (desktop . "208") "leo@Leos-M1-MBP-13.localdomain" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-*-Monaco-normal-normal-normal-*-18-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "mac:textColor") (background-color . "mac:textBackgroundColor") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (alpha) (scroll-bar-foreground) (scroll-bar-background) (tab-bar-lines . 0) (height . 34) (tool-bar-lines . 0) (title) (inhibit-double-buffering) (menu-bar-lines . 0) (icon-type) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 15) (scroll-bar-height . 15) (no-focus-on-map) (no-accept-focus) (fullscreen) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . light) (cursor-color . "black") (environment) (last-focus-update . t) (frameset--id . "CFE4-7006-8D5F-A8D6") (frameset--mini t . t) (width . 80) (modeline . t) (unsplittable) (left . 432) (top . 25) (icon-name) (display . "Mac") (explicit-name) (tool-bar-position . top)) ((min-height . 8) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 6) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 192) (min-pixel-width . 110) (min-pixel-height-ignore . 96) (min-pixel-width-ignore . 66) (min-pixel-height-safe . 48) (min-pixel-width-safe . 22)) vc (pixel-width . 896) (pixel-height . 799) (total-width . 81) (total-height . 33) (normal-height . 1.0) (normal-width . 1.0) (combination-limit . t) (leaf (pixel-width . 896) (pixel-height . 439) (total-width . 81) (total-height . 18) (normal-height . 0.5600750938673341) (normal-width . 1.0) (buffer "*scratch*" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1))) (leaf (last . t) (pixel-width . 896) (pixel-height . 360) (total-width . 81) (total-height . 15) (normal-height . 0.4399249061326658) (normal-width . 1.0) (buffer "ui.el" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins 2) (scroll-bars nil 0 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1222) (start . 1044)) (prev-buffers ("*Backtrace*" 1 912)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("/Users/leo/.emacs.d/customizations/ui.el" "~/.emacs.d/ido.last" "~/.emacs.d/customizations/ui.el" "~/Source/lisp/gentle/chap4.lisp" "~/.emacs.d/init.el" "~/.emacs.d/customizations/elisp-editing.el" "/ssh:leo.fm:/home/leo/.ssh/authorized_keys" "~/Source/lisp/on-lisp/chap3.lsp" "~/Source/lisp/lol/chap1.lisp" "~/Source/lisp/lol/adventure.lisp" "~/Source/lisp/on-lisp/chap2.lsp" "~/Source/lisp/99probs.lsp" "~/source/lisp/99probs.lsp" "~/quicklisp.lisp" "~/Source/lisp/gentle/code/chap6.lisp" "~/.config/fish/config.fish" "/Volumes/Macintosh HD/Users/leo/.config/kitty/kitty.conf" "/Volumes/Macintosh HD/Users/leo/Source/lisp/lisp-koans/koans/scope-and-extent.lisp" "/Volumes/Macintosh HD/Users/leo/.emacs.d/init.el" "/Volumes/Macintosh HD/Users/leo/.emacs.d/customizations/shell-integration.el"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/Users/leo/.emacs.d/customizations/ui.el"
+  "ui.el"
+  'emacs-lisp-mode
+  '(eldoc-mode aggressive-indent-mode which-key-mode undo-tree-mode flx-ido-mode projectile-mode linum-mode)
+  1222
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 24920 33758 797470 0) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring nil)))
+

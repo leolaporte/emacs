@@ -1,0 +1,117 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/leo/common-lisp/" . "gentle/")
+ ("/Users/leo/.emacs.d/" . "customizations/")
+ ("/Users/leo/Source/lisp/" . "gentle/")
+ ("/Users/" . "leo/")
+ ("/Users/leo/Source/" . "lisp/")
+ ("/Users/leo/" . "common-lisp/")
+ ("/Volumes/Macintosh HD/Users/leo/.config/" . "kitty/")
+ ("/ssh:leo.fm:/home/leo/www/leofm/content/posts/" . "2020-05/")
+ ("/ssh:leo.fm:www/leofm/content/posts/" . "2021-03/")
+ ("/ssh:leo.fm:www/leofm/content/" . "posts/")
+ ("/ssh:leo.fm:www/leofm/" . "content/")
+ ("/ssh:leo.fm:www/" . "leofm/")
+ ("/ssh:leo.fm:" . "www/")
+ ("/Volumes/Macintosh HD/Users/leo/Source/lisp/lisp-koans/" . "koans/")
+ ("/Volumes/Macintosh HD/Users/leo/Source/lisp/" . "lisp-koans/")
+ ("/Volumes/Macintosh HD/Users/leo/Source/" . "lisp/")
+ ("/Volumes/Macintosh HD/Users/leo/.emacs.d/" . "customizations/")
+ ("/Volumes/Macintosh HD/Users/leo/" . ".kitty/")
+ ("/Volumes/Macintosh HD/Users/" . "leo/")
+ ("/Volumes/Macintosh HD/" . "Users/")
+ ("/Volumes/" . "Macintosh HD/")
+ ("/" . "home/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/leo/common-lisp/gentle/"
+ "/Users/leo/.emacs.d/"
+ "/Users/leo/.emacs.d/customizations/"
+ "/Users/leo/Source/lisp/gentle/"
+ "/Users/leo/"
+ "/Users/leo/Source/"
+ "/Users/leo/Source/lisp/on-lisp/"
+ "/Users/leo/Source/lisp/"
+ "/Users/leo/.config/fish/.config/fish/"
+ "/Volumes/Macintosh HD/Users/leo/.kitty/"
+ "/Volumes/Macintosh HD/Users/leo/.config/kitty/"
+ "/Volumes/Macintosh HD/Users/leo/.emacs.d/customizations/"
+ "/Volumes/Macintosh HD/Users/leo/.emacs.d/"
+ "/ssh:leo.fm:www/leofm/content/posts/2021-03/"
+ "/ssh:leo.fm:/home/leo/www/leofm/content/posts/2020-05/"
+ "/Volumes/Macintosh HD/Users/leo/Source/lisp/lisp-koans/koans/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "chap8-3.lisp"
+ "init.el"
+ "ui.el"
+ "chap8-2.lisp"
+ "dtrace.lisp"
+ "editing.el"
+ "Brewfile"
+ "chap8-2.sync-conflict-20211016-103352-FNGYTVK.lisp"
+ "lisp.tar"
+ "chap8.lisp"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/leo/.emacs.d/" (24948 59110 491554 86000) ".lsp-session-v1" ".recentf~" ".smex-items" "backups/" "themes/" "games/" "elpa/" ".recentf" "init.el" "url/" ".emacs.desktop" "auto-save-list/" "eln-cache/" "straight/" "transient/" "tramp" "projectile-bookmarks.eld" "customizations/" "ido.last" "../" "./")
+
+ ("/Users/leo/.emacs.d/customizations/" (24948 59028 778004 603000) "elisp-editing.el" "ui.el~" "#shell-integration.el#" "setup-js.el" "navigation.el" "editing.el" ".emacs.desktop" "setup-clojure.el" "misc.el" "shell-integration.el" "ui.el" "../" "./")
+
+ ("/Users/leo/" (24948 49821 528555 571000) ".slime/" ".viminfo" "quicklisp/" ".gforth-history" "common-lisp/" ".gitconfig" ".cache/" ".python_history" "Downloads/" "Photos/" ".vscode/" ".revox/" ".themes/" "Sync/" "quicklisp.lisp" "Documents/" "Obsidian/" ".vscode-insiders/" ".ghcup/" "Brewfile" ".tldrc/" ".slime-history.eld" ".nb/" ".Trash/" ".nbrc" ".flutter-devtools/" ".profile" "Applications/" "Movies/" ".ssh/" ".rustup/" ".git-credentials" ".keys/" ".flutter" ".claws-mail/" ".zshenv" ".fzf.bash" "Public/" ".fzf.zsh" "Audio/" ".#syncarmorlock.sh" ".cups/" ".android/" ".cargo/" ".emacs.d/" "Calibre Library/" ".oracle_jre_usage/" "Library/" "Desktop/" ".zsh_history" "quicklisp.lisp.asc" ".sly-mrepl-history" ".pub-cache/" ".elvish/" ".dartServer/" ".authinfo" ".zprofile" "Source/" ".irssi/" "Pictures/" ".local/" ".sbcl_history" ".sbclrc" ".zshrc" ".bashrc" ".wget-hsts" ".CFUserTextEncoding" ".lldb/" ".vscode-exploration/" ".gnupg/" ".DS_Store" ".dart/" ".docker/" ".cabal-desktop/" ".eclrc" "Music/" ".macports/" ".config/" ".kitty/" ".TheBrain/" "../" "./")
+
+ ("/Users/leo/common-lisp/gentle/" (24948 46078 826381 70000) "ppmx.lisp" "chap7.lisp" ".git/" "chap6.lisp" "chap4.fasl" "dtrace.lisp" "chap8-3.lisp" "chap8-2.lisp" "tdd.lisp" "README.md" "defstruct.scheme" "dtrace/" "dtrace.fasl" "chap8-3.fasl" "code/" "tdd.fasl" "chap8-2.fasl" "sdraw/" "chap5.lisp" "chap7.fasl" "chap8.lisp" "chap4.lisp" "../" "./")
+
+ ("/Users/leo/common-lisp/" (24948 46052 933278 705000) "lisp-koans/" "dtrace/" "code/" "sdraw/" "gentle/" "lol/" "on-lisp/" "../" "./")
+
+ ("/Users/leo/Source/lisp/gentle/" (24947 23447 492363 223000) "ppmx.lisp" "chap7.lisp" ".git/" "chap6.lisp" "chap4.fasl" "dtrace.lisp" "chap8-3.lisp" "chap8-2.lisp" "tdd.lisp" "README.md" "defstruct.scheme" "dtrace/" "dtrace.fasl" "chap8-3.fasl" "code/" "tdd.fasl" "chap8-2.fasl" "sdraw/" "gentle/" "chap5.lisp" "chap7.fasl" "chap8.lisp" "chap4.lisp" "../" "./")
+
+ ("/Users/leo/Source/lisp/" (24947 23432 543228 456000) "lisp-koans/" "dtrace/" "code/" "sdraw/" "gentle/" "lol/" ".DS_Store" "on-lisp/" "../" "./")
+
+ ("/Users/leo/.emacs.d/backups/" (24944 10868 897598 532000) "!Users!leo!Sync!Org-Files!salvation.org~" "!ssh:leo.fm:!home!leo!www!leofm!content!posts!2021-03!amiafool.md~" "!Users!leo!.emacs.d!ido.last~" "!ssh:leo.fm:!home!leo!.ssh!authorized_keys~" "!Users!leo!.emacs.d!init.el~" "!Users!leo!Source!Shell!photo-importer.fish~" "!Volumes!Macintosh HD!Users!leo!.emacs.d!customizations!editing.el~" "!Users!leo!.emacs.d!customizations!editing.el~" "!Users!leo!Source!rust!hello_cargo!src!main.rs~" "!usr!local!bin!notes~" "!scp:leo.fm:!home!leo!www!leofm!content!posts!2020-11!applesilicon.md~" "!etc!pam.d!sudo.mine~" "!ssh:leo@leo.fm:!home!leo!www!leofm!config.toml~" "!Users!leo!Source!lisp!lol!chap1.lisp~" "!ssh:leo.fm:!home!leo!www!leofm!config.toml~" "!Users!leo!.emacs.d!customizations!shell-integration.el~" "!Users!leo!.config!fish!functions!fish_prompt.fish~" "!Users!leo!Source!lisp!gentle!chap4.lisp~" "!Users!leo!Source!lisp!lol!adventure.lisp~" "!Users!leo!Source!rust!variables!src!main.rs~" "!Users!leo!Sync!notes!2021-02.txt~" "!ssh:leo.fm:!home!leo!www!leofm!content!posts!2021-01!tweet2toot.md~" "!Volumes!Macintosh HD!Users!leo!Source!lisp!lisp-koans!koans!evaluation.lisp~" "!ssh:leo.fm:!home!leo!www!leofm!content!posts!2020-11!applesilicon.md~" "!Users!leo!Source!rust!guessing_game!src!main.rs~" "!ssh:leo.fm:!home!leo!www!leofm!content!posts!2021-02!qanon.md~" "!Users!leo!.emacs.d!customizations!navigation.el~" "!Users!leo!.config!fish!config.fish~" "!Users!leo!Sync!dotfiles!install.master~" "!Volumes!Macintosh HD!Users!leo!.emacs.d!customizations!shell-integration.el~" "!Volumes!Macintosh HD!Users!leo!.emacs.d!customizations!ui.el~" "!Users!leo!.emacs.d!.recentf~" "!Volumes!Macintosh HD!Users!leo!Source!lisp!lisp-koans!koans!scope-and-extent.lisp~" "!Users!leo!.emacs.d!customizations!misc.el~" "!Users!leo!source!lisp!99probs.lsp~" "!Users!leo!.emacs.d!customizations!ui.el~" "!Users!leo!Sync!dotfiles!emacs.d!init.el~" "!Volumes!Macintosh HD!Users!leo!Source!lisp!lisp-koans!koans!let.lisp~" "!Users!leo!.config!fish!functions!e.fish~" "!Users!leo!Source!lisp!gentle!chap8-2.lisp~" "!Volumes!Macintosh HD!Users!leo!.kitty!kitty.conf~" "!Users!leo!Library!LaunchAgents!syncthing.plist~" "!ssh:leo.fm:!home!leo!www!leofm!content!about!index.md~" "!Users!leo!Source!lisp!on-lisp!chap3.lsp~" "!scp:leo@leo.fm:!home!leo!.ssh!authorized_keys~" "!Users!leo!Source!lisp!gentle!tdd.lisp~" "!Users!leo!Source!Shell!photo-importer.sh~" "!Users!leo!Source!lisp!on-lisp!chap2.lsp~" "!Volumes!Macintosh HD!Users!leo!.emacs.d!init.el~" "!ssh:leo.fm:!home!leo!www!leofm!content!posts!2021-03!gottheshot.md~" "!Users!leo!dotfiles_old!emacs.d!customizations!ui.el~" "!ssh:leo.fm:!home!leo!www!leofm!content!posts!2020-05!iusethis.md~" "!Users!leo!.config!fish!functions!fish_greeting.fish~" "../" "./")
+
+ ("/home/" (24944 7128 62643 0) "../" "./")
+
+ ("/Users/leo/Source/" (24939 1277 271770 407000) "HyperSpec/" "lisp.tar" "lisp-koans/" "Javascript/" ".stversions/" "Raycast/" "Swift/" "scala/" "Cocoa/" "flutter/" "htdp/" "Haskell/" "Java/" "clojurescript/" "Source/" "rust/" "smalltalk/" "Perl/" "target/" "Shell/" "clojure/" "Python/" ".stfolder/" "fucking-algorithm/" "scribble/" "nim/" ".stignore" "racket/" ".DS_Store" "lisp/" "Applescript/" "._.DS_Store" "sicp/" "Xcode/" "../" "./")
+
+ ("/Users/leo/Source/lisp/on-lisp/" (24862 36326 475425 212000) "chap2.lsp" "chap3.lsp" "chap2.fasl" "../" "./")
+
+ ("/Users/" (24076 20864 0 0) "Guest/" "lisa/" "leo/" "ghost/" "Shared/" ".localized" "../" "./")
+
+ ("/Volumes/Macintosh HD/Users/leo/.kitty/" (24677 63071 462053 345000) "kitty.conf" "../" "./")
+
+ ("/Volumes/Macintosh HD/Users/leo/.config/kitty/" (24644 19519 132688 24000) "../" "./")
+
+ ("/Volumes/Macintosh HD/Users/leo/.config/" (24666 524 786129 11000) "gnome-initial-setup-done" "fish/" "ibus/" "Electron/" "goa-1.0/" "kitty/" "manjaro/" "pop-shell/" "nnn/" "cef_user_data/" "gnome-session/" "xnviewmp/" "user-dirs.locale" "evolution/" "iterm2/" "gtk-2.0/" "darktable/" "fontconfig/" "xonsh/" "user-dirs.dirs" "pulse/" "manjaro-hello.json" "dconf/" "gtk-3.0/" "Code - OSS/" "neofetch/" "caffeine/" "nautilus/" "joplin-desktop/" "._.config" "config" "racket/" "code-oss/" "gedit/" "syncthing-gtk/" "hexchat/" "ranger/" ".config/" "obsidian-dev/" "syncthing/" "pamac/" "../" "./")
+
+ ("/Volumes/Macintosh HD/Users/leo/.emacs.d/" (24677 62434 498026 746000) ".lsp-session-v1" ".smex-items" "backups/" "themes/" "elpa/" "emacs.d/" ".emacs.desktop.lock" ".recentf" "init.el" ".emacs.desktop" "auto-save-list/" "straight/" "transient/" "tramp" "projectile-bookmarks.eld" "customizations/" "init.el~" "ido.last" "../" "./")
+
+ ("/Volumes/" (24677 62135 437863 506000) "Macintosh HD/" "../" "./")
+
+ ("/Volumes/Macintosh HD/Users/leo/" (24671 46668 372198 248000) ".slime/" ".viminfo" "quicklisp/" ".gforth-history" ".gitconfig" ".cache/" ".python_history" "Downloads/" "Photos/" ".vscode/" ".themes/" "Sync/" "quicklisp.lisp" "Documents/" ".vscode-insiders/" ".ghcup/" ".slime-history.eld" ".nb/" ".Trash/" ".nbrc" ".profile" "Applications/" "Movies/" "Applications (Parallels)/" ".ssh/" ".rustup/" ".keys/" ".claws-mail/" ".zshenv" "Public/" "Audio/" ".cups/" ".android/" ".cargo/" ".emacs.d/" ".oracle_jre_usage/" "Library/" "Desktop/" ".zsh_history" "quicklisp.lisp.asc" ".authinfo" ".zprofile" "Source/" ".irssi/" "Pictures/" ".local/" ".sbclrc" ".wget-hsts" ".CFUserTextEncoding" ".lldb/" ".vscode-exploration/" ".gnupg/" ".DS_Store" ".docker/" ".cabal-desktop/" ".eclrc" "Music/" ".macports/" ".config/" ".kitty/" "../" "./")
+
+ ("/Volumes/Macintosh HD/Users/leo/Source/lisp/lisp-koans/koans/" (24650 62008 156126 319000) "backquote.lisp" "structures.lisp" "control-statements.lisp" "control-statements.sync-conflict-20210306-163431-FNGYTVK.lisp" "nil-false-empty.sync-conflict-20210306-163515-FNGYTVK.lisp" "hash-tables.lisp" "variables-parameters-constants.lisp" "triangle-project.lisp" "loops.lisp" "functions.sync-conflict-20210306-163327-FNGYTVK.lisp" "condition-handlers.sync-conflict-20210306-163439-FNGYTVK.lisp" "threads.lisp" "scope-and-extent.lisp" "atoms-vs-lists.sync-conflict-20210306-163525-FNGYTVK.lisp" "iteration.lisp" "equality-distinctions.lisp" "basic-macros.lisp" "loops.sync-conflict-20210306-163302-FNGYTVK.lisp" "std-method-comb.lisp" "asserts.lisp" "extra-credit.txt" "asserts.sync-conflict-20210306-163718-FNGYTVK.lisp" "let.sync-conflict-20210306-163311-FNGYTVK.lisp" "arrays.lisp" "evaluation.sync-conflict-20210306-163410-FNGYTVK.lisp" "functions.lisp" "let.lisp" "evaluation.lisp" "atoms-vs-lists.lisp" "clos.lisp" "format.lisp" "extra-credit.lisp" "strings.sync-conflict-20210306-163603-FNGYTVK.lisp" "scoring-project.lisp" "vectors.lisp" "multiple-values.lisp" "lists.lisp" "mapcar-and-reduce.lisp" "macros.lisp" "type-checking.lisp" "nil-false-empty.lisp" "dice-project.lisp" "condition-handlers.lisp" "strings.lisp" "../" "./")
+
+ ("/Volumes/Macintosh HD/Users/leo/Source/" (24670 32692 468948 33000) "Javascript/" ".stversions/" "Raycast/" "Swift/" "scala/" "Cocoa/" "htdp/" "Haskell/" "Java/" "clojurescript/" "rust/" "smalltalk/" "Perl/" "target/" "Shell/" "clojure/" "Python/" ".stfolder/" "scribble/" ".stignore" "racket/" ".DS_Store" "lisp/" "Applescript/" "._.DS_Store" "sicp/" "Xcode/" "../" "./")
+
+ ("/Volumes/Macintosh HD/Users/leo/.emacs.d/customizations/" (24659 60589 844646 531000) "elisp-editing.el" "#shell-integration.el#" "setup-js.el" "navigation.el" "editing.el" "setup-clojure.el" "misc.el" "shell-integration.el" "ui.el" "../" "./")
+
+ ("/Volumes/Macintosh HD/Users/leo/Source/lisp/lisp-koans/" (24644 8299 345649 693000) "contemplate.lisp" "meditate-macos.sync-conflict-20210306-163559-FNGYTVK.sh" ".koans" "koans-solved/" "test.lisp" ".git/" "BUILD" "meditate-macos.sh" "LICENSE.sync-conflict-20210306-163533-FNGYTVK" "README.md" "TODO" "lisp-koans.lisp" "meditate-linux.sh" "LICENSE" "koans/" "test-framework.lisp" "../" "./")
+
+ ("/Volumes/Macintosh HD/Users/leo/Source/lisp/" (24633 44503 760281 391000) "lisp-koans/" "aoc5.lsp" "input5.txt" "harmonic.lisp" "../" "./")
+
+ ("/Volumes/Macintosh HD/Users/" (24076 20864 0 0) "Guest/" "lisa/" "leo/" "ghost/" "Shared/" ".localized" "../" "./")
+
+ ("/Volumes/Macintosh HD/" (24076 20864 0 0) "cores/" "tmp/" "Volumes/" "dev/" "opt/" "Applications/" "Users/" ".vol/" "private/" ".VolumeIcon.icns" "System/" "Library/" "var/" "etc/" ".file" "sbin/" "bin/" "nix/" "usr/" "home/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
