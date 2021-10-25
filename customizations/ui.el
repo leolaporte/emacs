@@ -49,7 +49,7 @@
 (setq ;; makes killing/yanking interact with the clipboard
  x-select-enable-clipboard t
 
- ;; I'm actually not sure what this does but it's recommended?
+ ;; automatically copy the primary selection (if supported by the os)
  x-select-enable-primary t
 
  ;; Save clipboard strings into kill ring before replacing them.

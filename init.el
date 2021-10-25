@@ -7,8 +7,11 @@
 ;; https://github.com/raxod502/straight.el
 ;;;;
 
-;; increase garbage collection threshold to 20MB to reduce time spent in GC
-(setq gc-cons-threshold 20000000)
+;; increase garbage collection threshold to 50MB to reduce time spent in GC
+(setq gc-cons-threshold 50000000)
+
+;; warn before opening giant files over 100MB
+(setq large-file-warning-threshold 100000000)
 
 ;; use straight.el for package installation
 (defvar bootstrap-version)
@@ -25,9 +28,11 @@
   (load bootstrap-file nil 'nomessage))
 
 ;; Install packages
+
+;; my favorite terminal emulator package
 (straight-use-package 'vterm)
 
-;; lisp 
+;; Common Lisp support 
 (straight-use-package 'sly)
 (setq inferior-lisp-program "/opt/homebrew/bin/sbcl")
 ;;(setq slime-contribs '(slime-fancy))
