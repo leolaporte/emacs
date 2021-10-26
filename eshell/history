@@ -1,0 +1,13 @@
+ls
+cd .emacs
+la
+ls -a
+cd .emacs.d/
+ls
+ls -a
+exit
+cd ..
+ls
+ls themes
+ls modus-themes/
+exit

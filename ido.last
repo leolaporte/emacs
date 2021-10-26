@@ -48,29 +48,29 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "navigation.el"
+ "editing.el"
  "ui.el"
+ "init-helm.el"
  "init.el"
  "chap8-3.lisp"
- "chap8-2.lisp"
- "dtrace.lisp"
- "editing.el"
  "Brewfile"
  "chap8-2.sync-conflict-20211016-103352-FNGYTVK.lisp"
+ "chap8-2.lisp"
  "lisp.tar"
- "chap8.lisp"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/leo/.emacs.d/" (24950 3132 143662 645000) ".lsp-session-v1" ".recentf~" ".smex-items" "backups/" "themes/" "games/" ".git/" "elpa/" ".gitignore" ".recentf" "README.md" "init.el" "url/" ".emacs.desktop" "auto-save-list/" "eln-cache/" "straight/" "transient/" "projectile-bookmarks.eld" "customizations/" "init.el~" "ido.last" "../" "./")
+ ("/Users/leo/.emacs.d/customizations/" (24952 8513 273262 580000) "elisp-editing.el" "ui.el~" "init-helm.el" "setup-js.el" "navigation.el" "editing.el" ".emacs.desktop" "setup-clojure.el" "misc.el" "shell-integration.el" "ui.el" "../" "./")
 
- ("/Users/leo/" (24950 2900 577073 804000) ".slime/" ".viminfo" "quicklisp/" ".gforth-history" "common-lisp/" ".gitconfig" ".cache/" ".python_history" "Downloads/" "Photos/" ".vscode/" ".revox/" ".themes/" "Sync/" "quicklisp.lisp" "Documents/" "Obsidian/" ".vscode-insiders/" ".ghcup/" "Brewfile" ".tldrc/" ".slime-history.eld" ".nb/" ".Trash/" ".nbrc" ".flutter-devtools/" ".profile" "Applications/" "Movies/" ".ssh/" ".rustup/" ".git-credentials" ".keys/" ".flutter" ".claws-mail/" ".zshenv" ".fzf.bash" "Public/" ".fzf.zsh" "Audio/" ".#syncarmorlock.sh" ".cups/" ".android/" ".cargo/" ".emacs.d/" "Calibre Library/" ".oracle_jre_usage/" "Library/" "Desktop/" ".zsh_history" "quicklisp.lisp.asc" ".sly-mrepl-history" ".pub-cache/" ".elvish/" ".dartServer/" ".authinfo" ".zprofile" "Source/" ".irssi/" "Pictures/" ".local/" ".sbcl_history" ".sbclrc" ".zshrc" ".bashrc" ".wget-hsts" ".CFUserTextEncoding" ".lldb/" ".vscode-exploration/" ".gnupg/" ".DS_Store" ".dart/" ".docker/" ".cabal-desktop/" ".eclrc" "Music/" ".macports/" ".config/" ".kitty/" ".TheBrain/" "../" "./")
+ ("/Users/leo/.emacs.d/" (24951 31702 703156 11000) ".recentf~" ".smex-items" "backups/" "themes/" "games/" ".git/" ".gitignore" ".recentf" "README.md" "init.el" "url/" ".emacs.desktop" "auto-save-list/" "modus-themes/" "eln-cache/" "straight/" "transient/" "projectile-bookmarks.eld" "ido.last~" "customizations/" "eshell/" "init.el~" "ido.last" "../" "./")
 
- ("/Users/leo/.emacs.d/customizations/" (24949 64480 945765 565000) "elisp-editing.el" "ui.el~" "setup-js.el" "navigation.el" "editing.el" ".emacs.desktop" "setup-clojure.el" "misc.el" "shell-integration.el" "ui.el" "../" "./")
-
- ("/Users/leo/common-lisp/gentle/" (24948 46078 826381 70000) "ppmx.lisp" "chap7.lisp" ".git/" "chap6.lisp" "chap4.fasl" "dtrace.lisp" "chap8-3.lisp" "chap8-2.lisp" "tdd.lisp" "README.md" "defstruct.scheme" "dtrace/" "dtrace.fasl" "chap8-3.fasl" "code/" "tdd.fasl" "chap8-2.fasl" "sdraw/" "chap5.lisp" "chap7.fasl" "chap8.lisp" "chap4.lisp" "../" "./")
+ ("/Users/leo/common-lisp/gentle/" (24951 31762 503835 225000) "chap7.lisp" ".git/" "chap6.lisp" "chap8-3.lisp" ".gitignore" "chap8-2.lisp" "README.md" "chap5.lisp" "chap8.lisp" "chap4.lisp" "../" "./")
 
  ("/Users/leo/common-lisp/" (24948 46052 933278 705000) "lisp-koans/" "dtrace/" "code/" "sdraw/" "gentle/" "lol/" "on-lisp/" "../" "./")
+
+ ("/Users/leo/" (24951 31761 879811 397000) ".slime/" ".viminfo" "quicklisp/" ".gforth-history" "common-lisp/" ".gitconfig" ".cache/" ".python_history" "Downloads/" "Photos/" ".vscode/" ".revox/" ".themes/" "Sync/" "quicklisp.lisp" "Documents/" "Obsidian/" ".vscode-insiders/" ".ghcup/" "Brewfile" ".tldrc/" ".slime-history.eld" ".nb/" ".Trash/" ".nbrc" ".flutter-devtools/" ".profile" "Applications/" "Movies/" ".ssh/" ".rustup/" ".git-credentials" ".keys/" ".flutter" ".claws-mail/" ".zshenv" ".fzf.bash" "Public/" ".fzf.zsh" "Audio/" ".#syncarmorlock.sh" ".cups/" ".android/" ".cargo/" ".emacs.d/" "Calibre Library/" ".oracle_jre_usage/" "Library/" "Desktop/" ".zsh_history" "quicklisp.lisp.asc" ".sly-mrepl-history" ".pub-cache/" ".elvish/" ".dartServer/" ".authinfo" ".zprofile" "Source/" ".irssi/" "Pictures/" ".local/" ".sbcl_history" ".sbclrc" ".zshrc" ".bashrc" ".wget-hsts" ".CFUserTextEncoding" ".lldb/" ".vscode-exploration/" ".gnupg/" ".DS_Store" ".dart/" ".docker/" ".cabal-desktop/" ".eclrc" "Music/" ".macports/" ".config/" ".kitty/" ".TheBrain/" "../" "./")
 
  ("/Users/leo/Source/lisp/gentle/" (24947 23447 492363 223000) "ppmx.lisp" "chap7.lisp" ".git/" "chap6.lisp" "chap4.fasl" "dtrace.lisp" "chap8-3.lisp" "chap8-2.lisp" "tdd.lisp" "README.md" "defstruct.scheme" "dtrace/" "dtrace.fasl" "chap8-3.fasl" "code/" "tdd.fasl" "chap8-2.fasl" "sdraw/" "gentle/" "chap5.lisp" "chap7.fasl" "chap8.lisp" "chap4.lisp" "../" "./")
 

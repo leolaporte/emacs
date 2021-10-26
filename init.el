@@ -27,7 +27,15 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
+
 ;; Install packages
+
+;; Install Helm completions (instead of IDO or IVY)
+;; https://emacs-helm.github.io
+(straight-use-package 'helm)
+(helm-mode 1)
+(setq completion-styles '(flex))
 
 ;; my favorite terminal emulator package
 (straight-use-package 'vterm)
@@ -60,7 +68,6 @@
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-
 ;; key bindings and code colorization for Clojure
 ;; https://github.com/clojure-emacs/clojure-mode
 ;; clojure-mode
@@ -75,9 +82,9 @@
 ;; allow ido usage in as many contexts as possible. see
 ;; customizations/navigation.el line 23 for a description
 ;; of ido
-(straight-use-package 'ido-completing-read+)
+;; (straight-use-package 'ido-completing-read+)
 ;; and add flx (also see navigation.el)
-(straight-use-package 'flx-ido)
+;; (straight-use-package 'flx-ido)
 
 ;; Enhances M-x to allow easier execution of commands. Provides
 ;; a filterable list of possible commands in the minibuffer
@@ -99,14 +106,14 @@
 
 ;; minibuffer completion/filtering/sorting framework
 ;; https://github.com/abo-abo/swiper
-(straight-use-package 'ivy)
-(global-set-key (kbd "C-:") 'avy-goto-char)
-(global-set-key (kbd "C-'") 'avy-goto-char-2)
-(global-set-key (kbd "M-g e") 'avy-goto-word-0)
+;; (straight-use-package 'ivy)
+;; (global-set-key (kbd "C-:") 'avy-goto-char)
+;; (global-set-key (kbd "C-'") 'avy-goto-char-2)
+;; (global-set-key (kbd "M-g e") 'avy-goto-word-0)
 
 ;; simple but effective sorting and filtering for Emacs
 ;; https://github.com/raxod502/prescient.el
-(straight-use-package 'ivy-prescient)
+;; (straight-use-package 'ivy-prescient)
 
 ;; a Collection of Ridiculously Useful eXtensions for Emacs
 ;; https://github.com/bbatsov/crux
@@ -174,7 +181,23 @@
 ;; For editing lisps
 (load "elisp-editing.el")
 
+;; Helm config - from its author
+(load "init-helm.el")
+
 ;; Langauage-specific
 ;; (load "setup-clojure.el")
 ;; (load "setup-js.el")
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("31f1723fb10ec4b4d2d79b65bcad0a19e03270fe290a3fc4b95886f18e79ac2f" default)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

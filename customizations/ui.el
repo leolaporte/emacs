@@ -29,7 +29,12 @@
 ;; for a more technical explanation.
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
+;; ( add-to-list 'load-path "~/.emacs.d/modus-themes")
+;; (require 'modus-themes)
+;; (modus-themes-load-themes)
+;; (modus-themes-load-vivendi)
 (load-theme 'tomorrow-night-bright t)
+;; (load-theme 'modus-vivendi t)
 ;; (straight-use-package 'solarized-theme)
 
 ;; Uncomment the lines below by removing semicolons and play with the

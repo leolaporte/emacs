@@ -1,12 +1,12 @@
 
 ;; ----- smex-history -----
 (
- toggle-read-only
+ helm-mode
  sly
- magit
- ivy-mode
  customize-face
  load-theme
+ customize-themes
+ enable-theme
  package-install
 )
 
@@ -45,7 +45,7 @@
  (package-delete . 1)
  (window-swap-states . 5)
  (clojure-enable-slime-on-existing-buffers . 1)
- (sly . 25)
+ (sly . 23)
  (server-start . 2)
  (split-window-vertically . 1)
  (sly-update-indentation . 4)
@@ -54,7 +54,6 @@
  (Custom-set . 1)
  (customize-themes . 1)
  (customize-face . 3)
- (magit . 1)
- (toggle-fullscreen . 5)
- (toggle-read-only . 1)
+ (toggle-fullscreen . 1)
+ (helm-mode . 1)
 )
