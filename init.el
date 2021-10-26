@@ -42,7 +42,11 @@
 
 ;; Common Lisp support 
 (straight-use-package 'sly)
-(setq inferior-lisp-program "/opt/homebrew/bin/sbcl")
+(setq inferior-lisp-program "/usr/bin/sbcl") ; Linux
+                                        ; (setq inferior-lisp-program "/opt/homebrew/bin/sbcl") ; MacOS
+(setq global-helm-sly-mode t)
+(straight-use-package 'helm-sly)
+
 ;;(setq slime-contribs '(slime-fancy))
 ;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
 

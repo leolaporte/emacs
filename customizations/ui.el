@@ -5,7 +5,9 @@
 ;; preferences
 
 ;; increase font size for better readability
-(set-face-attribute 'default nil :family "iosevka nerd font mono" :height 180)
+;(set-face-attribute 'default nil :family "iosevka nerd font mono" :height 180) ; Macbook
+(set-face-attribute 'default nil :family "iosevka extended" :height 140) ; Mojo
+
 
 ;; Turn off the menu bar at the top of each frame because it's distracting
 (menu-bar-mode -1)
@@ -40,9 +42,10 @@
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
 ;; (in lines high) Emacs will have whenever you start it
-(setq initial-frame-alist '((top . 1) (left . 1) (width . 128) (height . 38))) ;Macbook Pro 13 
+(setq initial-frame-alist '((top . 40) (left . 200) (width . 200) (height . 75))) ; Mojo-Ryzen
+; (setq initial-frame-alist '((top . 10) (left . 10) (width . 288) (height . 35))) ;Macbook Pro 13 
 
-;; Full screen
+;; Add Full screen toggle
 (defun toggle-fullscreen ()
   "Toggle full screen"
   (interactive)
