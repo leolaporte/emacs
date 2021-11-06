@@ -7,11 +7,8 @@
 ;; https://github.com/raxod502/straight.el
 ;;;;
 
-;; increase garbage collection threshold to 50MB to reduce time spent in GC
-(setq gc-cons-threshold 50000000)
-
-;; warn before opening giant files over 100MB
-(setq large-file-warning-threshold 100000000)
+;; increase garbage collection threshold to 20MB to reduce time spent in GC
+(setq gc-cons-threshold 20000000)
 
 ;; use straight.el for package installation
 (defvar bootstrap-version)
@@ -27,26 +24,12 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
-
 ;; Install packages
-
-;; Install Helm completions (instead of IDO or IVY)
-;; https://emacs-helm.github.io
-(straight-use-package 'helm)
-(helm-mode 1)
-(setq completion-styles '(flex))
-
-;; my favorite terminal emulator package
 (straight-use-package 'vterm)
 
-;; Common Lisp support 
+;; lisp 
 (straight-use-package 'sly)
-;; (setq inferior-lisp-program "/usr/bin/sbcl") ; Linux
-(setq inferior-lisp-program "/opt/homebrew/bin/sbcl") ; MacOS
-(setq global-helm-sly-mode t)
-(straight-use-package 'helm-sly)
-
+(setq inferior-lisp-program "/opt/homebrew/bin/sbcl")
 ;;(setq slime-contribs '(slime-fancy))
 ;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
 
@@ -64,20 +47,6 @@
 ;; makes handling lisp expressions much, much easier
 ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
 (straight-use-package 'paredit)
-;; Mac keybindings using fn key
-(add-hook 'paredit-mode-hook
-          (lambda ()
-            (define-key paredit-mode-map (kbd "<prior>") 'paredit-forward-slurp-sexp)
-            (define-key paredit-mode-map (kbd "<next>") 'paredit-backward-slurp-sexp)
-            (define-key paredit-mode-map (kbd "<home>") 'paredit-backward-barf-sexp)
-            (define-key paredit-mode-map (kbd "<end>") 'paredit-forward-barf-sexp)))
-
-;; Increase the selected region by semantic units
-;; https://github.com/magnars/expand-region.el
-(straight-use-package 'expand-region)
-;; bind to C-=
-(require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; key bindings and code colorization for Clojure
 ;; https://github.com/clojure-emacs/clojure-mode
@@ -93,9 +62,9 @@
 ;; allow ido usage in as many contexts as possible. see
 ;; customizations/navigation.el line 23 for a description
 ;; of ido
-;; (straight-use-package 'ido-completing-read+)
+(straight-use-package 'ido-completing-read+)
 ;; and add flx (also see navigation.el)
-;; (straight-use-package 'flx-ido)
+(straight-use-package 'flx-ido)
 
 ;; Enhances M-x to allow easier execution of commands. Provides
 ;; a filterable list of possible commands in the minibuffer
@@ -117,14 +86,14 @@
 
 ;; minibuffer completion/filtering/sorting framework
 ;; https://github.com/abo-abo/swiper
-;; (straight-use-package 'ivy)
-;; (global-set-key (kbd "C-:") 'avy-goto-char)
-;; (global-set-key (kbd "C-'") 'avy-goto-char-2)
-;; (global-set-key (kbd "M-g e") 'avy-goto-word-0)
+(straight-use-package 'ivy)
+(global-set-key (kbd "C-:") 'avy-goto-char)
+(global-set-key (kbd "C-'") 'avy-goto-char-2)
+(global-set-key (kbd "M-g e") 'avy-goto-word-0)
 
 ;; simple but effective sorting and filtering for Emacs
 ;; https://github.com/raxod502/prescient.el
-;; (straight-use-package 'ivy-prescient)
+(straight-use-package 'ivy-prescient)
 
 ;; a Collection of Ridiculously Useful eXtensions for Emacs
 ;; https://github.com/bbatsov/crux
@@ -192,23 +161,7 @@
 ;; For editing lisps
 (load "elisp-editing.el")
 
-;; Helm config - from its author
-(load "init-helm.el")
-
 ;; Langauage-specific
 ;; (load "setup-clojure.el")
 ;; (load "setup-js.el")
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("31f1723fb10ec4b4d2d79b65bcad0a19e03270fe290a3fc4b95886f18e79ac2f" default)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
