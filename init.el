@@ -74,13 +74,6 @@
             (define-key paredit-mode-map (kbd "<home>") 'paredit-backward-barf-sexp)
             (define-key paredit-mode-map (kbd "<end>") 'paredit-forward-barf-sexp)))
 
-;; Increase the selected region by semantic units
-;; https://github.com/magnars/expand-region.el
-(straight-use-package 'expand-region)
-;; bind to C-=
-(require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
-
 ;; key bindings and code colorization for Clojure
 ;; https://github.com/clojure-emacs/clojure-mode
 ;; clojure-mode
