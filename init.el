@@ -29,12 +29,6 @@
 
 (straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
 
-;; macOS specific commands
-(if (eq system-type 'darwin)
-    (progn
-      (straight-use-package 'exec-path-from-shell)
-      (straight-use-package 'osx-lib)))
-
 ;; Install packages
 
 ;; Install Helm completions (instead of IDO or IVY)
@@ -53,7 +47,7 @@
 
 (if (eq system-type 'darwin)
     (setq inferior-lisp-program "/opt/homebrew/bin/sbcl")  ;; MacOS
-  (setq inferior-lisp-program "/usr/bin/local/scbl"))      ;; Linux
+  (setq inferior-lisp-program "/usr/bin/sbcl"))      ;; Linux
 
 ;;(setq slime-contribs '(slime-fancy))
 ;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
