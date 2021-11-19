@@ -25,6 +25,10 @@
 (global-set-key (kbd "s-r") #'crux-recentf-ido-find-file)
 (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
 (global-set-key [remap kill-whole-line] #'crux-kill-whole-line)
+(global-set-key (kbd "C-c n") #'crux-cleanup-buffer-or-region)
+(global-set-key (kbd "C-c f") #'crux-recentf-find-file)
+(global-set-key (kbd "C-c e") #'crux-eval-and-replace) ; evaluate e-lisp exp and replace with result
+(global-set-key (kbd "C-c I") #'crux-find-user-init-file)
 
 ;; Smarter C-a (move to beginning of a line)
 (defun smarter-move-beginning-of-line (arg)
