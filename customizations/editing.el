@@ -5,13 +5,6 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;; Increase the selected region by semantic units
-;; https://github.com/magnars/expand-region.el
-(straight-use-package 'expand-region)
-;; bind to C-=
-(require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
-
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand
 (global-set-key (kbd "M-/") 'hippie-expand)

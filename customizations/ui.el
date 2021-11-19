@@ -11,7 +11,7 @@
       (setq initial-frame-alist '((top . 10) (left . 10) (width . 120) (height . 40))))
   (progn ; Linux desktop
     (set-face-attribute 'default nil :family "iosevka Nerd Font Mono" :height 140) 
-    (setq initial-frame-alist '((top . 40) (left . 200) (width . 200) (height . 75))))) 
+    (setq initial-frame-alist '((top . 10) (left . 200) (width . 200) (height . 75))))) 
 
 ;; Add Full screen toggle
 (defun toggle-fullscreen ()
