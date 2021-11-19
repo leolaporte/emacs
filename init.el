@@ -29,6 +29,12 @@
 
 (straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
 
+;; macOS specific commands
+(if (eq system-type 'darwin)
+    (progn
+      (straight-use-package 'exec-path-from-shell)
+      (straight-use-package 'osx-lib)))
+
 ;; Install packages
 
 ;; Install Helm completions (instead of IDO or IVY)
@@ -42,10 +48,12 @@
 
 ;; Common Lisp support 
 (straight-use-package 'sly)
-;; (setq inferior-lisp-program "/usr/bin/sbcl") ; Linux
-(setq inferior-lisp-program "/opt/homebrew/bin/sbcl") ; MacOS
 (setq global-helm-sly-mode t)
 (straight-use-package 'helm-sly)
+
+(if (eq system-type 'darwin)
+    (setq inferior-lisp-program "/opt/homebrew/bin/sbcl")  ;; MacOS
+  (setq inferior-lisp-program "/usr/bin/local/scbl"))      ;; Linux
 
 ;;(setq slime-contribs '(slime-fancy))
 ;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
@@ -138,17 +146,6 @@
 
 ;; markdown mode
 (straight-use-package 'markdown-mode)
-
-;; On OS X, an Emacs instance started from the graphical user
-;; interface will have a different environment than a shell in a
-;; terminal window, because OS X does not run a shell during the
-;; login. Obviously this will lead to unexpected results when
-;; calling external utilities like make from Emacs.
-;; This library works around this problem by copying important
-;; environment variables from the user's shell.
-;; https://github.com/purcell/exec-path-from-shell
-(if (eq system-type 'darwin)
-    (straight-use-package 'exec-path-from-shell))
 
 ;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
 ;; to load them.

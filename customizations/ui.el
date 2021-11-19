@@ -4,9 +4,22 @@
 ;; a matter of preference and may require some fiddling to match your
 ;; preferences
 
-;; increase font size for better readability
-(set-face-attribute 'default nil :family "iosevka nerd font mono" :height 180) ; Macbook
-;;(set-face-attribute 'default nil :family "iosevka Nerd Font Mono" :height 140) ; Mojo
+;; System specific window and font sizes
+(if (eq system-type 'darwin)
+    (progn ; Macbook
+      (set-face-attribute 'default nil :family "iosevka nerd font mono" :height 180)
+      (setq initial-frame-alist '((top . 10) (left . 10) (width . 120) (height . 40))))
+  (progn ; Linux desktop
+    (set-face-attribute 'default nil :family "iosevka Nerd Font Mono" :height 140) 
+    (setq initial-frame-alist '((top . 40) (left . 200) (width . 200) (height . 75))))) 
+
+;; Add Full screen toggle
+(defun toggle-fullscreen ()
+  "Toggle full screen"
+  (interactive)
+  (set-frame-parameter
+   nil 'fullscreen
+   (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 ;; Turn off the menu bar at the top of each frame because it's distracting
 (menu-bar-mode -1)
@@ -37,20 +50,6 @@
 (load-theme 'tomorrow-night-bright t)
 ;; (load-theme 'modus-vivendi t)
 ;; (straight-use-package 'solarized-theme)
-
-;; Uncomment the lines below by removing semicolons and play with the
-;; values in order to set the width (in characters wide) and height
-;; (in lines high) Emacs will have whenever you start it
-;; (setq initial-frame-alist '((top . 40) (left . 200) (width . 200) (height . 75))) ; Mojo-Ryzen
-(setq initial-frame-alist '((top . 10) (left . 10) (width . 120) (height . 40))) ;Macbook Pro 13 
-
-;; Add Full screen toggle
-(defun toggle-fullscreen ()
-  "Toggle full screen"
-  (interactive)
-  (set-frame-parameter
-   nil 'fullscreen
-   (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 ;; These settings relate to how emacs interacts with your operating system
 (setq ;; makes killing/yanking interact with the clipboard
