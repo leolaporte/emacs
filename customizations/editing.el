@@ -1,9 +1,17 @@
 ;; Customizations relating to editing a buffer.
 
-(autoload 'markdown-mode "markdown-mode"
-  "Major mode for editing Markdown files" t)
+;; markdown mode
+(straight-use-package 'markdown-mode)
+(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; turn on agressive-indent-mode for all major modes
+;; https://github.com/Malabarba/aggressive-indent-mode/blob/master/README.md
+(straight-use-package 'aggressive-indent)
+(global-aggressive-indent-mode 1)
+(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+(add-to-list 'aggressive-indent-excluded-modes 'python-mode)
 
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand

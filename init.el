@@ -37,65 +37,22 @@
 (helm-mode 1)
 (setq completion-styles '(flex))
 
-;; my favorite terminal emulator package
+;; my favorite terminal emulator package - requires emacs built with module support
 (straight-use-package 'vterm)
 
-;; Common Lisp support 
+;; Common Lisp support - I like sly instead of slime
 (straight-use-package 'sly)
 (setq global-helm-sly-mode t)
 (straight-use-package 'helm-sly)
 
+;; locate lisp package
 (if (eq system-type 'darwin)
     (setq inferior-lisp-program "/opt/homebrew/bin/sbcl")  ;; MacOS
   (setq inferior-lisp-program "/usr/bin/sbcl"))      ;; Linux
 
-;;(setq slime-contribs '(slime-fancy))
-;;(load (expand-file-name "~/quicklisp/slime-helper.el"))
-
-;; turn on agressive-indent-mode for all major modes
-;; https://github.com/Malabarba/aggressive-indent-mode/blob/master/README.md
-(straight-use-package 'aggressive-indent)
-(global-aggressive-indent-mode 1)
-(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'python-mode)
-
 ;; minor mode for Emacs that displays the key bindings following your currently entered incomplete command 
 (straight-use-package 'which-key)
 (which-key-mode)
-
-;; makes handling lisp expressions much, much easier
-;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-(straight-use-package 'paredit)
-;; Mac keybindings using fn key
-(add-hook 'paredit-mode-hook
-          (lambda ()
-            (define-key paredit-mode-map (kbd "<prior>") 'paredit-forward-slurp-sexp)
-            (define-key paredit-mode-map (kbd "<next>") 'paredit-backward-slurp-sexp)
-            (define-key paredit-mode-map (kbd "<home>") 'paredit-backward-barf-sexp)
-            (define-key paredit-mode-map (kbd "<end>") 'paredit-forward-barf-sexp)))
-
-;; key bindings and code colorization for Clojure
-;; https://github.com/clojure-emacs/clojure-mode
-;; clojure-mode
-
-;; extra syntax highlighting for clojure
-;; clojure-mode-extra-font-locking
-
-;; integration with a Clojure REPL
-;; https://github.com/clojure-emacs/cider
-;; cider
-
-;; allow ido usage in as many contexts as possible. see
-;; customizations/navigation.el line 23 for a description
-;; of ido
-;; (straight-use-package 'ido-completing-read+)
-;; and add flx (also see navigation.el)
-;; (straight-use-package 'flx-ido)
-
-;; Enhances M-x to allow easier execution of commands. Provides
-;; a filterable list of possible commands in the minibuffer
-;; http://www.emacswiki.org/emacs/Smex
-(straight-use-package 'smex)
 
 ;; project navigation
 (straight-use-package 'projectile)
@@ -110,29 +67,10 @@
 ;; https://magit.vc
 (straight-use-package 'magit)
 
-;; minibuffer completion/filtering/sorting framework
-;; https://github.com/abo-abo/swiper
-;; (straight-use-package 'ivy)
-;; (global-set-key (kbd "C-:") 'avy-goto-char)
-;; (global-set-key (kbd "C-'") 'avy-goto-char-2)
-;; (global-set-key (kbd "M-g e") 'avy-goto-word-0)
-
-;; simple but effective sorting and filtering for Emacs
-;; https://github.com/raxod502/prescient.el
-;; (straight-use-package 'ivy-prescient)
-
-;; a Collection of Ridiculously Useful eXtensions for Emacs
-;; https://github.com/bbatsov/crux
-;; see navigation.el for special crux keys
-(straight-use-package 'crux)
-
 ;; replaces emacs undo with a tree-based system
 ;;https://elpa.gnu.org/packages/undo-tree.html
 (straight-use-package 'undo-tree)
 (global-undo-tree-mode)
-
-;; markdown mode
-(straight-use-package 'markdown-mode)
 
 ;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
 ;; to load them.
@@ -178,10 +116,6 @@
 
 ;; Helm config - from its author
 (load "init-helm.el")
-
-;; Langauage-specific
-;; (load "setup-clojure.el")
-;; (load "setup-js.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -1,5 +1,17 @@
 ;; Automatically load paredit when editing a lisp file
 ;; More at http://www.emacswiki.org/emacs/ParEdit
+
+;; makes handling lisp expressions much, much easier
+;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
+(straight-use-package 'paredit)
+;; Mac keybindings using fn key
+(add-hook 'paredit-mode-hook
+          (lambda ()
+            (define-key paredit-mode-map (kbd "<prior>") 'paredit-forward-slurp-sexp)
+            (define-key paredit-mode-map (kbd "<next>") 'paredit-backward-slurp-sexp)
+            (define-key paredit-mode-map (kbd "<home>") 'paredit-backward-barf-sexp)
+            (define-key paredit-mode-map (kbd "<end>") 'paredit-forward-barf-sexp)))
+
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)

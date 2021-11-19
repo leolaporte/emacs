@@ -18,11 +18,16 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 40)
 
+;; a Collection of Ridiculously Useful eXtensions for Emacs
+;; https://github.com/bbatsov/crux
+;; see navigation.el for special crux keys
+(straight-use-package 'crux)
+
 ;; CRUX key remaps
-(global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
+;;(global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
 (global-set-key (kbd "C-c o") #'crux-open-with)
 (global-set-key [(shift return)] #'crux-smart-open-line)
-(global-set-key (kbd "s-r") #'crux-recentf-ido-find-file)
+;; (global-set-key (kbd "s-r") #'crux-recentf-ido-find-file)
 (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
 (global-set-key [remap kill-whole-line] #'crux-kill-whole-line)
 (global-set-key (kbd "C-c n") #'crux-cleanup-buffer-or-region)
@@ -58,13 +63,6 @@
 
 ;; Shows a list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-
-;; Enhances M-x to allow easier execution of commands. Provides
-;; a filterable list of possible commands in the minibuffer
-;; http://www.emacswiki.org/emacs/Smex
-(setq smex-save-file (concat user-emacs-directory ".smex-items"))
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
 
 ;; projectile everywhere!
 (projectile-global-mode)
