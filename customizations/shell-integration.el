@@ -2,7 +2,7 @@
 ;; https://github.com/purcell/exec-path-from-shell
 ;; modified to use  vterm - Leo 2/24/21
 
-(when (memq window-system '(mac ns x))
+(when (memq window-system 'darwin)
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-envs
    '("PATH")))
@@ -20,7 +20,10 @@
 (global-set-key (kbd "C-c t") #'visit-term-buffer)
 
 ;; NOTE: change next line to reflect location of fish shell
-(setq explicit-shell-file-name "/opt/homebrew/bin/fish")
+(if (equal system-name 'darwin)
+    (setq explicit-shell-file-name "/opt/homebrew/bin/fish")
+  (setq explicit-shell-filename "/usr/bin/fish")
+  
 (setq shell-file-name "fish")
 (setq explicit-fish-args '("-l" "-i"))
 (setenv "SHELL" shell-file-name)
