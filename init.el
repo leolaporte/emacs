@@ -1,5 +1,7 @@
 ;; Emacs configuration
 ;; Leo Laporte, 8 Dec 2020
+;; Updated on Framework Fri 19 Nov 2021 03:45:58 PM PST
+
 ;; based on https://github.com/flyingmachine/emacs-for-clojure
 ;; with additions from https://emacsredux.com/blog/2020/12/08/favorite-emacs-packages/
 ;; 
@@ -37,19 +39,6 @@
 (helm-mode 1)
 (setq completion-styles '(flex))
 
-;; my favorite terminal emulator package - requires emacs built with module support
-(straight-use-package 'vterm)
-
-;; Common Lisp support - I like sly instead of slime
-(straight-use-package 'sly)
-(setq global-helm-sly-mode t)
-(straight-use-package 'helm-sly)
-
-;; locate lisp package
-(if (eq system-type 'darwin)
-    (setq inferior-lisp-program "/opt/homebrew/bin/sbcl")  ;; MacOS
-  (setq inferior-lisp-program "/usr/bin/sbcl"))      ;; Linux
-
 ;; minor mode for Emacs that displays the key bindings following your currently entered incomplete command 
 (straight-use-package 'which-key)
 (which-key-mode)
@@ -57,44 +46,22 @@
 ;; project navigation
 (straight-use-package 'projectile)
 
-;; colorful parenthesis matching
-(straight-use-package 'rainbow-delimiters)
-
-;; edit html tags like sexps
-;; (straight-use-package 'tagedit)
-
 ;; git integration
 ;; https://magit.vc
 (straight-use-package 'magit)
 
-;; replaces emacs undo with a tree-based system
-;;https://elpa.gnu.org/packages/undo-tree.html
-(straight-use-package 'undo-tree)
-(global-undo-tree-mode)
-
-;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
-;; to load them.
-;;
-;; For example, if you download yaml-mode.el to ~/.emacs.d/vendor,
-;; then you can add the following code to this file:
-;;
-;; (require 'yaml-mode)
-;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-;; 
-;; Adding this code will make Emacs enter yaml mode whenever you open
-;; a .yml file
+;; Place downloaded elisp files in ~/.emacs.d/vendor.
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 ;;;;
 ;; Customization
 ;;;;
 
-;; Add a directory to our load path so that when you `load` things
-;; below, Emacs knows where to look for the corresponding file.
+;; To help organize these files, create customizations folder
+;; containing customizations for specific purposes
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
-;; Sets up exec-path-from-shell so that Emacs will use the correct
-;; environment variables
+;; All the relevant shell stuff
 (load "shell-integration.el")
 
 ;; These customizations make it easier for you to navigate files,
@@ -112,7 +79,7 @@
 (load "misc.el")
 
 ;; For editing lisps
-(load "elisp-editing.el")
+(load "lisp.el")
 
 ;; Helm config - from its author
 (load "init-helm.el")

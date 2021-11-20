@@ -1,15 +1,18 @@
-;; Sets up exec-path-from shell
-;; https://github.com/purcell/exec-path-from-shell
+;; Sets up shell integration
+;; including some macOS specific mods
 ;; modified to use  vterm - Leo 2/24/21
+
+;; my preferred terminal emulator package - requires emacs built with module support
+(straight-use-package 'vterm)
 
 ;; set up system specific parameters
 (if (eq system-type 'darwin) ; macOS
     (progn
-      (setq explicit-shell-file-name "/opt/homebrew/bin/fish")
-      (straight-use-package 'osx-lib)              ; mac specific utilities
-      (straight-use-package 'exec-path-from-shell) ; imports $PATH
+      (straight-use-package 'exec-path-from-shell) ; imports $PATH  https://github.com/purcell/exec-path-from-shell
       (exec-path-from-shell-initialize)     
-      (exec-path-from-shell-copy-envs '("PATH")))
+      (exec-path-from-shell-copy-envs '("PATH"))
+      (setq explicit-shell-file-name "/opt/homebrew/bin/fish")
+      (straight-use-package 'osx-lib))              ; mac specific utilities
   (setq explicit-shell-filename "/usr/bin/fish")) ; else Linux
 
 (setq shell-file-name "fish")

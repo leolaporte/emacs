@@ -13,6 +13,11 @@
 (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'python-mode)
 
+;; replaces emacs undo with a tree-based system
+;;https://elpa.gnu.org/packages/undo-tree.html
+(straight-use-package 'undo-tree)
+(global-undo-tree-mode)
+
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand
 (global-set-key (kbd "M-/") 'hippie-expand)

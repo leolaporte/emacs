@@ -1,5 +1,15 @@
-;; Automatically load paredit when editing a lisp file
-;; More at http://www.emacswiki.org/emacs/ParEdit
+;; Lisp specific packages
+;; including sly, paraedit
+
+;; Common Lisp support - I like sly instead of slime
+(straight-use-package 'sly)
+(setq global-helm-sly-mode t)
+(straight-use-package 'helm-sly)
+
+;; locate lisp package
+(if (eq system-type 'darwin)
+    (setq inferior-lisp-program "/opt/homebrew/bin/sbcl")  ;; MacOS
+  (setq inferior-lisp-program "/usr/bin/sbcl"));; Linux
 
 ;; makes handling lisp expressions much, much easier
 ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
@@ -19,6 +29,9 @@
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+;; colorful parenthesis matching
+(straight-use-package 'rainbow-delimiters)
 
 ;; eldoc-mode shows documentation in the minibuffer when writing code
 ;; http://www.emacswiki.org/emacs/ElDoc
