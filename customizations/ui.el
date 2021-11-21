@@ -10,11 +10,11 @@
        (setq initial-frame-alist '((top . 10) (left . 10) (width . 120) (height . 40))))
 
       ((equal system-name "mojo-ryzen")        
-       ((set-face-attribute 'default nil :family "iosevka Nerd Font Mono" :height 140) 
-        (setq initial-frame-alist '((top . 40) (left . 200) (width . 200) (height . 75)))))
+       (set-face-attribute 'default nil :family "Iosevka" :height 140) 
+       (setq initial-frame-alist '((top . 80) (left . 800) (width . 150) (height . 50))))
 
       ((equal system-name "framework")
-       (set-face-attribute 'default nil :family "iosevka" :height 140) 
+       (set-face-attribute 'default nil :family "Iosevka" :height 140) 
        (setq initial-frame-alist '((top . 20) (left . 20) (width . 100) (height . 40)))))
 
 ;; Add Full screen toggle
