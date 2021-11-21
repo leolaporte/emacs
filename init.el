@@ -36,8 +36,11 @@
 ;; Install Helm completions (instead of IDO or IVY)
 ;; https://emacs-helm.github.io
 (straight-use-package 'helm)
+(setq completion-styles '(flex)) ; emacs 27 and higher
+(global-set-key (kbd "M-x") #'helm-M-x)
+(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
 (helm-mode 1)
-(setq completion-styles '(flex))
 
 ;; minor mode for Emacs that displays the key bindings following your currently entered incomplete command 
 (straight-use-package 'which-key)
@@ -85,7 +88,7 @@
 (load "init-helm.el")
 
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
+ ;; Custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.

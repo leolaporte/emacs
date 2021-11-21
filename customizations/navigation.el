@@ -24,35 +24,22 @@
 (straight-use-package 'crux)
 
 ;; CRUX key remaps
-;;(global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
-(global-set-key (kbd "C-c o") #'crux-open-with)
-(global-set-key [(shift return)] #'crux-smart-open-line)
+;; (global-set-key (kbd "C-c o") #'crux-open-with)
 ;; (global-set-key (kbd "s-r") #'crux-recentf-ido-find-file)
+
+(global-set-key (kbd "C-k") #'crux-smart-kill-line)
+(global-set-key [(shift return)] #'crux-smart-open-line)
+(global-set-key [(control shift return)] #'crux-smart-open-line-above)
 (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
-(global-set-key [remap kill-whole-line] #'crux-kill-whole-line)
 (global-set-key (kbd "C-c n") #'crux-cleanup-buffer-or-region)
 (global-set-key (kbd "C-c f") #'crux-recentf-find-file)
 (global-set-key (kbd "C-c e") #'crux-eval-and-replace) ; evaluate e-lisp exp and replace with result
 (global-set-key (kbd "C-c I") #'crux-find-user-init-file)
+(global-set-key (kbd "C-c d") #'crux-duplicate-current-line-or-region)
+(global-set-key (kbd "C-c r") #'crux-rename-file-and-buffer)
 
-;; Smarter C-a (move to beginning of a line)
-(defun smarter-move-beginning-of-line (arg)
-  (interactive "^p")
-  (setq arg (or arg 1))
-
-  ;; Move lines first
-  (when (/= arg 1)
-    (let ((line-move-visual nil))
-      (forward-line (1- arg))))
-
-  (let ((orig-point (point)))
-    (back-to-indentation)
-    (when (= orig-point (point))
-      (move-beginning-of-line 1))))
-
-;; remap C-a to `smarter-move-beginning-of-line'
-(global-set-key [remap move-beginning-of-line]
-                'smarter-move-beginning-of-line)
+(global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
+(global-set-key [remap kill-whole-line] #'crux-kill-whole-line)
 
 ;; Increase the selected region by semantic units
 ;; https://github.com/magnars/expand-region.el

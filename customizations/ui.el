@@ -5,13 +5,17 @@
 ;; preferences
 
 ;; System specific window and font sizes
-(if (eq system-type 'darwin)
-    (progn ; Macbook
-      (set-face-attribute 'default nil :family "iosevka nerd font mono" :height 180)
-      (setq initial-frame-alist '((top . 10) (left . 10) (width . 120) (height . 40))))
-  (progn ; Linux desktop
-    (set-face-attribute 'default nil :family "iosevka Nerd Font Mono" :height 140) 
-    (setq initial-frame-alist '((top . 10) (left . 200) (width . 200) (height . 75))))) 
+(cond ((equal system-name "MBP-14")
+       (set-face-attribute 'default nil :family "iosevka nerd font mono" :height 180)
+       (setq initial-frame-alist '((top . 10) (left . 10) (width . 120) (height . 40))))
+
+      ((equal system-name "mojo-ryzen")        
+       ((set-face-attribute 'default nil :family "iosevka Nerd Font Mono" :height 140) 
+        (setq initial-frame-alist '((top . 40) (left . 200) (width . 200) (height . 75)))))
+
+      ((equal system-name "framework")
+       (set-face-attribute 'default nil :family "iosevka Nerd Font Mono" :height 140) 
+       ((setq initial-frame-alist '((top . 10) (left . 10) (width . 120) (height . 40))))))
 
 ;; Add Full screen toggle
 (defun toggle-fullscreen ()
