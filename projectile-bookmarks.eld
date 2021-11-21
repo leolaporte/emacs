@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/common-lisp/gentle/")
+("~/.emacs.d/")
