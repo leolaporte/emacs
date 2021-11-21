@@ -31,12 +31,11 @@
 ;; Show line numbers
 ;; (global-linum-mode)
 
-;; You can uncomment this to remove the graphical toolbar at the top. After
-;; awhile, you won't need the toolbar.
+;; Remove graphical tool bar
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 
-;; Don't show native OS scroll bars for buffers because they're redundant
+;; Don't show native OS scroll bars for buffers
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
@@ -47,13 +46,7 @@
 ;; for a more technical explanation.
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
-;; ( add-to-list 'load-path "~/.emacs.d/modus-themes")
-;; (require 'modus-themes)
-;; (modus-themes-load-themes)
-;; (modus-themes-load-vivendi)
 (load-theme 'tomorrow-night-bright t)
-;; (load-theme 'modus-vivendi t)
-;; (straight-use-package 'solarized-theme)
 
 ;; These settings relate to how emacs interacts with your operating system
 (setq ;; makes killing/yanking interact with the clipboard
@@ -61,7 +54,7 @@
 
  ;; automatically copy the primary selection (if supported by the os)
  select-enable-primary t
-
+ 
  ;; Save clipboard strings into kill ring before replacing them.
  ;; When one selects something in another program to paste it into Emacs,
  ;; but kills something in Emacs before actually pasting it,
