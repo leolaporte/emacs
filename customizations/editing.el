@@ -85,3 +85,6 @@
 
 (setq electric-indent-mode t)
 (setq mac-command-key-is-meta t)
+
+;; A few key bindings from Mickey Peterson
+(global-set-key (kbd "M-o") 'other-window)

@@ -1,6 +1,6 @@
 ;; Sets up shell integration
 ;; including some macOS specific mods
-;; modified to use  vterm - Leo 2/24/21
+;; modified to use  vterm - Léo 2/24/21
 
 ;; my preferred terminal emulator package - requires emacs built with module support
 (straight-use-package 'vterm)

@@ -1,8 +1,6 @@
 ;; These customizations change the way emacs looks and disable/enable
-;; some user interface elements. Some useful customizations are
-;; commented out, and begin with the line "CUSTOMIZE". These are more
-;; a matter of preference and may require some fiddling to match your
-;; preferences
+;; some user interface elements.
+;; Léo Laporte Sun Nov 21 10:30:29 2021
 
 ;; System specific window and font sizes
 (cond ((equal system-name "MBP-14")
@@ -37,7 +35,9 @@
 (menu-bar-mode -1)
 
 ;; Show line numbers
-;; (global-linum-mode)
+;; (global-linum-mode)      ; in gutter
+(setf column-number-mode t) ; in mode line
+(setf line-number-mode t)   ; in mode line
 
 ;; Remove graphical tool bar
 (when (fboundp 'tool-bar-mode)
