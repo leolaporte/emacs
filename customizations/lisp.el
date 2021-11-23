@@ -1,7 +1,12 @@
 ;; Lisp specific packages
 ;; including sly, paraedit
 
-;; Common Lisp support - I like sly instead of slime
+;; project navigation
+;; projectile everywhere!
+(straight-use-package 'projectile)
+(projectile-global-mode)
+
+;; Common Lisp support - btw I use sly
 (straight-use-package 'sly)
 (setq global-helm-sly-mode t)
 (straight-use-package 'helm-sly)

@@ -35,8 +35,6 @@
 ;; (global-set-key (kbd "s-r") #'crux-recentf-ido-find-file)
 
 (global-set-key (kbd "C-k") #'crux-smart-kill-line)
-(global-set-key [(shift return)] #'crux-smart-open-line)
-(global-set-key [(control shift return)] #'crux-smart-open-line-above)
 (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
 (global-set-key (kbd "C-c n") #'crux-cleanup-buffer-or-region)
 (global-set-key (kbd "C-c f") #'crux-recentf-find-file)
@@ -45,6 +43,9 @@
 (global-set-key (kbd "C-c d") #'crux-duplicate-current-line-or-region)
 (global-set-key (kbd "C-c r") #'crux-rename-file-and-buffer)
 
+;; Crux remaps
+(global-set-key [(shift return)] #'crux-smart-open-line)
+(global-set-key [(control shift return)] #'crux-smart-open-line-above)
 (global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
 (global-set-key [remap kill-whole-line] #'crux-kill-whole-line)
 
@@ -58,7 +59,3 @@
 ;; Shows a list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-;; project navigation
-;; projectile everywhere!
-(straight-use-package 'projectile)
-(projectile-global-mode)

@@ -1,10 +1,13 @@
 ;; Emacs configuration
 ;; Leo Laporte, 8 Dec 2020
 ;; Updated on Framework Fri 19 Nov 2021 03:45:58 PM PST
+;; Cleaned up Tue 23 Nov 2021 03:40:42 PM PST
 
-;; based on https://github.com/flyingmachine/emacs-for-clojure
+;; Based on https://github.com/flyingmachine/emacs-for-clojure
 ;; with additions from https://emacsredux.com/blog/2020/12/08/favorite-emacs-packages/
-;; 
+;; and Mickey Petersen's excellent "Mastering Emacs" https://www.masteringemacs.org/
+;; and various suggestions from the excellent contribs at https://reddit.com/r/emacs
+
 ;; Packages using straight.el package manager
 ;; https://github.com/raxod502/straight.el
 ;;;;
@@ -20,13 +23,13 @@
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
       (bootstrap-version 5))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
+  ((unless (file-exists-p bootstrap-file)
+     with-current-buffer
+     (url-retrieve-synchronously
+      "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+      'silent 'inhibit-cookies)
+     (goto-char (point-max))
+     (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
 (straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
@@ -53,7 +56,7 @@
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
 
-;; Hard-to-categorize customizations
+;; Hard-to-categorize customizations like Magit
 (load "misc.el")
 
 ;; Set up vterm for shell
