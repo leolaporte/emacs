@@ -19,6 +19,10 @@
        (set-face-attribute 'default nil :family "Menlo" :height 140) 
        (setq initial-frame-alist '((top . 10) (left . 10) (width . 100) (height . 40))))
 
+      ((equal system-name "darterpro")        
+       (set-face-attribute 'default nil :family "ttf-iosevka" :height 140) 
+       (setq initial-frame-alist '((top . 40) (left . 20) (width . 120) (height . 30))))
+
       ((equal system-name "framework")
        (set-face-attribute 'default nil :family "Iosevka" :height 140) 
        (setq initial-frame-alist '((top . 20) (left . 20) (width . 100) (height . 40)))))
