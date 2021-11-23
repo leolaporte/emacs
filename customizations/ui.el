@@ -47,6 +47,9 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
+;; remember window layouts with winner-mode
+(winner-mode 1)
+
 ;; Color Themes
 ;; Read http://batsov.com/articles/2012/02/19/color-theming-in-emacs-reloaded/
 ;; for a great explanation of emacs color themes.
@@ -84,6 +87,8 @@
 
 ;; full path in title bar
 (setq-default frame-title-format "%b (%f)")
+
+
 
 ;; don't pop up font menu
 (global-set-key (kbd "s-t") '(lambda () (interactive)))
