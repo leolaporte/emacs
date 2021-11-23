@@ -1,3 +1,10 @@
+;; Miscellaneous extensions
+;; Leo Laporte Tue 23 Nov 2021 03:32:38 PM PST
+
+;; git integration
+;; https://magit.vc
+(straight-use-package 'magit)
+
 ;; Changes all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)
 

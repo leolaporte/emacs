@@ -1,6 +1,10 @@
 ;; These customizations make it easier for you to navigate files,
 ;; switch buffers, and choose options from the minibuffer.
 
+;; minor mode for Emacs that displays the key bindings following your currently entered incomplete command 
+(straight-use-package 'which-key)
+(which-key-mode)
+
 ;; “switch windows with your shift key by pressing S-<left>, S-<right>, S-<up>, S-<down>.
 (windmove-default-keybindings)
 
@@ -54,5 +58,7 @@
 ;; Shows a list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+;; project navigation
 ;; projectile everywhere!
+(straight-use-package 'projectile)
 (projectile-global-mode)

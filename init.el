@@ -31,41 +31,16 @@
 
 (straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
 
-;; Install packages
-
-;; Install Helm completions (instead of IDO or IVY)
-;; https://emacs-helm.github.io
-(straight-use-package 'helm)
-(setq completion-styles '(flex)) ; emacs 27 and higher
-(global-set-key (kbd "M-x") #'helm-M-x)
-(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
-(global-set-key (kbd "C-x C-f") #'helm-find-files)
-(helm-mode 1)
-
-;; minor mode for Emacs that displays the key bindings following your currently entered incomplete command 
-(straight-use-package 'which-key)
-(which-key-mode)
-
-;; project navigation
-(straight-use-package 'projectile)
-
-;; git integration
-;; https://magit.vc
-(straight-use-package 'magit)
-
-;; Place downloaded elisp files in ~/.emacs.d/vendor.
-(add-to-list 'load-path "~/.emacs.d/vendor")
-
 ;;;;
 ;; Customization
+;; All the installed packages are in these files, purely for organizational purposes
 ;;;;
 
-;; To help organize these files, create customizations folder
-;; containing customizations for specific purposes
+;; folder for customization files
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
-;; All the relevant shell stuff
-(load "shell-integration.el")
+;; Install helm for completions, etc. -- config cribbed whole from its author
+(load "init-helm.el")
 
 ;; These customizations make it easier for you to navigate files,
 ;; switch buffers, and choose options from the minibuffer.
@@ -81,11 +56,11 @@
 ;; Hard-to-categorize customizations
 (load "misc.el")
 
+;; Set up vterm for shell
+(load "shell-integration.el")
+
 ;; For editing lisps
 (load "lisp.el")
-
-;; Helm config - from its author
-(load "init-helm.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
