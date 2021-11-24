@@ -5,7 +5,7 @@
 ;; System specific window and font sizes
 (cond ((equal system-name "MBP-14")
        (set-face-attribute 'default nil :family "iosevka nerd font mono" :height 180)
-       (setq initial-frame-alist '((top . 10) (left . 10) (width . 120) (height . 40))))
+       (setq initial-frame-alist '((top . 20) (left . 10) (width . 120) (height . 40))))
 
       ((equal system-name "mojo-ryzen")        
        (set-face-attribute 'default nil :family "Iosevka" :height 140) 
