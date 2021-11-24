@@ -9,7 +9,7 @@
 
       ((equal system-name "mojo-ryzen")        
        (set-face-attribute 'default nil :family "Iosevka" :height 140) 
-       (setq initial-frame-alist '((top . 80) (left . 800) (width . 150) (height . 50))))
+       (setq initial-frame-alist '((top . 150) (left . 800) (width . 150) (height . 50))))
 
       ((equal system-name "xps13")        
        (set-face-attribute 'default nil :family "Iosevka" :height 140) 
@@ -91,8 +91,6 @@
 
 ;; full path in title bar
 (setq-default frame-title-format "%b (%f)")
-
-
 
 ;; don't pop up font menu
 (global-set-key (kbd "s-t") '(lambda () (interactive)))
