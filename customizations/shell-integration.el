@@ -5,15 +5,19 @@
 ;; my preferred terminal emulator package - requires emacs built with module support
 (straight-use-package 'vterm)
 
+(when (memq window-system '(mac ns x))
+  "Set $MANPATH, $PATH and exec-path from your shell when executed in a GUI frame on OS X or Linux.
+   https://github.com/purcell/exec-path-from-shell"
+  (straight-use-package 'exec-path-from-shell) ; imports $PATH  
+  (exec-path-from-shell-initialize)          
+  (exec-path-from-shell-copy-envs '("PATH")))
+
 ;; set up system specific parameters
 (if (eq system-type 'darwin) ; macOS
     (progn
-      (straight-use-package 'exec-path-from-shell) ; imports $PATH  https://github.com/purcell/exec-path-from-shell
-      (exec-path-from-shell-initialize)     
-      (exec-path-from-shell-copy-envs '("PATH"))
       (setq explicit-shell-file-name "/opt/homebrew/bin/fish")
-      (straight-use-package 'osx-lib))              ; mac specific utilities
-  (setq explicit-shell-filename "/usr/bin/fish")) ; else Linux
+      (straight-use-package 'osx-lib))                           ; mac specific utilities
+  (setq explicit-shell-filename "/usr/bin/fish"))                ; else Linux
 
 (setq shell-file-name "fish")
 (setq explicit-fish-args '("-l" "-i"))
