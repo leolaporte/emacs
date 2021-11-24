@@ -3,7 +3,6 @@
 
 ;; Install Helm completions (instead of IDO or IVY)
 ;; https://emacs-helm.github.io
-
 (use-package helm
   :straight t
   :config
