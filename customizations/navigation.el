@@ -1,11 +1,6 @@
 ;; These customizations make it easier for you to navigate files,
 ;; switch buffers, and choose options from the minibuffer.
 
-;; IDO everywhere (in addition to Helm - call me crazy)
-(ido-mode 1)
-(setq ido-everywhere t)
-(setq ido-enable-flex-matching t)
-
 ;; minor mode for Emacs that displays the key bindings following your currently entered incomplete command 
 (straight-use-package 'which-key)
 (which-key-mode)
