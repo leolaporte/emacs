@@ -6,7 +6,7 @@
 ;; Based on https://github.com/flyingmachine/emacs-for-clojure
 ;; with additions from https://emacsredux.com/blog/2020/12/08/favorite-emacs-packages/
 ;; and Mickey Petersen's excellent "Mastering Emacs" https://www.masteringemacs.org/
-;; and various suggestions from the excellent contribs at https://reddit.com/r/emacs
+;; and various suggestions from various contribs at https://reddit.com/r/emacs
 
 ;; Packages using straight.el package manager
 ;; https://github.com/raxod502/straight.el

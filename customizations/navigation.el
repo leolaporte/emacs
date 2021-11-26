@@ -59,3 +59,5 @@
 ;; Shows a list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+;; Turn on view mode in read-only buffers
+(setq view-read-only t)
