@@ -32,6 +32,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(straight-pull-package "melpa")  ; update repository
 (straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
 
 ;;;;

@@ -4,7 +4,8 @@
 ;; Léo Laporte Sun Nov 21 10:30:29 2021
 
 ;; System specific window and font sizes
-(cond ((equal system-name "MBP-14")
+;; specify system name with (system-name) - eval with Meta-:
+(cond ((equal system-name "MBP-14.local")
        (set-face-attribute 'default nil :family "iosevka nerd font mono" :height 180)
        (setq initial-frame-alist '((top . 20) (left . 10) (width . 120) (height . 40))))
 

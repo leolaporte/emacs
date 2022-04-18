@@ -1,6 +1,27 @@
-;; -*- emacs-lisp -*- <21/11/25 17:47:05 /Users/leo/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <22/02/08 18:58:14 /Users/leo/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; Run `M-x tramp-cleanup-all-connections' instead.
 
 (((tramp-file-name "ssh" nil nil "leo.fm" nil nil nil)
-  nil))
+  ("case-insensitive" nil)
+  ("uname" "Linux 5.10.0-10-amd64")
+  ("locale" "LC_ALL=en_US.utf8")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("pipe-buf" 4096)
+  ("remote-shell" "/bin/sh")
+  ("stat" "env QUOTING_STYLE=locale \\stat")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 1000)
+  ("file-exists" "test -e")
+  ("gid-string" "leo")
+  ("readlink" "\\readlink")
+  ("uid-integer" 1000)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("inotifywait" nil)
+  ("gio-monitor" "/usr/bin/gio")
+  ("git" "\\git")
+  ("~" "/home/leo")))

@@ -6,6 +6,11 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
+(straight-use-package 'tree-sitter)
+(straight-use-package 'tree-sitter-langs)
+(global-tree-sitter-mode)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
 ;; turn on agressive-indent-mode for all major modes
 ;; https://github.com/Malabarba/aggressive-indent-mode/blob/master/README.md
 (straight-use-package 'aggressive-indent)
@@ -17,6 +22,8 @@
 ;;https://elpa.gnu.org/packages/undo-tree.html
 (straight-use-package 'undo-tree)
 (global-undo-tree-mode)
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
 
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand

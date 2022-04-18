@@ -18,22 +18,8 @@
 
 ;; makes handling lisp expressions much, much easier
 ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-(straight-use-package 'paredit)
-;; Mac keybindings using fn key
-(add-hook 'paredit-mode-hook
-          (lambda ()
-            (define-key paredit-mode-map (kbd "<prior>") 'paredit-forward-slurp-sexp)
-            (define-key paredit-mode-map (kbd "<next>") 'paredit-backward-slurp-sexp)
-            (define-key paredit-mode-map (kbd "<home>") 'paredit-backward-barf-sexp)
-            (define-key paredit-mode-map (kbd "<end>") 'paredit-forward-barf-sexp)))
-
-(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
-(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(straight-use-package 'smartparens)
+(require 'smartparens-config)
 
 ;; colorful parenthesis matching
 (straight-use-package 'rainbow-delimiters)
@@ -43,3 +29,54 @@
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+
+;;;; Bits from Mark Triggs's .emacs
+;;;; Just a couple of things I find useful for Lisp editing.
+;;;; https://www.cliki.net/Bits%20from%20Mark%20Triggs%27s%20.emacs
+
+(straight-use-package 'w3m)
+(require 'w3m)
+
+(defadvice common-lisp-hyperspec (around hyperspec-lookup-w3m () activate)
+  "Browse the Common Lisp HyperSpec using w3m.
+When leaving w3m, restore the original window configuration."
+  (let* ((window-configuration (current-window-configuration))
+         (browse-url-browser-function
+          `(lambda (url new-window)
+             (unless (member (current-buffer) (w3m-list-buffers))
+               (select-window (split-window-vertically)))
+             (w3m-browse-url url nil)
+             (let ((hs-map (copy-keymap w3m-mode-map)))
+               (define-key hs-map (kbd "q")
+                 (lambda ()
+                   (interactive)
+                   (kill-buffer nil)
+                   (set-window-configuration ,window-configuration)))
+               (use-local-map hs-map)))))
+    ad-do-it))
+
+
+(defun lisp-reindent-defun ()
+  "Indent the current defun."
+  (interactive)
+  (save-excursion
+    (beginning-of-defun)
+    (indent-sexp)))
+
+
+;; Highlight "FIXME" comments
+(defface fixme-face
+  '((t (:weight bold :box (:line-width 2 :color "orange"))))
+  "The faced used to show FIXME lines.")
+
+(defun show-fixme-lines (&optional arg)
+  "Emphasise FIXME comments.
+If ARG is positive, enable highlighting.  If ARG is negative, disable
+highlighting.  Otherwise, toggle highlighting."
+  (interactive)
+  (if (or (and (not arg) (assoc "FIXME" hi-lock-interactive-patterns))
+          (and arg (minusp arg)))
+      (unhighlight-regexp "FIXME")
+    (highlight-phrase "FIXME" 'fixme-face)))
+
+
