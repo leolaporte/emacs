@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/common-lisp/gentle/" "~/AOC/" "~/Source/sicp/" "~/aoc/")
+("~/.emacs.d/" "~/.emacs.d/straight/repos/sly/" "~/common-lisp/gentle/" "~/AOC/" "~/Source/sicp/" "~/aoc/")

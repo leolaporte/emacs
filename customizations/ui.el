@@ -7,7 +7,7 @@
 ;; specify system name with (system-name) - eval with Meta-:
 (cond ((equal system-name "MBP-14.local")
        (set-face-attribute 'default nil :family "iosevka nerd font mono" :height 180)
-       (setq initial-frame-alist '((top . 20) (left . 10) (width . 120) (height . 40))))
+       (setq initial-frame-alist '((top . 30) (left . 0) (width . 166) (height . 42))))
 
       ((equal system-name "mojo-ryzen")        
        (set-face-attribute 'default nil :family "Iosevka" :height 140) 
@@ -18,7 +18,7 @@
        (setq initial-frame-alist '((top . 10) (left . 10) (width . 100) (height . 30))))
 
       ((equal system-name "oryx-popos")        
-       (set-face-attribute 'default nil :family "Menlo" :height 140) 
+       (set-face-attribute 'default nil :family "Menlo" :height 140)  
        (setq initial-frame-alist '((top . 10) (left . 10) (width . 100) (height . 40))))
 
       ((equal system-name "darterpro")        
@@ -37,7 +37,7 @@
 (defun toggle-fullscreen ()
   "Toggle full screen"
   (interactive)
-  (set-frame-parameter
+  (set-frame-parameter                                                                                                                                               
    nil 'fullscreen
    (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
