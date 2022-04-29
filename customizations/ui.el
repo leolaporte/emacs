@@ -5,7 +5,7 @@
 
 ;; System specific window and font sizes
 ;; specify system name with (system-name) - eval with Meta-:
-(cond ((equal system-name "MBP-14.local")
+(cond ((equal system-name "MBP-14.local") ; can't toggle fullscreen due to notch - ick
        (set-face-attribute 'default nil :family "iosevka nerd font mono" :height 180)
        (setq initial-frame-alist '((top . 30) (left . 0) (width . 166) (height . 42))))
 

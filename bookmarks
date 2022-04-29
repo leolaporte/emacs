@@ -1,8 +1,13 @@
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("tictactoe.lisp"
+(("org-capture-last-stored"
+ (filename . "~/org/journal.org")
+ (front-context-string . "**** Setting up ")
+ (rear-context-string . "4-29 Fri 08:01]\n")
+ (position . 317))
+("tictactoe.lisp"
  (filename . "~/common-lisp/gentle/tictactoe.lisp")
  (front-context-string . ";; A Gentle Intr")
  (rear-context-string)
