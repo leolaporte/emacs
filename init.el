@@ -35,6 +35,9 @@
 (straight-pull-package "melpa")  ; update repository
 (straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
 
+;; follow symlinks if necessary (can slow Emacs)
+(setq find-file-visit-truename t)
+
 ;;;;
 ;; Customization
 ;; All the installed packages are in these files, purely for organizational purposes

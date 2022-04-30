@@ -3,10 +3,10 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
- (filename . "~/org/journal.org")
- (front-context-string . "**** Setting up ")
- (rear-context-string . "4-29 Fri 08:01]\n")
- (position . 317))
+ (filename . "~/Sync/Journal/journal.org")
+ (front-context-string . "**** Finished Sl")
+ (rear-context-string . "4-29 Fri 08:35]\n")
+ (position . 460))
 ("tictactoe.lisp"
  (filename . "~/common-lisp/gentle/tictactoe.lisp")
  (front-context-string . ";; A Gentle Intr")
