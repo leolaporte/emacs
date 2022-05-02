@@ -71,3 +71,6 @@
 
 ;; Org-mode customixations
 (load "org-mode.el")
+
+;; All set up, now start server for faster loading in future
+(server-start)
