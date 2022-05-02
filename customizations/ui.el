@@ -11,7 +11,7 @@
 
       ((equal system-name "mojo-ryzen")        
        (set-face-attribute 'default nil :family "Iosevka" :height 140) 
-       (setq initial-frame-alist '((top . 150) (left . 800) (width . 150) (height . 50))))
+       (setq initial-frame-alist '((top . 150) (left . 1000) (width . 150) (height . 75))))
 
       ((equal system-name "max-mac.local")           
        (set-face-attribute 'default nil :family "Iosevka" :height 180) 
@@ -103,7 +103,7 @@
 (setq-default frame-title-format "%b (%f)")
 
 ;; don't pop up font menu
-(global-set-key (kbd "s-t") '(lambda () (interactive)))
+(global-set-key (kbd "s-t") #'(lambda () (interactive)))
 
 ;; no bell
 (setq ring-bell-function 'ignore)
