@@ -13,6 +13,10 @@
        (set-face-attribute 'default nil :family "Iosevka" :height 140) 
        (setq initial-frame-alist '((top . 150) (left . 800) (width . 150) (height . 50))))
 
+      ((equal system-name "max-mac.local")           
+       (set-face-attribute 'default nil :family "Iosevka" :height 180) 
+       (setq initial-frame-alist '((top . 100) (left . 800) (width . 250) (height . 90))))
+      
       ((equal system-name "xps13")        
        (set-face-attribute 'default nil :family "Iosevka" :height 140) 
        (setq initial-frame-alist '((top . 10) (left . 10) (width . 100) (height . 30))))
