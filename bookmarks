@@ -4,9 +4,9 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/Sync/Journal/journal.org")
- (front-context-string . "**** Finished Sl")
- (rear-context-string . "4-29 Fri 08:35]\n")
- (position . 460))
+ (front-context-string . "**** Let's check")
+ (rear-context-string . "22-05-01 Sunday\n")
+ (position . 602))
 ("tictactoe.lisp"
  (filename . "~/common-lisp/gentle/tictactoe.lisp")
  (front-context-string . ";; A Gentle Intr")

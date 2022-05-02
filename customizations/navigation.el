@@ -5,6 +5,10 @@
 (straight-use-package 'which-key)
 (which-key-mode)
 
+;; Hyperbole minor mode - M-Ret to click links https://www.gnu.org/software/hyperbole/
+(straight-use-package 'hyperbole)
+(hyperbole-mode 1)
+
 ;; “switch windows with your shift key by pressing S-<left>, S-<right>, S-<up>, S-<down>.
 (windmove-default-keybindings)
 
