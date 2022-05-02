@@ -49,16 +49,8 @@
 ;; Install helm for completions, etc. -- config cribbed whole from its author
 (load "init-helm.el")
 
-;; These customizations make it easier for you to navigate files,
-;; switch buffers, and choose options from the minibuffer.
-(load "navigation.el")
-
-;; These customizations change the way emacs looks and disable/enable
-;; some user interface elements
-(load "ui.el")
-
-;; These customizations make editing a bit nicer.
-(load "editing.el")
+;; Org-mode customizations
+(load "org-mode.el")
 
 ;; Hard-to-categorize customizations like Magit
 (load "misc.el")
@@ -69,8 +61,16 @@
 ;; For editing lisps
 (load "lisp.el")
 
-;; Org-mode customixations
-(load "org-mode.el")
+;; These customizations make editing a bit nicer.
+(load "editing.el")
+
+;; These customizations make it easier for you to navigate files,
+;; switch buffers, and choose options from the minibuffer.
+(load "navigation.el")
+
+;; These customizations change the way emacs looks and disable/enable
+;; some user interface elements
+(load "ui.el")
 
 ;; All set up, now start server for faster loading in future
 (server-start)
