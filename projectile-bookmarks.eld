@@ -1,1 +1,0 @@
-("~/.emacs.d/" "~/common-lisp/" "~/.emacs.d/straight/repos/hyperbole/" "~/AOC/" "~/aoc/")
