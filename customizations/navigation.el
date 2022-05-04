@@ -45,7 +45,8 @@
 
 ;; CRUX key remaps
 ;; (global-set-key (kbd "C-c o") #'crux-open-with)
-;; (global-set-key (kbd "s-r") #'crux-recentf-ido-find-file)
+
+(global-set-key (kbd "s-r") #'crux-recentf-ido-find-file)
 
 (global-set-key (kbd "C-k") #'crux-smart-kill-line)
 (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
@@ -55,6 +56,7 @@
 (global-set-key (kbd "C-c I") #'crux-find-user-init-file)
 (global-set-key (kbd "C-c d") #'crux-duplicate-current-line-or-region)
 (global-set-key (kbd "C-c r") #'crux-rename-file-and-buffer)
+(global-set-key (kbd "C-c k") #'crux-kill-other-buffers)
 
 ;; Crux remaps
 (global-set-key [(shift return)] #'crux-smart-open-line)

@@ -72,5 +72,11 @@
 ;; some user interface elements
 (load "ui.el")
 
+;; Set up ssh-agent and gpg-agent
+(load "keychain.el")
+
+;; Set up blogging environment
+(load "blog.el")
+
 ;; All set up, now start server for faster loading in future
 (server-start)
