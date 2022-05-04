@@ -24,7 +24,7 @@
         helm-move-to-line-cycle-in-source         t
         helm-autoresize-max-height                80 ; it is %.
         helm-autoresize-min-height                20 ; it is %.
-        helm-debug-root-directory                 "tmp/helm-debug"
+        helm-debug-root-directory                 "~/tmp/helm-debug"
         helm-follow-mode-persistent               t
         helm-candidate-number-limit               500
         helm-visible-mark-prefix                  "✓")
@@ -39,7 +39,7 @@
 
 (defun helm/debug-toggle ()
   (interactive)
-  (setq helm-debug (not helm-debug))
+  (setq helm-debug nil)
   (message "Helm Debug is now %s"
            (if helm-debug "Enabled" "Disabled")))
 
@@ -117,18 +117,18 @@
 (defun helm-imenu-in-frame ()
   (interactive)
   (with-helm-in-frame
-   (call-interactively #'helm-imenu)))
+    (call-interactively #'helm-imenu)))
 
 (defun helm-top-in-frame ()
   (interactive)
   (with-helm-in-frame
-   (call-interactively #'helm-top)))
+    (call-interactively #'helm-top)))
 
 (defun helm/bash-history ()
   (interactive)
   (helm :sources (helm-build-in-file-source "Bash history" "~/.bash_history"
-                                            :action '(("Kill new" . kill-new)
-                                                      ("Send command to Tmux" . emamux:send-command)))
+                   :action '(("Kill new" . kill-new)
+                             ("Send command to Tmux" . emamux:send-command)))
         :buffer "*helm bash history*"))
 
 (defun helm-zgrep-recursive (&optional directory)
