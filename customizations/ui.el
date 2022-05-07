@@ -73,29 +73,6 @@
 (add-to-list 'load-path "~/.emacs.d/themes")
 (load-theme 'tomorrow-night-bright t)
 
-;; These settings relate to how emacs interacts with your operating system
-(setq ;; makes killing/yanking interact with the clipboard
- select-enable-clipboard t
-
- ;; automatically copy the primary selection (if supported by the os)
- select-enable-primary t
- 
- ;; Save clipboard strings into kill ring before replacing them.
- ;; When one selects something in another program to paste it into Emacs,
- ;; but kills something in Emacs before actually pasting it,
- ;; this selection is gone unless this variable is non-nil
- save-interprogram-paste-before-kill t
-
- ;; Shows all options when running apropos. For more info,
- ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Apropos.html
- apropos-do-all t
-
- ;; Mouse yank commands yank at point instead of at click.
- mouse-yank-at-point t
-
- ;; copy mouse selected region automatically
- mouse-drag-copy-region t)
-
 ;; No cursor blinking, it's distracting
 (blink-cursor-mode 0)
 

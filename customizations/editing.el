@@ -5,7 +5,9 @@
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-(setq visual-line-mode 1)
+(add-hook 'markdown-mode-hook 'visual-line-mode)
+(add-hook 'text-mode-hook 'visual-line-mode)
+(add-hook 'prog-mode-hook 'visual-line-mode)
 
 (straight-use-package 'tree-sitter)
 (straight-use-package 'tree-sitter-langs)
@@ -62,11 +64,25 @@
 ;; keep track of saved places in ~/.emacs.d/places
 (setq save-place-file (concat user-emacs-directory "places"))
 
-;; Emacs can automatically create backup files. This tells Emacs to
-;; put all backups in ~/.emacs.d/backups. More info:
-;; http://www.gnu.org/software/emacs/manual/html_node/elisp/Backup-Files.html
-(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
-(setq auto-save-default nil)
+;; finesse auto save and backup 
+(setq auto-save-list-file-prefix ; Prefix for generating auto-save-list-file-name
+      (expand-file-name ".auto-save-list/.saves-" user-emacs-directory)
+      auto-save-default t        ; Auto-save every buffer that visits a file
+      auto-save-timeout 20       ; Number of seconds between auto-save
+      auto-save-interval 200)    ; Number of keystrokes between auto-saves
+
+(setq backup-directory-alist       ; File name patterns and backup directory names.
+      `(("." . ,(expand-file-name "backups" user-emacs-directory)))
+      make-backup-files t          ; Backup of a file the first time it is saved.
+      vc-make-backup-files nil     ; No backup of files under version contr
+      backup-by-copying t          ; Don't clobber symlinks
+      version-control t            ; Version numbers for backup files
+      delete-old-versions t        ; Delete excess backup files silently
+      kept-old-versions 6          ; Number of old versions to keep
+      kept-new-versions 9          ; Number of new versions to keep
+      delete-by-moving-to-trash t) ; Delete files to trash
+
+(setq bookmark-default-file (expand-file-name "bookmark" user-emacs-directory))
 
 ;; comments
 (defun toggle-comment-on-line ()
@@ -90,8 +106,43 @@
       (ns-get-selection-internal 'CLIPBOARD)
     (quit nil)))
 
+;; These settings relate to how emacs interacts with your operating system
+(setq ;; makes killing/yanking interact with the clipboard
+ select-enable-clipboard t
+
+ ;; automatically copy the primary selection (if supported by the os)
+ select-enable-primary t
+
+ ;; Save clipboard strings into kill ring before replacing them.
+ ;; When one selects something in another program to paste it into Emacs,
+ ;; but kills something in Emacs before actually pasting it,
+ ;; this selection is gone unless this variable is non-nil
+ save-interprogram-paste-before-kill t
+
+ ;; Shows all options when running apropos. For more info,
+ ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Apropos.html
+ apropos-do-all t
+
+ ;; Mouse yank commands yank at point instead of at click.
+ mouse-yank-at-point t
+
+ ;; copy mouse selected region automatically
+ mouse-drag-copy-region t)
+
+;; fix OSX clipboard
+(defun my/paste-from-osx ()
+  (shell-command-to-string "pbpaste"))
+
+(defun my/copy-to-osx (text &optional push)
+  (let ((process-connection-type nil))
+    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+      (process-send-string proc text)
+      (process-send-eof proc))))
+
+(when (and (not (display-graphic-p))
+           (eq system-type 'darwin))
+  (setq interprogram-cut-function   #'my/copy-to-osx
+        interprogram-paste-function #'my/paste-from-osx))
+
 (setq electric-indent-mode t)
 (setq mac-command-key-is-meta t)
-
-;; A few key bindings from Mickey Peterson
-(global-set-key (kbd "M-o") 'other-window)
