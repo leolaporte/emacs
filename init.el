@@ -101,5 +101,9 @@
 (load "blog.el")
 
 ;; All set up, now start server for faster loading in future
-(server-start)
+(require 'server)
+
+(unless (server-running-p)
+  (server-start))
+
 
