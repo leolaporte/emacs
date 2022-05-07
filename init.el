@@ -1,3 +1,4 @@
+
 ;; Emacs configuration
 ;; Leo Laporte, 8 Dec 2020
 ;; Updated on Framework Fri 19 Nov 2021 03:45:58 PM PST
@@ -17,6 +18,27 @@
 
 ;; warn before opening giant files over 100MB
 (setq large-file-warning-threshold 100000000)
+
+;; finesse auto save and backup 
+(setq auto-save-list-file-prefix ; Prefix for generating auto-save-list-file-name
+      (expand-file-name ".auto-save-list/.saves-" user-emacs-directory)
+      auto-save-default t        ; Auto-save every buffer that visits a file
+      auto-save-timeout 20       ; Number of seconds between auto-save
+      auto-save-interval 200)    ; Number of keystrokes between auto-saves
+
+(setq backup-directory-alist       ; File name patterns and backup directory names.
+      `(("." . ,(expand-file-name "backups" user-emacs-directory)))
+      make-backup-files t          ; Backup of a file the first time it is saved.
+      vc-make-backup-files nil     ; No backup of files under version contr
+      backup-by-copying t          ; Don't clobber symlinks
+      version-control t            ; Version numbers for backup files
+      delete-old-versions t        ; Delete excess backup files silently
+      kept-old-versions 6          ; Number of old versions to keep
+      kept-new-versions 9          ; Number of new versions to keep
+      delete-by-moving-to-trash t) ; Delete files to trash
+
+(setq bookmark-default-file (expand-file-name "bookmark" user-emacs-directory))
+
 
 ;; use straight.el for package installation
 (defvar bootstrap-version)
@@ -80,3 +102,4 @@
 
 ;; All set up, now start server for faster loading in future
 (server-start)
+
