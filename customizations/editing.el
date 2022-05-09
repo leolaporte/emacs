@@ -25,6 +25,7 @@
 ;;https://elpa.gnu.org/packages/undo-tree.html
 (straight-use-package 'undo-tree)
 (global-undo-tree-mode)
+
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
 
