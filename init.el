@@ -1,4 +1,3 @@
-
 ;; emacs configuration
 ;; leo laporte, 8 Dec 2020
 ;; Updated on Framework Fri 19 Nov 2021 03:45:58 PM PST
@@ -33,6 +32,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(straight-pull-package "elpa") 
 (straight-pull-package "melpa")  ; update repository
 (straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
 
@@ -75,13 +75,13 @@
 
 ;; Set up ssh-agent and gpg-agent
 (load "keychain.el")
+(keychain-refresh-environment)
 
 ;; Set up blogging environment
 (load "blog.el")
 
 ;; All set up, now start server for faster loading in future
 (require 'server)
-
 (unless (server-running-p)
   (server-start))
 

@@ -3,8 +3,8 @@
 
 ;; project navigation
 ;; projectile everywhere!
-(straight-use-package 'projectile)
-(projectile-global-mode)
+; (straight-use-package 'projectile)
+; (projectile-global-mode)
 
 ;; Common Lisp support - btw I use sly
 (straight-use-package 'sly)

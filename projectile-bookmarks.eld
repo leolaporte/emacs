@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/Source/lisp/" "~/Sync/dotfiles/" "/opt/homebrew/")
+("~/.emacs.d/" "~/Source/lisp/" "~/Source/lisp-koans/" "~/Sync/dotfiles/" "/opt/homebrew/")
