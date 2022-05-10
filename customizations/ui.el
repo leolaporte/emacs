@@ -1,13 +1,15 @@
-
 ;; These customizations change the way emacs looks and disable/enable
 ;; some user interface elements.
 ;; Léo Laporte Sun Nov 21 10:30:29 2021
 
 ;; System specific window and font sizes
 ;; specify system name with (system-name) - eval with Meta-:
-(cond ((equal system-name "MBP-14.local") ; can't toggle fullscreen due to notch - ick
+(cond ((equal system-name "MBP-14.local")
+       ;; M-x toggle-frame-fullscreen (below MacBook notch)
+       (global-set-key (kbd "A-<f10>") 'toggle-frame-fullscreen)
+       ;; M-x toggle-frame-maximized (M-<F10>) (all the way over notch)
        (set-face-attribute 'default nil :family "Fira Code Retina" :height 180)
-       (setq initial-frame-alist '((top . 30) (left . 0) (width . 166) (height . 42))))
+       (setq initial-frame-alist '((top . 20) (left . 15) (width . 100) (height . 40))))
 
       ((equal system-name "mojo-ryzen")        
        (set-face-attribute 'default nil :family "Iosevka" :height 140) 
@@ -36,14 +38,6 @@
       ((equal system-name "framework")
        (set-face-attribute 'default nil :family "Iosevka" :height 140) 
        (setq initial-frame-alist '((top . 20) (left . 20) (width . 100) (height . 40)))))
-
-;; Add Full screen toggle
-(defun toggle-fullscreen ()
-  "Toggle full screen"
-  (interactive)
-  (set-frame-parameter                                                                                                                                               
-   nil 'fullscreen
-   (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
 ;; Turn off the menu bar at the top of each frame because it's distracting
 (menu-bar-mode -1)

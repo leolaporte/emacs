@@ -45,6 +45,7 @@
 (global-set-key (kbd "C-:") 'avy-goto-char)
 (global-set-key (kbd "C-'") 'avy-goto-char-2)
 (global-set-key (kbd "M-g w") 'avy-goto-word-1)
+(global-set-key (kbd "M-j") 'avy-goto-char-timer)
 
 ;; a Collection of Ridiculously Useful eXtensions for Emacs
 ;; https://github.com/bbatsov/crux
