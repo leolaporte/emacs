@@ -64,7 +64,7 @@
 ;; keep track of saved places in ~/.emacs.d/places
 (setq save-place-file (concat user-emacs-directory "places"))
 
-;; finesse auto save and backup 
+;; finesse auto save and backup (keep them all in .emacs.d/backups)
 (setq auto-save-list-file-prefix ; Prefix for generating auto-save-list-file-name
       (expand-file-name ".auto-save-list/.saves-" user-emacs-directory)
       auto-save-default t        ; Auto-save every buffer that visits a file
