@@ -38,14 +38,6 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 40)
 
-;; Use avy-mode to jump to words in buffer
-(straight-use-package 'avy)
-(avy-setup-default)
-(global-set-key (kbd "C-c C-j") 'avy-resume)
-(global-set-key (kbd "C-:") 'avy-goto-char)
-(global-set-key (kbd "C-'") 'avy-goto-char-2)
-(global-set-key (kbd "M-g w") 'avy-goto-word-1)
-
 ;; a Collection of Ridiculously Useful eXtensions for Emacs
 ;; https://github.com/bbatsov/crux
 ;; see navigation.el for special crux keys

@@ -13,6 +13,8 @@
 (straight-use-package 'tree-sitter-langs)
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
 
 ;; turn on agressive-indent-mode for all major modes
 ;; https://github.com/Malabarba/aggressive-indent-mode/blob/master/README.md
@@ -25,9 +27,6 @@
 ;;https://elpa.gnu.org/packages/undo-tree.html
 (straight-use-package 'undo-tree)
 (global-undo-tree-mode)
-
-(require 'tree-sitter)
-(require 'tree-sitter-langs)
 
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand
