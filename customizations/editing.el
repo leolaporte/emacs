@@ -53,9 +53,6 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
-;; Don't use hard tabs
-(setq-default indent-tabs-mode nil)
-
 ;; When you visit a file, point goes to the last place where it
 ;; was when you previously visited the same file.
 ;; http://www.emacswiki.org/emacs/SavePlace
@@ -78,8 +75,8 @@
       backup-by-copying t          ; Don't clobber symlinks
       version-control t            ; Version numbers for backup files
       delete-old-versions t        ; Delete excess backup files silently
-      kept-old-versions 6          ; Number of old versions to keep
-      kept-new-versions 9          ; Number of new versions to keep
+      kept-old-versions 20         ; Number of old versions to keep
+      kept-new-versions 20         ; Number of new versions to keep
       delete-by-moving-to-trash t) ; Delete files to trash
 
 (setq bookmark-default-file (expand-file-name "bookmark" user-emacs-directory))
