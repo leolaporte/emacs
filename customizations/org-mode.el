@@ -28,8 +28,10 @@
          "* TODO %?\n  %i\n  %a")
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")
-        ("s" "Shopping List" entry (file+datetree "~/org/shopping.org")
-         "* %?\nEntered on %U\n  %i\n  %a")))
+	("s" "Shopping List" entry (file+datetree "~/org/shopping.org")
+         "* %?\nEntered on %U\n  %i\n  %a")
+	("i" "Inbox" entry (file+datetree "~/org/inbox.org")
+	 "* %?\nEntered on %U\n  %i\n  %a")))
 
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)

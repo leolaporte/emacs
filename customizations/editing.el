@@ -28,6 +28,9 @@
 (straight-use-package 'undo-tree)
 (global-undo-tree-mode)
 
+;; Auto-complete
+(straight-use-package 'auto-complete)
+
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand
 (global-set-key (kbd "M-/") 'hippie-expand)
