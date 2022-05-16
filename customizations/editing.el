@@ -30,8 +30,16 @@
 
 ;; Auto-complete uding company
 ;; https://company-mode.github.io/
-(straight-use-package 'company)
-(add-hook 'after-init-hook 'global-company-mode)
+;; (straight-use-package 'company)
+;; (add-hook 'after-init-hook 'global-company-mode)
+;; or using Auto-complete (not as intrusive but it's a matter of
+;; taste https://github.com/auto-complete
+(straight-use-package 'auto-complete)
+(straight-use-package 'ac-sly)  ; add support for Sly
+(add-hook 'sly-mode-hook 'set-up-sly-ac)
+(eval-after-load 'auto-complete
+  '(add-to-list 'ac-modes 'sly-mrepl-mode))
+(global-auto-complete-mode t)
 
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand
@@ -148,3 +156,4 @@
 
 (setq electric-indent-mode t)
 (setq mac-command-key-is-meta t)
+
