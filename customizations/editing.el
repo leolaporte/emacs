@@ -29,7 +29,7 @@
 (global-undo-tree-mode)
 
 ;; Auto-complete uding company
-;; (straight-use-package 'auto-complete)
+;; https://company-mode.github.io/
 (straight-use-package 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 
