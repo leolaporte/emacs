@@ -28,8 +28,10 @@
 (straight-use-package 'undo-tree)
 (global-undo-tree-mode)
 
-;; Auto-complete
-(straight-use-package 'auto-complete)
+;; Auto-complete uding company
+;; (straight-use-package 'auto-complete)
+(straight-use-package 'company)
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand
