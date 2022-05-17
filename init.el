@@ -86,39 +86,3 @@
   (server-start))
 
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-capture-templates
-   '(("t" "Todo" entry
-      (file+headline "~/org/todo.org" "Tasks")
-      "* TODO %?
-  %i
-  %a")
-     ("j" "Journal" entry
-      (file+olp+datetree "~/org/journal.org")
-      "* %?
-Entered on %U
-  %i
-  %a")
-     ("s" "Shopping List" entry
-      (file+olp+datetree "~/org/shopping.org")
-      "* %?
-Entered on %U
-  %i
-  %a")
-     ("i" "Inbox" entry
-      (file+olp+datetree "~/org/inbox.org")
-      "* %?
-Entered on %U
-  %i
-  %a")))
- '(send-mail-function 'mailclient-send-it))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
