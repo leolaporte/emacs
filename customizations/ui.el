@@ -4,7 +4,7 @@
 
 ;; System specific window and font sizes
 ;; specify system name with (system-name) - eval with Meta-:
-(cond ((equal system-name "MBP-14")
+(cond ((or (equal system-name "MBP-14.local") (equal system-name "MBP-14"))
        ;; M-x toggle-frame-fullscreen (below MacBook notch)
        (global-set-key (kbd "A-<f10>") 'toggle-frame-fullscreen)
        ;; M-x toggle-frame-maximized (M-<F10>) (all the way over notch)
