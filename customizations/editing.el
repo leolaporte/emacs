@@ -53,6 +53,11 @@
         try-complete-lisp-symbol-partially
         try-complete-lisp-symbol))
 
+;; Yasnippet
+;; (straight-use-package 'yasnippet)
+;; (require 'yasnippet)
+;; (yas-global-mode 1)
+
 ;; Highlights matching parenthesis
 (show-paren-mode 1)
 
