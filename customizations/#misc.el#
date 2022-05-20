@@ -1,0 +1,46 @@
+;; Miscellaneous extensions
+;; Leo Laporte Tue 23 Nov 2021 03:32:38 PM PST
+
+;; git integration
+;; https://magit.vc
+(straight-use-package 'magit)
+
+;; notmuch email
+;; (require 'notmuch)
+
+;; Changes all yes/no questions to y/n type
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; shell scripts
+(setq-default sh-basic-offset 2)
+(setq-default sh-indentation 2)
+
+;; No need for ~ files when editing
+(setq create-lockfiles nil)
+
+;; Go straight to scratch buffer on startup
+(setq inhibit-startup-message t)
+
+(defun aoc-get-puzzle-and-input (prefix)
+  "Retrieve the input for an advent of code puzzle. Use a prefix
+to retrieve for a specific year or day. The input is inserted into the current
+buffer, a new buffer will be made with the description of the puzzle."
+  (interactive "p")
+  (let* ((year  (cond ((= prefix 1)
+		       (string-to-number (format-time-string "%Y")))
+		      ((> prefix 1)
+		       (read-number "Year: "))))
+	 (day (cond ((= prefix 1)
+		     (string-to-number (format-time-string "%d")))
+		    ((> prefix 1)
+		     (read-number "Day: "))))
+	 (creds (auth-source-search :host "adventofcode.com"))
+	 (secret (plist-get (car creds) :secret))
+	 (decoded (funcall secret))
+	 (url-request-extra-headers `(("Cookie" . ,(concat "session=" decoded)))))
+    (url-insert-file-contents (format "https://adventofcode.com/%d/day/%d/input" year day))
+    (with-output-to-temp-buffer "aoc-puzzle"
+      (pop-to-buffer "aoc-puzzle")
+      (url-insert-file-contents (format "https://adventofcode.com/%d/day/%d" year day))
+      (shr-render-region (point-min) (point-max)))
+    ))

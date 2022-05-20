@@ -33,6 +33,11 @@
 	("i" "Inbox" entry (file+datetree "~/org/inbox.org")
 	 "* %?\nEntered on %U\n  %i\n  %a")))
 
+(setq org-todo-keywords
+      '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE" "DELEGATED")))
+
+(setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("calls" . ?c) ("@family" . ?f) ("@read-watch" . ?r) ("@lisa" . ?l) ("@abby" . ?a)))
+
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c b") #'org-iswitchb)
