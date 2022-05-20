@@ -16,10 +16,8 @@
 	    (setq hyrolo-file-list (append (hyrolo-initialize-file-list)
 					   (cddr (directory-files org-directory))))))
 
-;; (straight-use-package 'google-contacts) ; to use Google contacts for HyRolo
-
 ;; “switch windows with your shift key by pressing S-<left>, S-<right>, S-<up>, S-<down>.
-(windmove-default-keybindings)
+;; (windmove-default-keybindings)  -- conflicts with org todo
 
 ;; "When several buffers visit identically-named files,
 ;; Emacs must give the buffers distinct names. The usual method
