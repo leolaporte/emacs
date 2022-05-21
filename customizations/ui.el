@@ -17,7 +17,7 @@
 
       ((or (equal system-name "max-mac.local") (equal system-name "max-mac"))           
        (set-face-attribute 'default nil :family "Fira Code Retina" :height 180) 
-       (setq initial-frame-alist '((top . 100) (left . 800) (width . 250) (height . 90))))
+       (setq initial-frame-alist '((top . 100) (left . 500) (width . 250) (height . 85))))
       
       ((equal system-name "xps13")        
        (set-face-attribute 'default nil :family "Iosevka" :height 140) 
