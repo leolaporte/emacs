@@ -41,6 +41,9 @@
   '(add-to-list 'ac-modes 'sly-mrepl-mode))
 (global-auto-complete-mode t)
 
+;; enable abbrev mode https://www.masteringemacs.org/article/correcting-typos-misspellings-abbrev
+(setq-default abbrev-mode t)
+
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
