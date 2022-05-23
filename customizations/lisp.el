@@ -11,6 +11,12 @@
 (setq global-helm-sly-mode t)
 (straight-use-package 'helm-sly)
 
+;; launch whenever a lisp files is opened
+(add-hook 'sly-mode-hook
+	  (lambda ()
+	    (unless (sly-connected-p)
+	      (save-excursion (sly)))))
+
 ;; locate lisp package
 (if (eq system-type 'darwin)
     (setq inferior-lisp-program "/opt/homebrew/bin/sbcl")  ;; MacOS
@@ -34,7 +40,8 @@
 ;;;; Just a couple of things I find useful for Lisp editing.
 ;;;; https://www.cliki.net/Bits%20from%20Mark%20Triggs%27s%20.emacs
 
-(straight-use-package 'w3m)
+;; browser for display of hyperspec pages
+(straight-use-package 'w3m) ; w3m must be separately installed on system
 (require 'w3m)
 
 (defadvice common-lisp-hyperspec (around hyperspec-lookup-w3m () activate)
@@ -55,6 +62,11 @@ When leaving w3m, restore the original window configuration."
                (use-local-map hs-map)))))
     ad-do-it))
 
+(defun hyperspec-lookup--hyperspec-lookup-w3m (orig-fun &rest args)
+  (let ((browse-url-browser-function 'w3m-browse-url))
+    (apply orig-fun args)))
+
+(advice-add 'hyperspec-lookup :around #'hyperspec-lookup--hyperspec-lookup-w3m)
 
 (defun lisp-reindent-defun ()
   "Indent the current defun."
@@ -62,7 +74,6 @@ When leaving w3m, restore the original window configuration."
   (save-excursion
     (beginning-of-defun)
     (indent-sexp)))
-
 
 ;; Highlight "FIXME" comments
 (defface fixme-face
@@ -78,5 +89,4 @@ highlighting.  Otherwise, toggle highlighting."
           (and arg (minusp arg)))
       (unhighlight-regexp "FIXME")
     (highlight-phrase "FIXME" 'fixme-face)))
-
 
