@@ -30,6 +30,8 @@
          "* %?\nEntered on %U\n  %i\n  %a")
 	("s" "Shopping List" entry (file+datetree "~/org/shopping.org")
          "* %?\nEntered on %U\n  %i\n  %a")
+	("q" "Quotes" entry (file+datetree "~/org/quotes.org")
+         "* %?\nEntered on %U\n  %i\n  %a")
 	("i" "Inbox" entry (file+datetree "~/org/inbox.org")
 	 "* %?\nEntered on %U\n  %i\n  %a")))
 

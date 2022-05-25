@@ -24,7 +24,7 @@
         helm-move-to-line-cycle-in-source         t
         helm-autoresize-max-height                80 ; it is %.
         helm-autoresize-min-height                20 ; it is %.
-        helm-debug-root-directory                 "~/tmp/helm-debug"
+        helm-debug-root-directory                 "~/.tmp/helm-debug"
         helm-follow-mode-persistent               t
         helm-candidate-number-limit               500
         helm-visible-mark-prefix                  "✓")
