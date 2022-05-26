@@ -65,8 +65,8 @@
 ;; for a more technical explanation.
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
-;; (load-theme 'tomorrow-night-bright t)
-(load-theme 'spacemacs-dark t)
+(load-theme 'tomorrow-night-bright t)
+;;(load-theme 'spacemacs-dark t)
 
 ;; No cursor blinking, it's distracting
 (blink-cursor-mode 0)
