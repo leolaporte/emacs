@@ -18,6 +18,10 @@
 ;; warn before opening giant files over 100MB
 (setq large-file-warning-threshold 100000000)
 
+;; Define when to check for package modifications,
+;; for improved straight.el startup time.
+(setq straight-check-for-modifications '(check-on-save find-when-checking))
+
 ;; use straight.el for package installation
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -32,7 +36,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(straight-pull-package "elpa") 
+(straight-pull-package "elpa")
 (straight-pull-package "melpa")  ; update repository
 (straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
 

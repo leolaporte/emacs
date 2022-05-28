@@ -1,7 +1,7 @@
 ;;;; Org-mode Customizations
 ;;;; Leo Laporte, April 2022
 
-(with-eval-after-load 'org       
+(with-eval-after-load 'org
   (setq org-startup-indented t) ; Enable `org-indent-mode' by default
   (add-hook 'org-mode-hook #'visual-line-mode)) ; word wrap by default
 

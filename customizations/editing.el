@@ -1,5 +1,10 @@
 ;; Customizations relating to editing a buffer.
 
+;; Setup nice scrolling for Emacs 28
+(setq scroll-margin 0)
+(setq scroll-conservatively 100000)
+(setq scroll-preserve-screen-position 1)
+
 ;; markdown mode
 (straight-use-package 'markdown-mode)
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
@@ -63,6 +68,13 @@
 
 ;; Highlights matching parenthesis
 (show-paren-mode 1)
+
+;; Automatic pair matching
+(setq electric-pair-pairs '((?\{ . ?\})
+			    (?\( . ?\))
+			    (?\[ . ?\])
+			    (?\" . ?\")))
+(electric-pair-mode t)
 
 ;; Highlight current line
 (global-hl-line-mode 1)
@@ -165,3 +177,6 @@
 (setq electric-indent-mode t)
 (setq mac-command-key-is-meta t)
 
+;; Strip trailing whitespaces on save
+(add-hook 'before-save-hook
+	  'delete-trailing-whitespace)
