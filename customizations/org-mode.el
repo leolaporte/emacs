@@ -24,19 +24,19 @@
 (global-set-key (kbd "C-c c") #'org-capture)
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
-         "* TODO %?\n  %i\n  %a")
-        ("j" "Journal" entry (file+datetree "~/org/journal.org")
-         "* %?\nEntered on %U\n  %i\n  %a")
+      '(("i" "Inbox" entry (file+datetree "~/org/inbox.org")
+	 "* %?\nEntered on %U\n  %i\n  %a")
+	("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
+	 "* TODO %?\n  %i\n  %a")
+	("j" "Journal" entry (file+datetree "~/org/journal.org")
+	 "* %?\nEntered on %U\n  %i\n  %a")
 	("s" "Shopping List" entry (file+datetree "~/org/shopping.org")
-         "* %?\nEntered on %U\n  %i\n  %a")
+	 "* %?\nEntered on %U\n  %i\n  %a")
 	("q" "Quotes" entry (file+datetree "~/org/quotes.org")
-         "* %?\nEntered on %U\n  %i\n  %a")
-	("i" "Inbox" entry (file+datetree "~/org/inbox.org")
 	 "* %?\nEntered on %U\n  %i\n  %a")))
 
 (setq org-todo-keywords
-      '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE" "DELEGATED")))
+      '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE" "DELEGATED" "SOMEDAY")))
 
 (setq org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("calls" . ?c) ("@family" . ?f) ("@read-watch" . ?r) ("@lisa" . ?l) ("@abby" . ?a)))
 
