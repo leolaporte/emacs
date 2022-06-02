@@ -3640,7 +3640,7 @@
     ("symetrically" "symmetrically" nil :count 1)
     ("symetry" "symmetry" nil :count 1)
     ("symettric" "symmetric" nil :count 1)
-    ("symmetral" "symmetric" nil :count 1)
+        ("symmetral" "symmetric" nil :count 1)
     ("symmetricaly" "symmetrically" nil :count 1)
     ("synagouge" "synagogue" nil :count 1)
     ("syncronization" "synchronization" nil :count 1)
@@ -3653,7 +3653,6 @@
     ("sysmatically" "systematically" nil :count 1)
     ("sytem" "system" nil :count 1)
     ("sytle" "style" nil :count 1)
-    ("t" "doesn't" nil :count 1)
     ("tabacco" "tobacco" nil :count 1)
     ("tahn" "than" nil :count 1)
     ("taht" "that" nil :count 1)
@@ -4084,4 +4083,3 @@
     ("yuo" "you" nil :count 1)
     ("zeebra" "zebra" nil :count 1)
    ))
-
