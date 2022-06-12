@@ -8,7 +8,7 @@
 ;; and Mickey Petersen's excellent "Mastering Emacs" https://www.masteringemacs.org/
 ;; and various suggestions from various contribs at https://reddit.com/r/emacs
 
-;; Packages using straight.el package manager
+;; Install packages using straight.el package manager
 ;; https://github.com/raxod502/straight.el
 ;;;;
 

@@ -39,10 +39,10 @@
        (set-face-attribute 'default nil :family "Iosevka" :height 140)
        (setq initial-frame-alist '((top . 20) (left . 20) (width . 100) (height . 40)))))
 
-;;; Modus Operandi high contrast theme - built-into Emacs >28.1
+;;; use Modus Operandi high contrast theme - built-into Emacs >28.1
 ;;; https://protesilaos.com/emacs/modus-themes
 
-;; Add customizations prior to loading the themes
+;; Add customizations prior to loading the theme
 (setq modus-themes-italic-constructs t
       modus-themes-bold-constructs t
       modus-themes-mixed-fonts t
@@ -153,7 +153,7 @@
         (t . (semibold))))
 
 (load-theme 'modus-vivendi)
-(define-key global-map (kbd "<f5>") #'modus-themes-toggle)
+(define-key global-map (kbd "<f5>") #'modus-themes-toggle) ; swap light and dark mode
 
 ;; Turn off the menu bar at the top of each frame because it's distracting
 (menu-bar-mode -1)
