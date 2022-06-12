@@ -17,6 +17,10 @@
 	    (unless (sly-connected-p)
 	      (save-excursion (sly)))))
 
+;; always split windows vertically
+(setq split-height-threshold nil)
+(setq split-width-threshold 0)
+
 ;; locate lisp package
 (if (eq system-type 'darwin)
     (setq inferior-lisp-program "/opt/homebrew/bin/sbcl")  ;; MacOS
@@ -89,4 +93,3 @@ highlighting.  Otherwise, toggle highlighting."
           (and arg (minusp arg)))
       (unhighlight-regexp "FIXME")
     (highlight-phrase "FIXME" 'fixme-face)))
-
