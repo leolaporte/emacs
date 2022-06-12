@@ -85,7 +85,7 @@
       ;; Options for `modus-themes-hl-line' are either nil (the default),
       ;; or a list of properties that may include any of those symbols:
       ;; `accented', `underline', `intense'
-      modus-themes-hl-line '(underline accented)
+      modus-themes-hl-line nil
 
       ;; Options for `modus-themes-paren-match' are either nil (the
       ;; default), or a list of properties that may include any of those
