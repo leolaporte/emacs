@@ -1,0 +1,11 @@
+cd /ssh:leo@leo.fm
+cd ssh:leo@leo.fm
+cd /ssh:leo@leo.fm:
+lw
+ls
+www
+ls
+cd leofm
+ls
+hg
+exit
