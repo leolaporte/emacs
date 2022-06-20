@@ -36,8 +36,8 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(straight-pull-package "elpa")
 (straight-pull-package "melpa")  ; update repository
+(straight-pull-package "elpa")
 (straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
 
 ;; follow symlinks if necessary (can slow Emacs)
@@ -48,14 +48,18 @@
 ;; All the installed packages are in these files, purely for organizational purposes
 ;;;;
 
+;; Store emacs's customizations elsewhere
+(setq custom-file "~/.emacs.d/customizations/custom.el")
+(load custom-file)
+
 ;; folder for customization files
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
-;; Install helm for completions, etc. -- config cribbed whole from its author
-(load "init-helm.el")
-
 ;; Org-mode customizations
 (load "org-mode.el")
+
+;; Install helm for completions, etc. -- config cribbed whole from its author
+(load "init-helm.el")
 
 ;; Hard-to-categorize customizations like Magit
 (load "misc.el")

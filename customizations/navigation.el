@@ -1,7 +1,7 @@
 ;; These customizations make it easier for you to navigate files,
 ;; switch buffers, and choose options from the minibuffer.
 
-;; minor mode for Emacs that displays the key bindings following your currently entered incomplete command 
+;; minor mode for Emacs that displays the key bindings following your currently entered incomplete command
 (straight-use-package 'which-key)
 (which-key-mode)
 
@@ -57,7 +57,6 @@
 
 (global-set-key (kbd "C-k") #'crux-smart-kill-line)
 (global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
-(global-set-key (kbd "C-c n") #'crux-cleanup-buffer-or-region)
 (global-set-key (kbd "C-c f") #'crux-recentf-find-file)
 (global-set-key (kbd "C-c e") #'crux-eval-and-replace) ; evaluate e-lisp exp and replace with result
 (global-set-key (kbd "C-c I") #'crux-find-user-init-file)

@@ -30,7 +30,8 @@
         helm-visible-mark-prefix                  "✓")
   (set-face-foreground 'helm-mark-prefix "Gold1")
   (add-to-list 'helm-sources-using-default-as-input 'helm-source-info-bash)
-  (helm-define-key-with-subkeys global-map (kbd "C-c n") ?n 'helm-cycle-resume))
+  ;;  (helm-define-key-with-subkeys global-map (kbd "C-c n") ?n 'helm-cycle-resume)
+  )
 
 ;;; Load all autoloads for helm extensions
 ;;
@@ -229,7 +230,7 @@
              :disabled t
              :commands helm-recoll
              ;; Use the HFF actions to setup directories, then run
-             ;; "recoll index -c DIR" on each directory. 
+             ;; "recoll index -c DIR" on each directory.
              :init (customize-set-variable 'helm-recoll-directories
                                            '(("work" . "~/.recoll-work"))))
 
@@ -250,7 +251,7 @@
                      "\\`\\*Messages" "\\`\\*Magit" "\\`\\*git-gutter" "\\`\\*Help"))
 
              (define-key helm-buffer-map (kbd "C-d") 'helm-buffer-run-kill-persistent)
-             
+
              (cl-defmethod helm-setup-user-source ((source helm-source-buffers))
                "Adds additional actions to `helm-source-buffers-list'.
 - Git status."
