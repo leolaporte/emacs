@@ -32,21 +32,34 @@
 	 :map org-mode-map
 	 ("C-M-i"   . completion-at-point)))
 
+;; deft for search
+(use-package deft
+  :straight t
+  :after org
+  :bind
+  ("C-c n d" . deft)
+  :custom
+  (deft-recursive t)
+  (deft-use-filter-string-for-filename t)
+  (deft-default-extension "org")
+  (deft-directory org-roam-directory))
+
 ;; If you're using a vertical completion framework, you might want a more informative completion interface
 (setq org-roam-node-display-template
-	(concat "${title:*} "
-		(propertize "${tags:10}" 'face 'org-tag)))
+      (concat "${title:*} "
+	      (propertize "${tags:10}" 'face 'org-tag)))
 
 (setq org-roam-completion-everythere t)
 (org-roam-db-autosync-mode)
 
 (require 'org-roam-protocol)
+(require 'org-roam-export)
 
 (setq org-roam-mode-sections
-(list #'org-roam-backlinks-section
-      #'org-roam-reflinks-section
-      ;; #'org-roam-unlinked-references-section
-      ))
+      (list #'org-roam-backlinks-section
+	    #'org-roam-reflinks-section
+	    ;; #'org-roam-unlinked-references-section
+	    ))
 
 ;; Org-roam does not control how the pop-up buffer is displayed: this is left to the user. The author’s recommended configuration is as follows:
 (add-to-list 'display-buffer-alist
@@ -55,4 +68,3 @@
                (direction . right)
                (window-width . 0.33)
                (window-height . fit-window-to-buffer)))
-

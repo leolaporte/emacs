@@ -8,7 +8,7 @@
        ;; M-x toggle-frame-fullscreen (below MacBook notch)
        (global-set-key (kbd "A-<f10>") 'toggle-frame-fullscreen)
        ;; M-x toggle-frame-maximized (M-<F10>) (all the way over notch)
-       (set-face-attribute 'default nil :family "Fira Code Retina" :height 180)
+       (set-face-attribute 'default nil :family "Iosevka Nerd Font" :height 180)
        (setq initial-frame-alist '((top . 20) (left . 15) (width . 100) (height . 40))))
 
       ((equal system-name "mojo-ryzen")
