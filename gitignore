@@ -1,4 +1,3 @@
-*eld
 tutorial
 tmp
 bookmark
@@ -13,3 +12,8 @@ autosave*
 ~*
 #*
 *.dat
+*.db
+*.eld
+*.bak
+*.tmp
+
