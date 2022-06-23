@@ -24,11 +24,14 @@
   (org-roam-db-autosync-mode)
 
   :config
+  (setq org-roam-dailies-directory "daily/")
+
   (setq org-roam-dailies-capture-templates
-	'(("i" "item" item
-	   "[ ] %?"
-	   :target (file+head "%<%Y-%m-%d>.org"
-			      "#+title: %<%Y-%m-%d>\n#+FILETAGS: :dailies:\n"))))
+	'(("d" "default" entry
+           "* %?"
+           :target (file+head "%<%Y-%m-%d>.org"
+                              "#+title: %<%Y-%m-%d>\n#+FILETAGS: :dailies:\n"))))
+
   (setq org-tag-alist '(("@abby" . ?a)
 			("@family" . ?f)
 			("@finance" . ?$)
