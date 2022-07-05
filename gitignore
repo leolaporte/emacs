@@ -7,6 +7,8 @@ straight
 transient
 backups
 url
+elpa
+melpa
 autosave*
 .*
 ~*
@@ -16,4 +18,3 @@ autosave*
 *.eld
 *.bak
 *.tmp
-
