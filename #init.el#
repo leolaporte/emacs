@@ -59,10 +59,7 @@
 (load "org-mode.el")
 
 ;; Install helm for completions, etc. -- config cribbed whole from its author
-;; (load "init-helm.el")
-
-;; New completion framework
-(load "completion.el")
+(load "init-helm.el")
 
 ;; Hard-to-categorize customizations like Magit
 (load "misc.el")

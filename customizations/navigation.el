@@ -5,16 +5,16 @@
 (straight-use-package 'which-key)
 (which-key-mode)
 
-;; Hyperbole minor mode - M-Ret to click links https://www.gnu.org/software/hyperbole/
-(straight-use-package 'hyperbole)
-(hyperbole-mode 1)
+;; ;; Hyperbole minor mode - M-Ret to click links https://www.gnu.org/software/hyperbole/
+;; (straight-use-package 'hyperbole)
+;; (hyperbole-mode 1)
 
-;; Hyperbole will use the Org directory for rolodex etc.
-(add-hook 'hyperbole-init-hook
-	  (lambda ()
-	    (require 'org)
-	    (setq hyrolo-file-list (append (hyrolo-initialize-file-list)
-					   (cddr (directory-files org-directory))))))
+;; ;; Hyperbole will use the Org directory for rolodex etc.
+;; (add-hook 'hyperbole-init-hook
+;; 	  (lambda ()
+;; 	    (require 'org)
+;; 	    (setq hyrolo-file-list (append (hyrolo-initialize-file-list)
+;; 					   (cddr (directory-files org-directory))))))
 
 ;; “switch windows with your shift key by pressing S-<left>, S-<right>, S-<up>, S-<down>.
 (windmove-default-keybindings) ; unfortunately conflicts with org todo

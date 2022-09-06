@@ -11,7 +11,7 @@
        (set-face-attribute 'default nil :family "Iosevka Nerd Font" :height 180)
        (setq initial-frame-alist '((top . 20) (left . 15) (width . 100) (height . 40))))
 
-      ((equal system-name "mojo-ryzen")
+      ((equal system-name "mojo")
        (set-face-attribute 'default nil :family "Iosevka" :height 140)
        (setq initial-frame-alist '((top . 150) (left . 1000) (width . 150) (height . 75))))
 

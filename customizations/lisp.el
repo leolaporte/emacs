@@ -18,8 +18,8 @@
 	      (save-excursion (sly)))))
 
 ;; load lispy for fast CL navigation
-(straight-use-package 'lispy)
-(add-hook 'sly-mode-hook (lambda () (lispy-mode 1)))
+;; (straight-use-package 'lispy)
+;; (add-hook 'sly-mode-hook (lambda () (lispy-mode 1)))
 
 ;; always split windows vertically
 (setq split-height-threshold nil)
