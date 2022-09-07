@@ -1,6 +1,7 @@
-;;; -*- lexical-binding: t; -*-
-
-;; Replacing Helm with  Vertico, Embark, Consult, Orderless and Marginalia
+;;; Replacing Helm with  Vertico, Embark, Consult, Orderless and Marginalia
+;;; via
+;;; https://codeberg.org/vifon/emacs-config/src/branch/master/emacs.d/lisp/20-completing-read.el
+;;; Leo Laporte 6 Sept 2022
 
 (use-package vertico
   :straight (vertico :files (:defaults "extensions/*"))
@@ -17,7 +18,6 @@
             (setq vertico-multiform-categories '((consult-grep buffer))
                   vertico-multiform-commands '((tmm-menubar flat)
                                                (tmm-shortcut flat)))))
-
 (use-package orderless
   :straight t
   :after vertico

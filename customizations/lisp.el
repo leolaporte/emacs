@@ -3,13 +3,13 @@
 
 ;; project navigation
 ;; projectile everywhere!
-; (straight-use-package 'projectile)
-; (projectile-global-mode)
+(straight-use-package 'projectile)
+(projectile-global-mode)
 
 ;; Common Lisp support - btw I use sly
 (straight-use-package 'sly)
-(setq global-helm-sly-mode t)
-(straight-use-package 'helm-sly)
+;; (setq global-helm-sly-mode t)
+;; (straight-use-package 'helm-sly)
 
 ;; launch whenever a lisp files is opened
 (add-hook 'sly-mode-hook

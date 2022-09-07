@@ -14,12 +14,12 @@
 (add-hook 'text-mode-hook 'visual-line-mode)
 (add-hook 'prog-mode-hook 'visual-line-mode)
 
-;; (straight-use-package 'tree-sitter)
-;; (straight-use-package 'tree-sitter-langs)
-;; (global-tree-sitter-mode)
-;; (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-;; (require 'tree-sitter)
-;; (require 'tree-sitter-langs)
+(straight-use-package 'tree-sitter)
+(straight-use-package 'tree-sitter-langs)
+(global-tree-sitter-mode)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+(require 'tree-sitter)
+(require 'tree-sitter-langs)
 
 ;; turn on agressive-indent-mode for all major modes
 ;; https://github.com/Malabarba/aggressive-indent-mode/blob/master/README.md
@@ -33,10 +33,10 @@
 (straight-use-package 'undo-tree)
 (global-undo-tree-mode)
 
-;; Auto-complete uding company
+;; Auto-complete using company
 ;; https://company-mode.github.io/
-;; (straight-use-package 'company)
-;; (add-hook 'after-init-hook 'global-company-mode)
+(straight-use-package 'company)
+(add-hook 'after-init-hook 'global-company-mode)
 ;; or using Auto-complete (not as intrusive but it's a matter of
 ;; taste https://github.com/auto-complete
 (straight-use-package 'auto-complete)
