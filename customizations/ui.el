@@ -27,10 +27,6 @@
        (set-face-attribute 'default nil :family "Menlo" :height 140)
        (setq initial-frame-alist '((top . 10) (left . 10) (width . 120) (height . 50))))
 
-      ((equal system-name "darterpro")
-       (set-face-attribute 'default nil :family "ttf-iosevka" :height 140)
-       (setq initial-frame-alist '((top . 40) (left . 20) (width . 130) (height . 45))))
-
       ((equal system-name "studio-lenovo")
        (set-face-attribute 'default nil :family "ttf-iosevka" :height 140)
        (setq initial-frame-alist '((top . 50) (left . 80) (width . 100) (height . 40))))

@@ -1,0 +1,15 @@
+(undo-tree-save-format-version . 1)
+"5693b5e34ef68a88714ee11847424c8cef58d60d"
+[nil nil nil nil (25370 28392 699271 0) 0 nil]
+([nil nil ((1603 . 1609) (#("       " 0 7 (fontified t)) . -1603) (1529 . 1535) (#("       " 0 7 (fontified t)) . -1529) (#("      ((equal system-name \"darterpro\")" 0 26 (fontified t) 26 37 (fontified t face font-lock-string-face) 37 38 (fontified t)) . 1528) (t 25368 11026 209195 675000)) nil (25370 28392 699270 0) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 1528) (undo-tree-id13 . -1)) nil (25370 28392 699268 0) 0 nil])
+([nil nil ((#("(set-face-attribute 'default nil :family \"ttf-iosevka\" :height 140)" 0 33 (fontified t) 33 40 (fontified t face font-lock-builtin-face) 40 41 (fontified t) 41 54 (fontified t face font-lock-string-face) 54 55 (fontified t) 55 62 (fontified t face font-lock-builtin-face) 62 67 (fontified t)) . 1534) (undo-tree-id9 . 67) (undo-tree-id10 . -1) (undo-tree-id11 . 1) (undo-tree-id12 . -67)) nil (25370 28392 699267 0) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified nil)) . 1528) (undo-tree-id7 . -1) (#("      " 0 6 (fontified t)) . -1528) (undo-tree-id8 . -6) 1534) nil (25370 28392 699261 0) 0 nil])
+([nil nil ((#("(setq initial-frame-alist '((top . 40) (left . 20) (width . 130) (height . 45))))" 0 1 (fontified t) 1 5 (fontified t face font-lock-keyword-face) 5 81 (fontified t)) . 1534) (undo-tree-id3 . 81) (undo-tree-id4 . -1) (undo-tree-id5 . 2) (undo-tree-id6 . -80)) nil (25370 28392 699258 0) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified nil)) . 1528) (undo-tree-id1 . -1) (#("      " 0 6 (fontified t)) . -1528) (undo-tree-id2 . -6) 1534) nil (25370 28392 699255 0) 0 nil])
+([nil current ((#("
+" 0 1 (fontified t)) . 1528) (undo-tree-id0 . -1)) nil (25370 28392 699248 0) 0 nil])
+nil
