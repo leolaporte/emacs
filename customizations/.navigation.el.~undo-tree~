@@ -1,9 +1,0 @@
-(undo-tree-save-format-version . 1)
-"8e385bbaba8a302cbff545382f5dc63e64f0f755"
-[nil nil nil nil (25368 12889 453571 0) 0 nil]
-([nil nil ((126 . 128) (t 25368 11026 208815 6000)) nil (25368 12889 453570 0) 0 nil])
-([nil nil ((129 . 134) (128 . 130)) nil (25368 12889 453569 0) 0 nil])
-([nil nil ((nil rear-nonsticky nil 156 . 157) (nil fontified nil 134 . 157) (134 . 157)) nil (25368 12889 453568 0) 0 nil])
-([nil nil ((#(")" 0 1 (fontified nil)) . -159) (159 . 160) (#(")" 0 1 (fontified nil)) . -159) (157 . 160)) nil (25368 12889 453566 0) 0 nil])
-([nil current ((160 . 161)) nil (25368 12889 453562 0) 0 nil])
-nil
