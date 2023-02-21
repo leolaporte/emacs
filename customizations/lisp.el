@@ -6,6 +6,10 @@
 (straight-use-package 'projectile)
 (projectile-global-mode)
 
+;; Racket mode support
+(straight-use-package 'racket-mode)
+(setq racket-program "opt/homebrew/bin/racket")
+
 ;; Common Lisp support - btw I use sly
 (straight-use-package 'sly)
 ;; (setq global-helm-sly-mode t)
@@ -17,11 +21,21 @@
 	    (unless (sly-connected-p)
 	      (save-excursion (sly)))))
 
+;; Auto-complete
+;; https://github.com/auto-complete
+(straight-use-package 'auto-complete)
+(straight-use-package 'ac-sly)  ; add support for Sly
+(add-hook 'sly-mode-hook 'set-up-sly-ac)
+(eval-after-load 'auto-complete
+  '(add-to-list 'ac-modes 'sly-mrepl-mode))
+(global-auto-complete-mode t)
+
 ;; load lispy for fast CL navigation
 ;; (straight-use-package 'lispy)
 ;; (add-hook 'sly-mode-hook (lambda () (lispy-mode 1)))
 
 ;; always split windows vertically
+;; (I like the REPL on the right on most displays)
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
 
@@ -37,6 +51,16 @@
 
 ;; colorful parenthesis matching
 (straight-use-package 'rainbow-delimiters)
+
+;; Highlights matching parenthesis
+(show-paren-mode 1)
+
+;; Automatic pair matching
+(setq electric-pair-pairs '((?\{ . ?\})
+			    (?\( . ?\))
+			    (?\[ . ?\])
+			    (?\" . ?\")))
+(electric-pair-mode t)
 
 ;; eldoc-mode shows documentation in the minibuffer when writing code
 ;; http://www.emacswiki.org/emacs/ElDoc
@@ -82,18 +106,3 @@ When leaving w3m, restore the original window configuration."
   (save-excursion
     (beginning-of-defun)
     (indent-sexp)))
-
-;; Highlight "FIXME" comments
-(defface fixme-face
-  '((t (:weight bold :box (:line-width 2 :color "orange"))))
-  "The faced used to show FIXME lines.")
-
-(defun show-fixme-lines (&optional arg)
-  "Emphasise FIXME comments.
-If ARG is positive, enable highlighting.  If ARG is negative, disable
-highlighting.  Otherwise, toggle highlighting."
-  (interactive)
-  (if (or (and (not arg) (assoc "FIXME" hi-lock-interactive-patterns))
-          (and arg (minusp arg)))
-      (unhighlight-regexp "FIXME")
-    (highlight-phrase "FIXME" 'fixme-face)))

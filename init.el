@@ -92,6 +92,6 @@
 ;; (load "blog.el")
 
 ;; All set up, now start server for faster loading in future
-(require 'server)
-(unless (server-running-p)
-  (server-start))
+;; (require 'server)
+;; (unless (server-running-p)
+;;   (server-start))

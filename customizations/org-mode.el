@@ -15,12 +15,13 @@
 		 (display-buffer-in-side-window)
 		 (side . right)
 		 (slot . 0)
-		 (window-width . 0.33)
+		 (window-width . 0.50)
 		 (window-parameters . ((no-other-window . t)
 				       (no-delete-other-windows . t)))))
   ;; When t the autocomplete in org documents will query the org roam database
   (setq org-roam-completion-everywhere t)
   (setq org-roam-v2-ack t)
+  ;;  (setq find-file-visit-truename t)
   (org-roam-db-autosync-mode)
 
   :config
@@ -45,6 +46,7 @@
   :custom
   (org-roam-directory (file-truename "~/org/"))
 
+
   ;; See https://github.com/nobiot/org-transclusion/issues/136
   (org-roam-db-extra-links-exclude-keys '((node-property "ROAM_REFS")))
   (org-roam-node-display-template
@@ -67,6 +69,20 @@
 	 ("C-M-i"   . completion-at-point)
 	 ("C-s-<right>" . org-roam-dailies-goto-next-note)
 	 ("C-s-<left>" . org-roam-dailies-goto-previous-note)))
+
+(use-package org-roam-ui
+  :straight
+  (:host github :repo "org-roam/org-roam-ui" :branch "main" :files ("*.el" "out"))
+  :after org-roam
+  ;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
+  ;;         a hookable mode anymore, you're advised to pick something yourself
+  ;;         if you don't care about startup time, use
+  ;;  :hook (after-init . org-roam-ui-mode)
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))
 
 ;; deft for search
 (use-package deft

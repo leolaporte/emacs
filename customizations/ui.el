@@ -4,7 +4,9 @@
 
 ;; System specific window and font sizes
 ;; specify system name with (system-name) - eval with Meta-:
-(cond ((or (equal system-name "MBP-14.local") (equal system-name "MBP-14"))
+(cond ((or (equal system-name "Tybalt.localdomain")
+	   (equal system-name "Tybalt")
+	   (equal system-name "Tybalt.local"))
        ;; M-x toggle-frame-fullscreen (below MacBook notch)
        (global-set-key (kbd "A-<f10>") 'toggle-frame-fullscreen)
        ;; M-x toggle-frame-maximized (M-<F10>) (all the way over notch)
@@ -48,7 +50,6 @@
       modus-themes-tabs-accented t
       modus-themes-variable-pitch-ui t
       modus-themes-inhibit-reload t ; only applies to `customize-set-variable' and related
-
       modus-themes-fringes nil ; {nil,'subtle,'intense}
 
       ;; Options for `modus-themes-lang-checkers' are either nil (the

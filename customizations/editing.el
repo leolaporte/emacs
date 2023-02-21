@@ -33,19 +33,6 @@
 (straight-use-package 'undo-tree)
 (global-undo-tree-mode)
 
-;; Auto-complete using company
-;; https://company-mode.github.io/
-(straight-use-package 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-;; or using Auto-complete (not as intrusive but it's a matter of
-;; taste https://github.com/auto-complete
-(straight-use-package 'auto-complete)
-(straight-use-package 'ac-sly)  ; add support for Sly
-(add-hook 'sly-mode-hook 'set-up-sly-ac)
-(eval-after-load 'auto-complete
-  '(add-to-list 'ac-modes 'sly-mrepl-mode))
-(global-auto-complete-mode t)
-
 ;; enable abbrev mode https://www.masteringemacs.org/article/correcting-typos-misspellings-abbrev
 (setq-default abbrev-mode t)
 
@@ -65,16 +52,6 @@
 ;; (straight-use-package 'yasnippet)
 ;; (require 'yasnippet)
 ;; (yas-global-mode 1)
-
-;; Highlights matching parenthesis
-(show-paren-mode 1)
-
-;; Automatic pair matching
-(setq electric-pair-pairs '((?\{ . ?\})
-			    (?\( . ?\))
-			    (?\[ . ?\])
-			    (?\" . ?\")))
-(electric-pair-mode t)
 
 ;; Highlight current line
 (global-hl-line-mode 1)
@@ -168,6 +145,13 @@
     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
       (process-send-string proc text)
       (process-send-eof proc))))
+
+;; key bindings
+(when (eq system-type 'darwin) ;; mac specific settings
+  (setq mac-option-modifier 'alt)
+  (setq mac-command-modifier 'meta)
+  (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
+  (setq mac-right-option-modifier 'none))
 
 (when (and (not (display-graphic-p))
            (eq system-type 'darwin))
