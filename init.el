@@ -41,7 +41,7 @@
 (straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
 
 ;; follow symlinks if necessary (can slow Emacs)
-(setq find-file-visit-truename t)
+;; (setq find-file-visit-truename t)
 
 ;;;;
 ;; Customization
