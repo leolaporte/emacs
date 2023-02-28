@@ -84,13 +84,6 @@
 ;; some user interface elements
 (load "ui.el")
 
-;; Set up ssh-agent and gpg-agent
-;; (load "keychain.el")
-;; (keychain-refresh-environment)
-
-;; Set up blogging environment
-;; (load "blog.el")
-
 ;; All set up, now start server for faster loading in future
 ;; (require 'server)
 ;; (unless (server-running-p)

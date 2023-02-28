@@ -106,3 +106,4 @@ When leaving w3m, restore the original window configuration."
   (save-excursion
     (beginning-of-defun)
     (indent-sexp)))
+

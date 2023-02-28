@@ -18,6 +18,7 @@
 		 (window-width . 0.50)
 		 (window-parameters . ((no-other-window . t)
 				       (no-delete-other-windows . t)))))
+
   ;; When t the autocomplete in org documents will query the org roam database
   (setq org-roam-completion-everywhere t)
   (setq org-roam-v2-ack t)
@@ -34,8 +35,10 @@
                               "#+title: %<%Y-%m-%d>\n#+FILETAGS: :dailies:\n"))))
 
   (setq org-tag-alist '(("@abby" . ?a)
+			("@books" . ?b)
 			("@family" . ?f)
 			("@finance" . ?$)
+			("@games" . ?g)
 			("@health" . ?e)
 			("@home" . ?h)
 			("@lisa" . ?l)
@@ -44,23 +47,13 @@
 			("@work" . ?w)))
 
   :custom
-  (org-roam-directory (file-truename "~/org/"))
-
-
-  ;; See https://github.com/nobiot/org-transclusion/issues/136
-  (org-roam-db-extra-links-exclude-keys '((node-property "ROAM_REFS")))
-  (org-roam-node-display-template
-   (concat "${type:7} "
-	   " ${title:80} "
-	   (propertize "${tags:50}" 'face 'org-tag)))
-  (org-roam-node-annotation-function
-   (lambda (node)
-     (org-roam-node-backlinkscount node)))
-
+  (setq org-roam-directory (file-truename "~/org-roam/"))
+  (setq org-roam-verbose t)
+  (setq org-roam-db-location (concat org-roam-directory "/.database/org-roam.db"))
 
   :bind (("C-c n l" . org-roam-buffer-toggle)
-	 ("C-c n f" . org-roam-node-find)
-	 ("C-c n g" . org-roam-graph)
+	 ;; ("C-c n f" . org-roam-node-find)
+	 ;; ("C-c n g" . org-roam-graph)
 	 ("C-c n i" . org-roam-node-insert)
 	 ("C-c n c" . org-roam-capture)
 	 ;; Dailies
@@ -69,20 +62,6 @@
 	 ("C-M-i"   . completion-at-point)
 	 ("C-s-<right>" . org-roam-dailies-goto-next-note)
 	 ("C-s-<left>" . org-roam-dailies-goto-previous-note)))
-
-(use-package org-roam-ui
-  :straight
-  (:host github :repo "org-roam/org-roam-ui" :branch "main" :files ("*.el" "out"))
-  :after org-roam
-  ;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
-  ;;         a hookable mode anymore, you're advised to pick something yourself
-  ;;         if you don't care about startup time, use
-  ;;  :hook (after-init . org-roam-ui-mode)
-  :config
-  (setq org-roam-ui-sync-theme t
-        org-roam-ui-follow t
-        org-roam-ui-update-on-save t
-        org-roam-ui-open-on-start t))
 
 ;; deft for search
 (use-package deft
@@ -102,13 +81,4 @@
 (setq org-roam-mode-sections
       (list #'org-roam-backlinks-section
 	    #'org-roam-reflinks-section
-	    ;; #'org-roam-unlinked-references-section
-	    ))
-
-;; Org-roam does not control how the pop-up buffer is displayed: this is left to the user. The author’s recommended configuration is as follows:
-(add-to-list 'display-buffer-alist
-             '("\\*org-roam\\*"
-               (display-buffer-in-direction)
-               (direction . right)
-               (window-width . 0.33)
-               (window-height . fit-window-to-buffer)))
+	    #'org-roam-unlinked-references-section))
