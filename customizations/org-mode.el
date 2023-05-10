@@ -46,11 +46,6 @@
 			("@travel" . ?t)
 			("@work" . ?w)))
 
-  :custom
-  (setq org-roam-directory (file-truename "~/org-roam/"))
-  (setq org-roam-verbose t)
-  (setq org-roam-db-location (concat org-roam-directory "/.database/org-roam.db"))
-
   :bind (("C-c n l" . org-roam-buffer-toggle)
 	 ;; ("C-c n f" . org-roam-node-find)
 	 ;; ("C-c n g" . org-roam-graph)
@@ -61,7 +56,12 @@
 	 :map org-mode-map
 	 ("C-M-i"   . completion-at-point)
 	 ("C-s-<right>" . org-roam-dailies-goto-next-note)
-	 ("C-s-<left>" . org-roam-dailies-goto-previous-note)))
+	 ("C-s-<left>" . org-roam-dailies-goto-previous-note))
+
+  :custom
+  (setq org-roam-directory (file-truename "~/org-roam/"))
+  (setq org-roam-verbose t)
+  (setq org-roam-db-location (concat org-roam-directory "/.database/org-roam.db")))
 
 ;; deft for search
 (use-package deft

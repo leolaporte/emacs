@@ -73,6 +73,9 @@
 ;; For editing lisps
 (load "lisp.el")
 
+;; for Clojure
+(load "setup-clojure.el")
+
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
 

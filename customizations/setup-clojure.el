@@ -2,6 +2,8 @@
 ;; Clojure
 ;;;;
 
+(straight-use-package 'cider)
+
 ;; Enable paredit for Clojure
 (add-hook 'clojure-mode-hook 'enable-paredit-mode)
 
@@ -10,7 +12,7 @@
 (add-hook 'clojure-mode-hook 'subword-mode)
 
 ;; A little more syntax highlighting
-(require 'clojure-mode-extra-font-locking)
+(straight-use-package 'clojure-mode-extra-font-locking)
 
 ;; syntax hilighting for midje
 (add-hook 'clojure-mode-hook
