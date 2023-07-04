@@ -74,7 +74,7 @@
 (load "lisp.el")
 
 ;; for Clojure
-(load "setup-clojure.el")
+;; (load "setup-clojure.el")
 
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
@@ -88,6 +88,6 @@
 (load "ui.el")
 
 ;; All set up, now start server for faster loading in future
-;; (require 'server)
-;; (unless (server-running-p)
-;;   (server-start))
+(require 'server)
+(unless (server-running-p)
+  (server-start))
