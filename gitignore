@@ -1,0 +1,12 @@
+.*
+~*
+*~
+#*
+straight
+org-roam.db
+ac-comphist*
+*.dat
+cider-history
+projectile*
+auto-save-list/
+backups/

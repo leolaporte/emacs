@@ -1,1 +1,0 @@
-/Users/leo/.emacs.d/straight/repos/tree-sitter-langs/queries/hcl/highlights.terraform-mode.scm
