@@ -1,1 +1,0 @@
-/Users/leo/.emacs.d/straight/repos/tree-sitter-langs/tree-sitter-langs.el

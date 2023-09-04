@@ -1,1 +1,0 @@
-/Users/leo/.emacs.d/straight/repos/emacsql/emacsql-pg.el

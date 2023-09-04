@@ -1,1 +1,0 @@
-("~/Source/lisp/AOC/" "~/.emacs.d/")
