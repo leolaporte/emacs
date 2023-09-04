@@ -1,5 +1,8 @@
 ;; Customizations relating to editing a buffer.
 
+;; spaces not tabs!
+(setq-default indent-tabs-mode nil)
+
 ;; Setup nice scrolling for Emacs 28
 (setq scroll-margin 0)
 (setq scroll-conservatively 100000)

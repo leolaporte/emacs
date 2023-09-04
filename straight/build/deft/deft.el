@@ -1,0 +1,1 @@
+/Users/leo/.emacs.d/straight/repos/deft/deft.el
