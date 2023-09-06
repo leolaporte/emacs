@@ -1,5 +1,5 @@
 ;; Lisp specific packages
-;; including sly, paraedit
+;; including sly and lispy
 
 ;; project navigation
 ;; projectile everywhere!
@@ -30,7 +30,8 @@
   '(add-to-list 'ac-modes 'sly-mrepl-mode))
 (global-auto-complete-mode t)
 
-;; load lispy for fast CL navigation
+;; load the fantastic lispy for fast CL navigation
+;; https://github.com/abo-abo/lispy
 (straight-use-package 'lispy)
 (add-hook 'sly-mode-hook (lambda () (lispy-mode 1)))
 
@@ -60,13 +61,6 @@
 
 ;; Highlights matching parenthesis
 (show-paren-mode 1)
-
-;; Automatic pair matching
-;; (setq electric-pair-pairs '((?\{ . ?\})
-;; 			    (?\( . ?\))
-;; 			    (?\[ . ?\])
-;; 			    (?\" . ?\")))
-;; (electric-pair-mode t)
 
 ;; eldoc-mode shows documentation in the minibuffer when writing code
 ;; http://www.emacswiki.org/emacs/ElDoc
@@ -105,10 +99,3 @@ When leaving w3m, restore the original window configuration."
     (apply orig-fun args)))
 
 (advice-add 'hyperspec-lookup :around #'hyperspec-lookup--hyperspec-lookup-w3m)
-
-(defun lisp-reindent-defun ()
-  "Indent the current defun."
-  (interactive)
-  (save-excursion
-    (beginning-of-defun)
-    (indent-sexp)))
