@@ -9,7 +9,7 @@
 (setq scroll-preserve-screen-position 1)
 
 ;; markdown mode
-(straight-use-package 'markdown-mode)
+(use-package markdown-mode)
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
@@ -17,23 +17,16 @@
 (add-hook 'text-mode-hook 'visual-line-mode)
 (add-hook 'prog-mode-hook 'visual-line-mode)
 
-(straight-use-package 'tree-sitter)
-(straight-use-package 'tree-sitter-langs)
-(global-tree-sitter-mode)
-(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-(require 'tree-sitter)
-(require 'tree-sitter-langs)
-
 ;; turn on agressive-indent-mode for all major modes
 ;; https://github.com/Malabarba/aggressive-indent-mode/blob/master/README.md
-(straight-use-package 'aggressive-indent)
+(use-package aggressive-indent)
 (global-aggressive-indent-mode 1)
 (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'python-mode)
 
 ;; replaces emacs undo with a tree-based system
 ;;https://elpa.gnu.org/packages/undo-tree.html
-(straight-use-package 'undo-tree)
+(use-package undo-tree)
 (global-undo-tree-mode)
 
 ;; enable abbrev mode https://www.masteringemacs.org/article/correcting-typos-misspellings-abbrev

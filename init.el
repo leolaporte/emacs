@@ -22,11 +22,15 @@
 ;; for improved straight.el startup time.
 (setq straight-check-for-modifications '(check-on-save find-when-checking))
 
+;; Disable package.el in favor of straight.el
+(setq package-enable-at-startup nil)
+
 ;; use straight.el for package installation
+(setq straight-repository-branch "develop")
 (defvar bootstrap-version)
 (let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 5))
+      (bootstrap-version 6))
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
         (url-retrieve-synchronously
@@ -36,9 +40,15 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
+
+;; Configure use-package to use straight.el by default
+(use-package straight
+  :custom
+  (straight-use-package-by-default t))
+
 (straight-pull-package "melpa")  ; update repository
 (straight-pull-package "elpa")
-(straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
 
 ;; follow symlinks if necessary (can slow Emacs)
 ;; (setq find-file-visit-truename t)

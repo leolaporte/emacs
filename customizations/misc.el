@@ -3,7 +3,7 @@
 
 ;; git integration
 ;; https://magit.vc
-(straight-use-package 'magit)
+(use-package magit)
 
 ;; notmuch email
 ;; (require 'notmuch)
@@ -20,4 +20,3 @@
 
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
-

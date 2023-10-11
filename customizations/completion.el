@@ -1,6 +1,6 @@
 ;;; Replacing Helm with  Vertico, Embark, Consult, Orderless and Marginalia
 ;;; via
-;;; https://codeberg.org/vifon/emacs-config/src/branch/master/emacs.d/lisp/20-completing-read.el
+;;; https://codeberg.org/vifon/emacs-config/src/branch/master/emacs.d/lisp/20-completing-read.eln
 ;;; Leo Laporte 6 Sept 2022
 
 (use-package vertico
@@ -19,7 +19,6 @@
                   vertico-multiform-commands '((tmm-menubar flat)
                                                (tmm-shortcut flat)))))
 (use-package orderless
-  :straight t
   :after vertico
   :config (progn
             (setq orderless-matching-styles '(orderless-regexp
@@ -47,7 +46,6 @@
                                                 vifon/orderless-literal-if-equal))))
 
 (use-package embark
-  :straight t
   :bind (("C-c o" . embark-act)
          ("C-."   . embark-act)
          :map minibuffer-local-map
@@ -97,11 +95,9 @@
             (bind-key "a" #'embark-attach-file embark-file-map)))
 
 (use-package embark-consult
-  :straight t
   :after (embark consult))
 
 (use-package marginalia
-  :straight t
   :after vertico
   :demand t                     ; :demand applies to :bind but not
 					; :after.  We want to eagerly load
@@ -111,7 +107,6 @@
   :config (marginalia-mode 1))
 
 (use-package consult
-  :straight t
   :bind (("M-s f" . consult-line)
          ("M-g g" . consult-line)
          ("M-g o" . consult-outline)
@@ -164,9 +159,7 @@
                 (consult-line query)))))
 
 (use-package corfu
-  :straight t
   :init (global-corfu-mode 1))
-
 
 ;;; https://with-emacs.com/posts/tutorials/customize-completion-at-point/
 (autoload 'ffap-file-at-point "ffap")

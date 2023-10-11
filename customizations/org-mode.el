@@ -2,11 +2,10 @@
 ;;;; Leo Laporte, April 2022
 
 ;; make sure the latest org is installed before anything calls it
-(straight-use-package 'org)
+(use-package org)
 
 ;; load org-roam
 (use-package org-roam
-  :straight t
   :ensure t
   :init
   ;; Help keep the `org-roam-buffer', toggled via `org-roam-buffer-toggle', sticky.
@@ -65,7 +64,6 @@
 
 ;; deft for search
 (use-package deft
-  :straight t
   :after org
   :bind
   ("C-c n d" . deft)

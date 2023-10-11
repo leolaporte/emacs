@@ -1,23 +1,22 @@
 ;; Lisp specific packages
 ;; including sly and lispy
+;; Leo Laporte 5 Sept 2023
 
 ;; project navigation
 ;; projectile everywhere!
-(straight-use-package 'projectile)
+(use-package projectile)
 (projectile-global-mode)
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;; Racket mode support
-;; (straight-use-package 'racket-mode)
+;; (use-package racket-mode)
 ;; (setq racket-program "opt/homebrew/bin/racket")
 
 ;; Common Lisp support - btw I use sly
-(straight-use-package 'sly)
-;; (setq global-helm-sly-mode t)
-;; (straight-use-package 'helm-sly)
+(use-package sly)
 
-;; launch whenever a lisp files is opened
+;; launch whenever a lisp file is opened
 (add-hook 'sly-mode-hook
 	  (lambda ()
 	    (unless (sly-connected-p)
@@ -25,8 +24,8 @@
 
 ;; Auto-complete
 ;; https://github.com/auto-complete
-(straight-use-package 'auto-complete)
-(straight-use-package 'ac-sly)  ; add support for Sly
+(use-package auto-complete)
+(use-package ac-sly)  ; add support for Sly
 (add-hook 'sly-mode-hook 'set-up-sly-ac)
 (eval-after-load 'auto-complete
   '(add-to-list 'ac-modes 'sly-mrepl-mode))
@@ -34,7 +33,7 @@
 
 ;; load the fantastic lispy for fast CL navigation
 ;; https://github.com/abo-abo/lispy
-(straight-use-package 'lispy)
+(use-package lispy)
 (add-hook 'sly-mode-hook (lambda () (lispy-mode 1)))
 
 ;; always split windows vertically
@@ -48,7 +47,7 @@
   (setq inferior-lisp-program "/usr/bin/sbcl"));; Linux
 
 ;; colorful parenthesis matching
-(straight-use-package 'rainbow-delimiters)
+(use-package rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 (require 'rainbow-delimiters)
 (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red

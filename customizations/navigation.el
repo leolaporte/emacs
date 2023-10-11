@@ -2,7 +2,7 @@
 ;; switch buffers, and choose options from the minibuffer.
 
 ;; minor mode for Emacs that displays the key bindings following your currently entered incomplete command
-(straight-use-package 'which-key)
+(use-package which-key)
 (which-key-mode)
 
 ;; ;; ;; Hyperbole minor mode - M-Ret to click links https://www.gnu.org/software/hyperbole/
@@ -37,7 +37,7 @@
 (setq recentf-max-menu-items 40)
 
 ;; Use avy-mode to jump to words in buffer
-(straight-use-package 'avy)
+(use-package avy)
 (avy-setup-default)
 (global-set-key (kbd "C-c C-j") 'avy-resume)
 (global-set-key (kbd "C-:") 'avy-goto-char)
@@ -48,7 +48,7 @@
 ;; a Collection of Ridiculously Useful eXtensions for Emacs
 ;; https://github.com/bbatsov/crux
 ;; see navigation.el for special crux keys
-(straight-use-package 'crux)
+(use-package crux)
 
 ;; CRUX key remaps
 ;; (global-set-key (kbd "C-c o") #'crux-open-with)
@@ -72,7 +72,7 @@
 
 ;; Increase the selected region by semantic units
 ;; https://github.com/magnars/expand-region.el
-(straight-use-package 'expand-region)
+(use-package expand-region)
 ;; bind to C-=
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
