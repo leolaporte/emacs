@@ -9,6 +9,9 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
+(use-package treemacs)
+(use-package treemacs-projectile)
+
 ;; Racket mode support
 ;; (use-package racket-mode)
 ;; (setq racket-program "opt/homebrew/bin/racket")
