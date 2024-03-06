@@ -1,1 +1,1 @@
-nil
+((magit-dispatch nil))

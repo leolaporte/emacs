@@ -30,7 +30,7 @@
 (global-undo-tree-mode)
 
 ;; enable abbrev mode https://www.masteringemacs.org/article/correcting-typos-misspellings-abbrev
-(setq-default abbrev-mode t)
+;; (setq-default abbrev-mode t)
 
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand
@@ -154,8 +154,8 @@
   (setq interprogram-cut-function   #'my/copy-to-osx
         interprogram-paste-function #'my/paste-from-osx))
 
-(setq electric-indent-mode t)
-(setq mac-command-key-is-meta t)
+;; (setq electric-indent-mode t)
+;; (setq mac-command-key-is-meta t)
 
 ;; Strip trailing whitespaces on save
 (add-hook 'before-save-hook

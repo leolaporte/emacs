@@ -1,0 +1,1 @@
+/Users/leo/.emacs.d/straight/repos/treemacs/src/extra/treemacs-projectile.el
