@@ -47,9 +47,9 @@ flycheck_*.el
 # network security
 /network-security.data
 
-/straight/
-/backups/
-/eshell/
-/transient/
-/treestter/
+straight/
+backups/
+eshell/
+transient/
+treestter/
 

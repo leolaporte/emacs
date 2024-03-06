@@ -1,7 +1,0 @@
-ls
-cd .emacs.d/
-cd ../cl
-cd AOC/2023
-ls
-cd
-exit
