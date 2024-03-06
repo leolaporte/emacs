@@ -51,5 +51,8 @@ straight/
 backups/
 eshell/
 transient/
-treestter/
+treesitter/
+ac-comphist.dat
+org-roam.db
+projectile*
 
