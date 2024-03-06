@@ -37,7 +37,7 @@
 ;; load the fantastic lispy for fast CL navigation
 ;; https://github.com/abo-abo/lispy
 (use-package lispy)
-(add-hook 'sly-mode-hook (lambda () (lispy-mode 1)))
+;; (add-hook 'sly-mode-hook (lambda () (lispy-mode 1)))
 
 ;; always split windows vertically
 ;; (I like the REPL on the right on most displays)
