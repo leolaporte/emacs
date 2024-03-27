@@ -37,7 +37,7 @@
 ;; load the fantastic lispy for fast CL navigation
 ;; https://github.com/abo-abo/lispy
 (use-package lispy)
-;; (add-hook 'sly-mode-hook (lambda () (lispy-mode 1)))
+;; (add-hook 'sly-mode-hook (lambda () (lispy-mode 1))) ; load automatically in sly
 
 ;; always split windows vertically
 ;; (I like the REPL on the right on most displays)
@@ -71,3 +71,11 @@
 (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+
+;; use w3m for hyperspec lookup (C-c C-d C-h)
+(straight-use-package 'emacs-w3m)
+(defun hyperspec-lookup--hyperspec-lookup-w3m (orig-fun &rest args)
+  (let ((browse-url-browser-function 'w3m-browse-url))
+    (apply orig-fun args)))
+
+(advice-add 'hyperspec-lookup :around #'hyperspec-lookup--hyperspec-lookup-w3m)
