@@ -11,7 +11,7 @@
   ;; M-x toggle-frame-fullscreen (below MacBook notch)
   (global-set-key (kbd "A-<f10>") 'toggle-frame-fullscreen)
   ;; M-x toggle-frame-maximized (M-<F10>) (all the way over notch)
-  (set-face-attribute 'default nil :family "Fira Code Retina" :height 180)
+  (set-face-attribute 'default nil :family "Iosevka" :height 180)
   (setq initial-frame-alist '((top . 20) (left . 15) (width . 100) (height . 40))))
 
  ((or (equal system-name "Charon.localdomain")
@@ -20,20 +20,12 @@
   ;; M-x toggle-frame-fullscreen (below MacBook notch)
   (global-set-key (kbd "A-<f10>") 'toggle-frame-fullscreen)
   ;; M-x toggle-frame-maximized (M-<F10>) (all the way over notch)
-  (set-face-attribute 'default nil :family "Fira Code Retina" :height 180)
+  (set-face-attribute 'default nil :family "Iosevka" :height 220)
   (setq initial-frame-alist '((top . 20) (left . 15) (width . 100) (height . 40))))
 
  ((equal system-name "mojo")
   (set-face-attribute 'default nil :family "Iosevka" :height 140)
   (setq initial-frame-alist '((top . 150) (left . 1000) (width . 150) (height . 75))))
-
- ((or (equal system-name "max-mac.local") (equal system-name "max-mac"))
-  (set-face-attribute 'default nil :family "Fira Code Retina" :height 180)
-  (setq initial-frame-alist '((top . 100) (left . 500) (width . 250) (height . 85))))
-
- ((equal system-name "xps13")
-  (set-face-attribute 'default nil :family "Iosevka" :height 140)
-  (setq initial-frame-alist '((top . 10) (left . 10) (width . 100) (height . 30))))
 
  ((equal system-name "oryx")
   (set-face-attribute 'default nil :family "Menlo" :height 140)
@@ -41,11 +33,7 @@
 
  ((equal system-name "studio-lenovo")
   (set-face-attribute 'default nil :family "ttf-iosevka" :height 140)
-  (setq initial-frame-alist '((top . 50) (left . 80) (width . 100) (height . 40))))
-
- ((equal system-name "framework")
-  (set-face-attribute 'default nil :family "Iosevka" :height 140)
-  (setq initial-frame-alist '((top . 20) (left . 20) (width . 100) (height . 40)))))
+  (setq initial-frame-alist '((top . 50) (left . 80) (width . 100) (height . 40)))))
 
 ;;; use Modus Operandi high contrast theme - built-into Emacs >28.1
 ;;; https://protesilaos.com/emacs/modus-themes
