@@ -5,13 +5,13 @@
 ;; System specific window and font sizes
 ;; specify system name with (system-name) - eval with Meta-:
 (cond
- ((or (equal system-name "Mercutio.localdomain")
-      (equal system-name "Mercutio")
-      (equal system-name "Mercutio.local"))
+ ((or (equal system-name "Tybalt.localdomain")
+      (equal system-name "Tybalt")
+      (equal system-name "Tybalt.local"))
   ;; M-x toggle-frame-fullscreen (below MacBook notch)
   (global-set-key (kbd "A-<f10>") 'toggle-frame-fullscreen)
   ;; M-x toggle-frame-maximized (M-<F10>) (all the way over notch)
-  (set-face-attribute 'default nil :family "Iosevka" :height 180)
+  (set-face-attribute 'default nil :family "Iosevka" :height 220)
   (setq initial-frame-alist '((top . 20) (left . 15) (width . 100) (height . 40))))
 
  ((or (equal system-name "Charon.localdomain")
@@ -180,3 +180,7 @@
 
 ;; no bell
 (setq ring-bell-function 'ignore)
+
+;; golden-ratio for windows resizing
+(use-package golden-ratio
+  :init (golden-ratio-mode 1))

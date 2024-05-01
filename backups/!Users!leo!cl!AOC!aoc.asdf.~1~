@@ -1,0 +1,45 @@
+(defsystem aoc-common
+           :author "Leo Laporte <leo@leo.fm>"
+           :maintainer "Leo Laporte <leo@leo.fm>"
+           :license "MIT"
+           :version "0.1"
+           :homepage "https://github.com/leolaporte/aoc-cl"
+           :description "Advent of Code solutions, for full problems visit https://adventofcode.com"
+
+           :depends-on  (:serapeum
+            :alexandria
+            :fiveam
+            :iterate
+            :cl-ppcr
+            :str
+            :trivia
+            :trivia.ppcre)
+
+:components ((:module "src"
+                :serial t
+                :components
+                ((:file "Day01/day01")
+                 (:file "Day02/day02")
+                 (:file "Day03/day03")
+                 (:file "Day04/day04")
+                 (:file "Day05/day05")
+                 (:file "Day06/day06")
+                 (:file "Day07/day07")
+                 (:file "Day08/day08")
+                 (:file "Day09/day09")
+                 (:file "Day10/day10")
+                 (:file "Day11/day11")
+                 (:file "Day12/day12")
+                 (:file "Day13/day13")
+                 (:file "Day14/day14")
+                 (:file "Day15/day15")
+                 (:file "Day16/day16")
+                 (:file "Day17/day17")
+                 (:file "Day18/day18")
+                 (:file "Day19/day19")
+                 (:file "Day20/day20")
+                 (:file "Day21/day21")
+                 (:file "Day22/day22")
+                 (:file "Day23/day23")
+                 (:file "Day24/day24")
+                (:file "Day25/day25")))))

@@ -18,6 +18,15 @@
             (setq vertico-multiform-categories '((consult-grep buffer))
                   vertico-multiform-commands '((tmm-menubar flat)
                                                (tmm-shortcut flat)))))
+(use-package vertico-posframe
+  :if (display-graphic-p)
+  :after (vertico)
+  :hook (after-init . vertico-posframe-mode)
+  :custom
+  (vertico-posframe-poshandler #'posframe-poshandler-frame-center)
+  (vertico-posframe-width 150)
+  (vertico-posframe-height vertico-count))
+
 (use-package orderless
   :after vertico
   :config (progn
