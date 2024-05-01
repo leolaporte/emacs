@@ -1,7 +1,0 @@
-:PROPERTIES:
-:ID:       30B02DCB-5B8B-491A-892E-0621D49A9877
-:END:
-
-
-;; This buffer is for text that is not saved, and for Lisp evaluation.
-;; To create a file, visit it with C-x C-f and enter text in its buffer.
