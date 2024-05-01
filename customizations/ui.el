@@ -184,3 +184,5 @@
 ;; golden-ratio for windows resizing
 (use-package golden-ratio
   :init (golden-ratio-mode 1))
+
+(setq golden-ratio-auto-scale t)
