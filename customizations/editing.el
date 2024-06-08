@@ -159,8 +159,7 @@
   (setq interprogram-cut-function   #'my/copy-to-osx
         interprogram-paste-function #'my/paste-from-osx))
 
-;; (setq electric-indent-mode t)
-;; (setq mac-command-key-is-meta t)
+(setq electric-indent-mode t)
 
 ;; Strip trailing whitespaces on save
 (add-hook 'before-save-hook
