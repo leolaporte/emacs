@@ -8,6 +8,11 @@
 (setq scroll-conservatively 100000)
 (setq scroll-preserve-screen-position 1)
 
+;; Prevent inadvertently changing font size when scrolling
+(global-set-key (kbd "<pinch>") 'ignore)
+(global-set-key (kbd "<C-wheel-up>") 'ignore)
+(global-set-key (kbd "<C-wheel-down>") 'ignore)
+
 ;; markdown mode
 (use-package markdown-mode)
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
