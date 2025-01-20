@@ -36,9 +36,9 @@
 
 ;; load the fantastic lispy for fast CL navigation
 ;; https://github.com/abo-abo/lispy
-(use-package lispy)
-(setq-default lispy-no-space t)
-(add-hook 'sly-mode-hook (lambda () (lispy-mode 1))) ; load automatically in sly
+;; (use-package lispy)
+;; (setq-default lispy-no-space t)
+;; (add-hook 'sly-mode-hook (lambda () (lispy-mode 1))) ; load automatically in sly
 
 ;; always split windows vertically
 ;; (I like the REPL on the right on most displays)
@@ -46,9 +46,7 @@
 (setq split-width-threshold 0)
 
 ;; locate lisp package
-(if (eq system-type 'darwin)
-    (setq inferior-lisp-program "/opt/homebrew/bin/sbcl")  ;; MacOS
-  (setq inferior-lisp-program "/usr/bin/sbcl"));; Linux
+(setq inferior-lisp-program "/opt/homebrew/bin/sbcl")  ;; MacOS
 
 ;; colorful parenthesis matching
 (use-package rainbow-delimiters)

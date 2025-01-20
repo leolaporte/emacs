@@ -7,14 +7,8 @@
 (cond
  ((or (equal system-name "Tybalt.localdomain")
       (equal system-name "Tybalt")
-      (equal system-name "Tybalt.local"))
-  ;; M-x toggle-frame-fullscreen (below MacBook notch)
-  (global-set-key (kbd "A-<f10>") 'toggle-frame-fullscreen)
-  ;; M-x toggle-frame-maximized (M-<F10>) (all the way over notch)
-  (set-face-attribute 'default nil :family "Iosevka" :height 220)
-  (setq initial-frame-alist '((top . 20) (left . 15) (width . 100) (height . 40))))
-
- ((or (equal system-name "Charon.localdomain")
+      (equal system-name "Tybalt.local")
+      (equal system-name "Charon.localdomain")
       (equal system-name "Charon")
       (equal system-name "Charon.local"))
   ;; M-x toggle-frame-fullscreen (below MacBook notch)
@@ -27,13 +21,22 @@
   (set-face-attribute 'default nil :family "Iosevka" :height 140)
   (setq initial-frame-alist '((top . 150) (left . 1000) (width . 150) (height . 75))))
 
+ ((or (equal system-name "Mac-mini")
+      (equal system-name "Mac-mini.localdomain")
+      (equal system-name "Mac-mini.local")
+      (equal system-name "Mac-mini.hsd1.ca.comcast.net"))
+  (set-face-attribute 'default nil :family "Iosevka" :height 220)
+  (setq initial-frame-alist '((top . 100) (left . 250) (width . 250) (height . 70))))
+
  ((equal system-name "oryx")
   (set-face-attribute 'default nil :family "Menlo" :height 140)
   (setq initial-frame-alist '((top . 10) (left . 10) (width . 120) (height . 50))))
 
- ((equal system-name "studio-lenovo")
-  (set-face-attribute 'default nil :family "ttf-iosevka" :height 140)
-  (setq initial-frame-alist '((top . 50) (left . 80) (width . 100) (height . 40)))))
+ (t
+  (set-face-attribute 'default nil :family "Iosevka" :height 220)
+  (setq initial-frame-alist '((top . 100) (left . 250) (width . 250) (height . 70))))
+
+ )
 
 ;;; use Modus Operandi high contrast theme - built-into Emacs >28.1
 ;;; https://protesilaos.com/emacs/modus-themes
@@ -184,5 +187,3 @@
 ;; golden-ratio for windows resizing
 ;; (use-package golden-ratio
 ;;   :init (golden-ratio-mode 1))
-
-(setq golden-ratio-auto-scale t)
