@@ -39,7 +39,7 @@
 
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand
-(global-set-key [remap dabbrev-expand] 'hippie-expand)
+(global-set-key [remap dabbrev-expand] 'hippie-expand) ; Meta-/
 
 ;; Lisp-friendly hippie expand
 (setq hippie-expand-try-functions-list
@@ -50,6 +50,9 @@
         try-complete-lisp-symbol))
 
 ;; Yasnippet
+;; Textmate style template expansion
+;; https://github.com/joaotavora/yasnippet
+
 ;; (straight-use-package 'yasnippet)
 ;; (require 'yasnippet)
 ;; (yas-global-mode 1)
@@ -97,6 +100,7 @@
   "comment or uncomment current line"
   (interactive)
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+
 (global-set-key (kbd "C-;") 'toggle-comment-on-line)
 
 ;; use 2 spaces for tabs
@@ -108,11 +112,11 @@
   (keyboard-quit))
 
 ;; fix weird os x kill error
-(defun ns-get-pasteboard ()
-  "Returns the value of the pasteboard, or nil for unsupported formats."
-  (condition-case nil
-      (ns-get-selection-internal 'CLIPBOARD)
-    (quit nil)))
+;; (defun ns-get-pasteboard ()
+;;   "Returns the value of the pasteboard, or nil for unsupported formats."
+;;   (condition-case nil
+;;       (ns-get-selection-internal 'CLIPBOARD)
+;;     (quit nil)))
 
 ;; These settings relate to how emacs interacts with your operating system
 (setq ;; makes killing/yanking interact with the clipboard

@@ -24,7 +24,6 @@
 (setenv "SHELL" shell-file-name)
 (add-hook 'comint-output-filter-functions 'comint-strip-ctrl-m)
 
-
 ;; (defun visit-term-buffer ()
 ;;   "Create or visit a terminal buffer."
 ;;   (interactive)
@@ -35,4 +34,4 @@
 ;;         (vterm (getenv "SHELL")))
 ;;     (switch-to-buffer-other-window "*vterm*")))
 
-;; (global-set-key (kbd "C-c t") #'visit-term-buffer)
+;; (global-set-key (kbd "C-c t") #'visit-term-buffer) ; launch vterm

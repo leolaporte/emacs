@@ -1,0 +1,79 @@
+;;;; Exercises from Paul Graham's ANSI Common Lisp
+;;;; Chapter 4
+;;;; Leo Laporte, 15 April 2022
+
+(in-package #:chap04)
+(require "fiasco") ; for tests
+
+;;; 1. Define a function to take a square array (an array whose dimensions
+;;; are (n n)) and rotate it 90° clockwise:
+;;; > (quarter-turn #2A((a b) (c d)))
+;;;  #2a((C A) (D B))
+;;; You'll need array-dimensions (page 361).
+
+(defun quarter-turn (src)
+  "rotates the given array 90 degrees - assume array is square"
+  (let* ((dim (car (array-dimensions src)))  ; length of sides
+         (dst (make-array (list dim dim))))  ; the result
+    (do ((i 0 (1+ i)))                       ; row by row
+        ((= i dim) dst)                      ; all done - return rotated array
+	(do ((j 0 (1+ j)) (k (1- dim) (1- k))) ; col by col
+            ((= j dim))
+            (setf (aref dst i j) (aref src k i)))))) ; move src to dst
+
+(fiasco:deftest test-quarter-turn ()
+		(fiasco:is (equal (quarter-turn #2A((a b) (c d)))
+				  #2a((C A) (D B)))))
+
+;;; 2. Read the description of reduce on page 368, then use it to define:
+
+;;; (a) copy-list
+(defun my-copy-list (lst)
+  (reduce #'cons lst :from-end t :initial-value '()))
+
+(fiasco:deftest test-my-copy-list ()
+		(fiasco:is (equal (my-copy-list '(1 2 3 4))
+				  '(1 2 3 4))))
+
+;;; (b) reverse (for lists)
+
+(defun my-reverse (lst)
+  (reduce #'(lambda (x y) (cons y x)) lst  :initial-value '()))
+
+(fiasco:deftest test-my-reverse ()
+  (fiasco:is (equal (my-reverse '(1 2 3 4))
+                    '(4 3 2 1))))
+
+;;; 3. Define a structure to represent a tree where each node contains some
+;;; data and has up to three children. Define:
+
+(defstruct tri
+  data left middle right)
+
+;;; (a) a function to copy such a tree (so that no node in the copy is
+;;;     eql to a node in the original)
+
+(defun copy-tri (t)
+  (if (atom t)
+      t
+      (cons (copy-tri (
+
+;;; (b) a function that takes an object and such a tree, and returns true
+;;;    if the object is eql to the data field of one of the nodes
+
+
+
+;;; 4. Define a function that takes a BST and returns a list of its elements
+;;; ordered from greatest to least.
+
+;;; 5. Define bst-ad j oin. This function should take the same arguments as
+;;; bst-insert, but should only insert the object if there is nothing eql to
+;;; it in the tree.
+
+
+;;; 6. The contents of any hash table can be described by an assoc-list whose
+;;; elements are (k . v), for each key-value pair in the hash table. Define
+;;; a function that
+;;;   (a) takes an assoc-list and returns a corresponding hash table
+;;;   (b) takes a hash table and returns a corresponding assoc-list
+

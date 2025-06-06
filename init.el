@@ -26,15 +26,17 @@
 (setq package-enable-at-startup nil)
 
 ;; use straight.el for package installation
-(setq straight-repository-branch "develop")
 (defvar bootstrap-version)
 (let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 6))
+       (expand-file-name
+        "straight/repos/straight.el/bootstrap.el"
+        (or (bound-and-true-p straight-base-dir)
+            user-emacs-directory)))
+      (bootstrap-version 7))
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
         (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
          'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
@@ -45,7 +47,7 @@
 ;; Configure use-package to use straight.el by default
 (use-package straight
   :custom
-  (straight-use-package-by-default t))
+  (straight-use-package-by-default t)) ; implicit :straight t in use-package calls
 
 (straight-pull-package "melpa")  ; update repository
 (straight-pull-package "elpa")

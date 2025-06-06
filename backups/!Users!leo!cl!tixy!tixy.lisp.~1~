@@ -1,0 +1,97 @@
+;;;; tixy.lisp
+;;;; based on tixy.land and https://www.mathsuniverse.com/tixy
+;;;; Common Lisp implementation with CLOG
+
+;; Load CLOG for GUI
+(ql:quickload :clog)
+
+(defpackage :tixy
+  (:use :cl :clog)
+  (:export :start-tixy))
+
+(in-package :tixy)
+
+(defparameter *grid-size* 16)
+(defparameter *dot-size* 5)
+(defparameter *spacing* 10)
+(defparameter *grid-color* "black")
+(defparameter *dot-colors* '("white" "red"))
+(defparameter *body* nil)
+(defparameter *canvas* nil)
+(defparameter *current-expression* nil)
+(defparameter *time-start* (get-universal-time))
+
+(defun on-new-window (body)
+  "Setup the initial page for a new user."
+  (setf *body* body)
+  (setf (title *body*) "TIXY - Lisp Edition")
+  (setf (background-color *body*) *grid-color*)
+  
+  ;; Create a container for our grid
+  (let* ((container (create-div *body*))
+         (grid-width (* *grid-size* (+ *dot-size* *spacing*))))
+    
+    (setf (width container) (format nil "~Apx" grid-width))
+    (setf (height container) (format nil "~Apx" grid-width))
+    (setf (margin container) "50px auto")
+    
+    ;; Create 16x16 grid of dots
+    (dotimes (y *grid-size*)
+      (dotimes (x *grid-size*)
+        (let ((dot (create-div container)))
+          (setf (position dot) "absolute")
+          (setf (left dot) (format nil "~Apx" (* x (+ *dot-size* *spacing*))))
+          (setf (top dot) (format nil "~Apx" (* y (+ *dot-size* *spacing*))))
+          (setf (width dot) (format nil "~Apx" *dot-size*))
+          (setf (height dot) (format nil "~Apx" *dot-size*))
+          (setf (border-radius dot) "50%")
+          (setf (background-color dot) "white")
+          (setf (css-class-name dot) (format nil "dot-~A-~A" x y))))))
+  
+  ;; Start the animation loop
+  (set-interval *body* (lambda () (update-dots)) 50))
+
+(defun calculate-dot-value (x y i t-val)
+  "Calculate the value for a dot based on the current expression."
+  (if *current-expression*
+      (funcall *current-expression* x y i t-val)
+      0.5))  ;; Default value
+
+(defun update-dots ()
+  "Update all dots in the grid."
+  (let ((t-val (/ (- (get-universal-time) *time-start*) 1.0)))
+    (dotimes (y *grid-size*)
+      (dotimes (x *grid-size*)
+        (let* ((i (+ (* y *grid-size*) x))
+               (dot-selector (format nil ".dot-~A-~A" x y))
+               (dot (query-selector *body* dot-selector))
+               (val (calculate-dot-value x y i t-val)))
+          
+          ;; Set size based on absolute value (0.0 to 1.0)
+          (let ((size (* *dot-size* (min 1.0 (max 0.0 (abs val))))))
+            (setf (width dot) (format nil "~Apx" size))
+            (setf (height dot) (format nil "~Apx" size)))
+          
+          ;; Set color (positive = white, negative = red)
+          (setf (background-color dot) 
+                (if (>= val 0) 
+                    (first *dot-colors*) 
+                    (second *dot-colors*))))))))
+
+(defun set-expression (expr)
+  "Set the current expression for the grid."
+  (setf *current-expression* expr)
+  (setf *time-start* (get-universal-time)))
+
+(defun start-tixy ()
+  "Start the TIXY application."
+  (initialize 'on-new-window)
+  
+  ;; Example expression: (lambda (x y i t) (sin (+ t (/ (+ (expt (- x 7.5) 2) (expt (- y 7.5) 2)) 4))))
+  (set-expression (lambda (x y i t) (sin t)))
+  
+  ;; Return a message indicating the app is running
+  "TIXY is running. Open your browser to see the grid.")
+
+;; Start the application when this file is loaded
+(start-tixy)
