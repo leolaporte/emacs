@@ -68,7 +68,7 @@
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
 ;; Org-mode customizations
-(load "org-mode.el")
+;; (load "org-mode.el")
 
 ;; Install helm for completions, etc. -- config cribbed whole from its author
 ;; (load "init-helm.el")

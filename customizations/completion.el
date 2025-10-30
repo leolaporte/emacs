@@ -3,6 +3,27 @@
 ;;; https://codeberg.org/vifon/emacs-config/src/branch/master/emacs.d/lisp/20-completing-read.eln
 ;;; Leo Laporte 6 Sept 2022
 
+;;; Keys
+
+;; Vertico
+;; "C-x M-r" . vertico-repeat
+;; "C-l" . vertico-directory-delete-word
+;; "M-g" . vertico-multiform-grid
+;; "M-q" . vertico-multiform-flat
+
+;; Embark
+;; "C-c o" . embark-act
+;; "C-."   . embark-act
+;; "M-o"   . embark-act
+
+;; Consult
+;; "M-s f" . consult-line
+;; "M-g g" . consult-line
+;; "M-g o" . consult-outline
+;; "M-g i" . consult-imenu
+;; "M-g r" . consult-ripgrep
+;; "C-x C-r" . consult-recent-file
+
 (use-package vertico
   :straight (vertico :files (:defaults "extensions/*"))
   :bind (("C-x M-r" . vertico-repeat)
