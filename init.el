@@ -8,12 +8,7 @@
 ;; with additions from https://emacsredux.com/blog/2020/12/08/favorite-emacs-packages/
 ;; and Mickey Petersen's excellent "Mastering Emacs" https://www.masteringemacs.org/
 ;; and various suggestions from various contribs at https://reddit.com/r/emacs
-
-;; Install packages using straight.el package manager
-;; https://github.com/raxod502/straight.el
-
-;; increase garbage collection threshold to 50MB to reduce time spent in GC
-(setq gc-cons-threshold 50000000)
+;; reorganized and updated with the help of Claude Code 2 November 2025, Leo Laporte
 
 ;; warn before opening giant files over 100MB
 (setq large-file-warning-threshold 100000000)
