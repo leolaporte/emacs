@@ -2,6 +2,7 @@
 ;; leo laporte, 8 Dec 2020
 ;; Updated on Framework Fri 19 Nov 2021 03:45:58 PM PST
 ;; Cleaned up Tue 23 Nov 2021 03:40:42 PM PST
+;; see .emacs.d/keybindings.md for custom keybindings
 
 ;; Based on https://github.com/flyingmachine/emacs-for-clojure
 ;; with additions from https://emacsredux.com/blog/2020/12/08/favorite-emacs-packages/
@@ -10,7 +11,6 @@
 
 ;; Install packages using straight.el package manager
 ;; https://github.com/raxod502/straight.el
-;;;;
 
 ;; increase garbage collection threshold to 50MB to reduce time spent in GC
 (setq gc-cons-threshold 50000000)
@@ -21,9 +21,6 @@
 ;; Define when to check for package modifications,
 ;; for improved straight.el startup time.
 (setq straight-check-for-modifications '(check-on-save find-when-checking))
-
-;; Disable package.el in favor of straight.el
-(setq package-enable-at-startup nil)
 
 ;; use straight.el for package installation
 (defvar bootstrap-version)
@@ -42,15 +39,8 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(straight-use-package 'use-package) ; preserve compatibility with all those use-package statements!
-
-;; Configure use-package to use straight.el by default
-(use-package straight
-  :custom
-  (straight-use-package-by-default t)) ; implicit :straight t in use-package calls
-
-(straight-pull-package "melpa")  ; update repository
-(straight-pull-package "elpa")
+;; To update package repositories, run manually: M-x straight-pull-all
+;; or M-x straight-pull-package
 
 ;; follow symlinks if necessary (can slow Emacs)
 ;; (setq find-file-visit-truename t)
@@ -85,6 +75,12 @@
 ;; For editing lisps
 (load "lisp.el")
 
+;; Advent of Code helpers
+(load "aoc-helpers.el")
+
+;; Everybody Codes helpers
+(load "ec-helpers.el")
+
 ;; for Clojure
 ;; (load "setup-clojure.el")
 
@@ -98,8 +94,3 @@
 ;; These customizations change the way emacs looks and disable/enable
 ;; some user interface elements
 (load "ui.el")
-
-;; All set up, now start server for faster loading in future
-(require 'server)
-(unless (server-running-p)
-  (server-start))

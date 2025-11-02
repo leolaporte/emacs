@@ -14,24 +14,29 @@
 (global-set-key (kbd "<C-wheel-down>") 'ignore)
 
 ;; markdown mode
-(use-package markdown-mode)
+(straight-use-package 'markdown-mode)
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-hook 'markdown-mode-hook 'visual-line-mode)
 (add-hook 'text-mode-hook 'visual-line-mode)
-(add-hook 'prog-mode-hook 'visual-line-mode)
+;; Note: visual-line-mode removed from prog-mode for better performance
 
 ;; turn on agressive-indent-mode for all major modes
 ;; https://github.com/Malabarba/aggressive-indent-mode/blob/master/README.md
-(use-package aggressive-indent)
+(straight-use-package 'aggressive-indent)
+(require 'aggressive-indent)
 (global-aggressive-indent-mode 1)
 (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 (add-to-list 'aggressive-indent-excluded-modes 'python-mode)
+(add-to-list 'aggressive-indent-excluded-modes 'markdown-mode)
+(add-to-list 'aggressive-indent-excluded-modes 'yaml-mode)
+(add-to-list 'aggressive-indent-excluded-modes 'text-mode)
 
 ;; replaces emacs undo with a tree-based system
 ;;https://elpa.gnu.org/packages/undo-tree.html
-(use-package undo-tree)
+(straight-use-package 'undo-tree)
+(require 'undo-tree)
 (global-undo-tree-mode)
 
 ;; enable abbrev mode https://www.masteringemacs.org/article/correcting-typos-misspellings-abbrev
@@ -70,8 +75,7 @@
 ;; When you visit a file, point goes to the last place where it
 ;; was when you previously visited the same file.
 ;; http://www.emacswiki.org/emacs/SavePlace
-(require 'saveplace)
-(setq-default save-place t)
+(save-place-mode 1)
 ;; keep track of saved places in ~/.emacs.d/places
 (setq save-place-file (concat user-emacs-directory "places"))
 

@@ -1,0 +1,28 @@
+# -*- mode: snippet -*-
+# name: aoc-grid
+# key: grid
+# --
+(defun parse-grid (lines)
+  "Parse LINES into a 2D grid (hash table with (row . col) keys)."
+  (let ((grid (make-hash-table :test 'equal)))
+    (iter (for line in lines)
+          (for row from 0)
+          (iter (for char in-string line)
+                (for col from 0)
+                (setf (gethash (cons row col) grid) char)))
+    grid))
+
+(defun grid-dimensions (grid)
+  "Return (max-row max-col) of GRID."
+  (iter (for (row . col) in-hashtable grid)
+        (maximizing row into max-row)
+        (maximizing col into max-col)
+        (finally (return (values (1+ max-row) (1+ max-col))))))
+
+(defun print-grid (grid)
+  "Print GRID to stdout."
+  (multiple-value-bind (rows cols) (grid-dimensions grid)
+    (iter (for row from 0 below rows)
+          (iter (for col from 0 below cols)
+                (princ (gethash (cons row col) grid #\Space)))
+          (terpri))))$0

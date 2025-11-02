@@ -12,7 +12,7 @@
 (set-face-attribute 'default nil :family "Iosevka Nerd Font Mono" :height 220)
 
 ;; rightsize window
-(setq initial-frame-alist '((top . 50) (left . 30)))
+(setq initial-frame-alist '((top . 50) (left . 700)))
 
 (defun set-frame-size-according-to-resolution ()
   (interactive)
@@ -22,7 +22,7 @@
         ;; and smaller 80 column windows for smaller displays
         ;; pick whatever numbers make sense for you
         (if (> (x-display-pixel-width) 1280)
-            (add-to-list 'default-frame-alist (cons 'width 120))
+            (add-to-list 'default-frame-alist (cons 'width 180))
           (add-to-list 'default-frame-alist (cons 'width 80)))
         ;; for the height, subtract a couple hundred pixels
         ;; from the screen height (for panels, menubars and

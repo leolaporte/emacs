@@ -3,7 +3,8 @@
 
 ;; git integration
 ;; https://magit.vc
-(use-package magit)
+(straight-use-package 'magit)
+(require 'magit)
 
 ;; notmuch email
 ;; (require 'notmuch)

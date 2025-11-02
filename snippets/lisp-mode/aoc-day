@@ -1,0 +1,71 @@
+# -*- mode: snippet -*-
+# name: aoc-day
+# key: aocday
+# --
+;;;; Day${2:$(format "%02d" (string-to-number yas-text))}.lisp
+;;;; ${1:$(format "%04d" (string-to-number yas-text} AOC Day ${2:1} solution
+;;;; Common Lisp solutions by Leo Laporte (with lots of help)
+;;;; Started: `(format-time-string "%d %b %Y")`
+;;;; Finished:
+
+;; ----------------------------------------------------------------------------
+;; Prologue code for setup - same every day
+;; ----------------------------------------------------------------------------
+
+(defpackage :aoc.${1:$(format "%04d" (string-to-number yas-text}.day${2:$(format "%02d" (string-to-number yas-text))}
+  (:use  #:cl :iterate :alexandria)
+  (:local-nicknames
+   (:re :cl-ppcre)       ; regex
+   (:sr :serapeum)       ; utilities
+   (:tr :trivia)         ; pattern matching
+   (:5a :fiveam)))       ; testing framework
+
+(in-package :day${2:$(format "%02d" (string-to-number yas-text))})
+
+(setf 5a:*run-test-when-defined* t)  ; test as we go
+(setf 5a:*verbose-failures* t)       ; show failing expression
+(sr:toggle-pretty-print-hash-table)  ; automatic pretty print for hashes
+(declaim (optimize (debug 3)))       ; max debugging info
+;; (declaim (optimize (speed 3)))    ; max speed if needed
+
+(defparameter *data-file* "~/cl/AOC/${1:2025}/Day_${2:$(format "%02d" (string-to-number yas-text))}/input.txt"
+  "Downloaded from the AoC problem set")
+
+#| ----------------------------------------------------------------------------
+--- Part One ---
+
+$0
+
+---------------------------------------------------------------------------- |#
+
+(defparameter *example* )
+
+(defun day_${2:$(format "%02d" (string-to-number yas-text))}-1 (los)
+  "Solve part 1."
+  nil)
+
+(5a:test day_${2:$(format "%02d" (string-to-number yas-text))}-1-test
+  (5a:is (= (day_${2:$(format "%02d" (string-to-number yas-text))}-1 *example*) )))
+
+#| ----------------------------------------------------------------------------
+--- Part Two ---
+
+---------------------------------------------------------------------------- |#
+
+(defun day_${2:$(format "%02d" (string-to-number yas-text))}-2 (los)
+  "Solve part 2."
+  nil)
+
+(5a:test day_${2:$(format "%02d" (string-to-number yas-text))}-2-test
+  (5a:is (= (day_${2:$(format "%02d" (string-to-number yas-text))}-2 *example*) )))
+
+;; now solve the puzzle!
+;; (time (format t "The answer to AOC ${1:2025} Day ${2:1} Part 1 is ~a"
+;;               (day_${2:$(format "%02d" (string-to-number yas-text))}-1 (uiop:read-file-lines *data-file*))))
+
+;; (time (format t "The answer to AOC ${1:2025} Day ${2:1} Part 2 is ~a"
+;;               (day_${2:$(format "%02d" (string-to-number yas-text))}-2 (uiop:read-file-lines *data-file*))))
+
+;; ----------------------------------------------------------------------------
+;; Timings with SBCL on Framework Desktop w/ AMD AI Max+ 395, 128GB RAM
+;; ----------------------------------------------------------------------------

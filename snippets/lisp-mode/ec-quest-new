@@ -1,0 +1,96 @@
+# -*- mode: snippet -*-
+# name: ec-quest-new
+# key: ecquest
+# --
+;;;; Quest${2:$(format "%02d" (string-to-number yas-text))}.lisp
+;;;; ${1:2024} Everybody Codes solution
+;;;; Leo Laporte
+;;;; Started: `(format-time-string "%d %b %Y at %H:%M")`
+;;;; Finished:
+
+;; ----------------------------------------------------------------------------
+;; Prologue code for setup - same every day
+;; ----------------------------------------------------------------------------
+
+;; I pre-load these in .sbclrc:
+;; (ql:quickload '(:fiveam :alexandria :iterate :cl-ppcre :trivia :serapeum :str))
+
+(defpackage :ec.${1:$(format "%d" (string-to-number yas-text))}.quest${2:$(format "%02d" (string-to-number yas-text))}
+  (:use  #:cl :alexandria :iterate)
+  (:local-nicknames
+   (:re :cl-ppcre)       ; regex
+   (:sr :serapeum)       ; utilities
+   (:tr :trivia)         ; pattern matching
+   (:5a :fiveam)))       ; testing framework
+
+(in-package :ec.${1:$(format "%d" (string-to-number yas-text))}.quest${2:$(format "%02d" (string-to-number yas-text))})
+
+(setf 5a:*run-test-when-defined* t)  ; test as we go
+(sr:toggle-pretty-print-hash-table)  ; pretty print for hashes
+(declaim (optimize (debug 3)))       ; max debugging info
+;; (declaim (optimize (speed 3))     ; max speed if needed
+
+(defparameter *data-file1* "~/cl/ec/${1:$(format "%d" (string-to-number yas-text))}/quest${2:$(format "%02d" (string-to-number yas-text))}/input1.txt"
+  "Downloaded problem set")
+(defparameter *data-file2* "~/cl/ec/${1:$(format "%d" (string-to-number yas-text))}/quest${2:$(format "%02d" (string-to-number yas-text))}/input2.txt"
+  "Downloaded problem set")
+(defparameter *data-file3* "~/cl/ec/${1:$(format "%d" (string-to-number yas-text))}/quest${2:$(format "%02d" (string-to-number yas-text))}/input3.txt"
+  "Downloaded problem set")
+
+#| ----------------------------------------------------------------------------
+--- Part One ---
+
+---------------------------------------------------------------------------- |#
+
+(defparameter *example* )
+
+(defun quest${2:$(format "%02d" (string-to-number yas-text))}-1
+  nil
+  )
+
+(5a:test quest${2:$(format "%02d" (string-to-number yas-text))}-1-test
+  (5a:is (= (quest${2:$(format "%02d" (string-to-number yas-text))}-1 ))))
+
+#| ----------------------------------------------------------------------------
+--- Part Two ---
+
+---------------------------------------------------------------------------- |#
+
+(defparameter *example2* )
+
+(defun quest${2:$(format "%02d" (string-to-number yas-text))}-2
+  nil
+  )
+
+(5a:test quest${2:$(format "%02d" (string-to-number yas-text))}-2-test
+  (5a:is (= (quest${2:$(format "%02d" (string-to-number yas-text))}-2 ))))
+
+#| ----------------------------------------------------------------------------
+--- Part Three ---
+
+---------------------------------------------------------------------------- |#
+
+(defparameter *example3* )
+
+(defun quest${2:$(format "%02d" (string-to-number yas-text))}-3
+  nil
+  )
+
+(5a:test quest${2:$(format "%02d" (string-to-number yas-text))}-3-test
+  (5a:is (= (quest${2:$(format "%02d" (string-to-number yas-text))}-3 ))))
+
+;; ----------------------------------------------------------------------------
+
+;; now solve the puzzle!
+;; (time (format t "The answer to EC Quest ${2:1} Part 1 is ~a"
+;;	      (quest${2:$(format "%02d" (string-to-number yas-text))}-1 (uiop:read-file-lines *data-file1*))))
+
+;; (time (format t "The answer to EC Quest ${2:1} Part 2 is ~a"
+;;	      (quest${2:$(format "%02d" (string-to-number yas-text))}-2 (uiop:read-file-lines *data-file2*))))
+
+;; (time (format t "The answer to EC Quest ${2:1} Part 3 is ~a"
+;;	      (quest${2:$(format "%02d" (string-to-number yas-text))}-3 (uiop:read-file-lines *data-file3*))))
+
+;; ----------------------------------------------------------------------------
+;; Timings with SBCL on Framework Desktop w/ AMD AI Max+ 395, 128GB RAM
+;; ----------------------------------------------------------------------------

@@ -1,0 +1,22 @@
+;;; -*- coding: utf-8; mode: lisp-data -*-
+(("/home/leo/cl/ec/2024/quest01/q01.lisp" . 459)
+ ("/home/leo/cl/AOC/template.lisp" . 1952)
+ ("/home/leo/.emacs.d/snippets/lisp-mode/ec-quest-new" . 3545)
+ ("/home/leo/cl/ec/2025/quest02/q02.lisp" . 1460)
+ ("/home/leo/cl/ec/2024/quest02/q02.lisp" . 686)
+ ("/home/leo/cl/AOC/2024/Day_15/Day_15.lisp" . 609)
+ ("/home/leo/.emacs.d/keybindings.md" . 1454)
+ ("/home/leo/.emacs.d/customizations/lisp.el" . 3243)
+ ("/home/leo/.emacs.d/customizations/unused/"
+  (dired-filename . "/home/leo/.emacs.d/customizations"))
+ ("/home/leo/.emacs.d/customizations/"
+  (dired-filename . "/home/leo/.emacs.d"))
+ ("/home/leo/.emacs.d/"
+  (dired-filename . "/home/leo/.emacs.d/snippets"))
+ ("/home/leo/.emacs.d/snippets/"
+  (dired-filename . "/home/leo/.emacs.d/snippets/lisp-mode"))
+ ("/home/leo/.emacs.d/snippets/lisp-mode/"
+  (dired-filename . "/home/leo/.emacs.d/snippets/lisp-mode/aoc-day"))
+ ("/home/leo/.emacs.d/snippets/lisp-mode/aoc-day" . 932)
+ ("/home/leo/.emacs.d/customizations/aoc-helpers.el" . 117)
+ ("/home/leo/.emacs.d/init.el" . 3403))
