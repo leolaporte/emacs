@@ -1,4 +1,0 @@
-(in-package :aoc.2024.day10)####
-(uiop:read-file-lines *data-file*)####
-(in-package :day15)####
-(in-package :ec.2024.quest02)####
