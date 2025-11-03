@@ -50,24 +50,6 @@
 ;; folder for customization files
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
-;; New completion framework
-(load "completion.el")
-
-;; Hard-to-categorize customizations like Magit
-(load "misc.el")
-
-;; Set up vterm for shell
-(load "shell-integration.el")
-
-;; For editing lisps
-(load "lisp.el")
-
-;; Advent of Code helpers
-(load "aoc-helpers.el")
-
-;; Everybody Codes helpers
-(load "ec-helpers.el")
-
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
 
@@ -78,3 +60,22 @@
 ;; These customizations change the way emacs looks and disable/enable
 ;; some user interface elements
 (load "ui.el")
+
+;; Completion framework
+(load "completion.el")
+
+;; Hard-to-categorize customizations like Magit
+(load "misc.el")
+
+;; For editing lisps
+(load "lisp.el")
+
+;; Set up vterm for shell
+(load "shell-integration.el")
+
+;; Advent of Code helpers
+(load "aoc-helpers.el")
+
+;; Everybody Codes helpers
+(load "ec-helpers.el")
+
