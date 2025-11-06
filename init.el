@@ -66,7 +66,6 @@
 
 ;; Hard-to-categorize customizations like Magit
 (load "misc.el")
-
 ;; For editing lisps
 (load "lisp.el")
 
