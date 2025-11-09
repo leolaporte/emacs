@@ -11,6 +11,14 @@
 ;; and Mickey Petersen's excellent "Mastering Emacs" https://www.masteringemacs.org/
 ;; and various suggestions from various contribs at https://reddit.com/r/emacs
 
+;; Disable package.el in favor of straight.el
+;; This must be set before package.el is loaded
+(setq package-enable-at-startup nil)
+
+;; Increase garbage collection threshold during startup
+;; (Will be reset in init.el)
+(setq gc-cons-threshold most-positive-fixnum)
+
 ;; warn before opening giant files over 100MB
 (setq large-file-warning-threshold 100000000)
 
@@ -52,7 +60,7 @@
 
 ;; These customizations change the way emacs looks and disable/enable
 ;; some user interface elements
-(load "ui.el")
+(load "ui.el")                          ;
 
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
@@ -61,13 +69,14 @@
 ;; switch buffers, and choose options from the minibuffer.
 (load "navigation.el")
 
+;; For editing lisps
+(load "lisp.el")
+
 ;; Completion framework
 (load "completion.el")
 
 ;; Hard-to-categorize customizations like Magit
 (load "misc.el")
-;; For editing lisps
-(load "lisp.el")
 
 ;; Set up vterm for shell
 (load "shell-integration.el")
@@ -77,4 +86,3 @@
 
 ;; Everybody Codes helpers
 (load "ec-helpers.el")
-

@@ -38,6 +38,8 @@
 #| ----------------------------------------------------------------------------
 --- Part One ---
 
+LEO'S NOTES:
+
 ---------------------------------------------------------------------------- |#
 
 (defparameter *example* )
@@ -47,10 +49,12 @@
   )
 
 (5a:test day${2:$(format "%02d" (string-to-number yas-text))}-1-test
-  (5a:is (= (day${2:$(format "%02d" (string-to-number yas-text))}-1 ))))
+  (5a:is (= (day${2:$(format "%02d" (string-to-number yas-text))}-1 *example*))))
 
 #| ----------------------------------------------------------------------------
 --- Part Two --
+
+LEO'S NOTES:
 
 ---------------------------------------------------------------------------- |#
 
@@ -59,7 +63,7 @@
   )
 
 (5a:test day${2:$(format "%02d" (string-to-number yas-text))}-2-test
-  (5a:is (= (day${2:$(format "%02d" (string-to-number yas-text))}-2 ))))
+  (5a:is (= (day${2:$(format "%02d" (string-to-number yas-text))}-2 *example*))))
 
 ;; ----------------------------------------------------------------------------
 

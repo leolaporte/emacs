@@ -40,44 +40,50 @@
 #| ----------------------------------------------------------------------------
 --- Part One ---
 
+LEO'S NOTES:
+
 ---------------------------------------------------------------------------- |#
 
-(defparameter *example* )
+(defparameter *example1* )
 
-(defun quest${2:$(format "%02d" (string-to-number yas-text))}-1
+(defun quest${2:$(format "%02d" (string-to-number yas-text))}-1 (input)
   nil
   )
 
 (5a:test quest${2:$(format "%02d" (string-to-number yas-text))}-1-test
-  (5a:is (= (quest${2:$(format "%02d" (string-to-number yas-text))}-1 ))))
+  (5a:is (= (quest${2:$(format "%02d" (string-to-number yas-text))}-1 *example1*))))
 
 #| ----------------------------------------------------------------------------
 --- Part Two ---
+
+LEO'S NOTES:
 
 ---------------------------------------------------------------------------- |#
 
 (defparameter *example2* )
 
-(defun quest${2:$(format "%02d" (string-to-number yas-text))}-2
+(defun quest${2:$(format "%02d" (string-to-number yas-text))}-2 (input)
   nil
   )
 
 (5a:test quest${2:$(format "%02d" (string-to-number yas-text))}-2-test
-  (5a:is (= (quest${2:$(format "%02d" (string-to-number yas-text))}-2 ))))
+  (5a:is (= (quest${2:$(format "%02d" (string-to-number yas-text))}-2 *example2*))))
 
 #| ----------------------------------------------------------------------------
 --- Part Three ---
+
+LEO'S NOTES:
 
 ---------------------------------------------------------------------------- |#
 
 (defparameter *example3* )
 
-(defun quest${2:$(format "%02d" (string-to-number yas-text))}-3
+(defun quest${2:$(format "%02d" (string-to-number yas-text))}-3 (input)
   nil
   )
 
 (5a:test quest${2:$(format "%02d" (string-to-number yas-text))}-3-test
-  (5a:is (= (quest${2:$(format "%02d" (string-to-number yas-text))}-3 ))))
+  (5a:is (= (quest${2:$(format "%02d" (string-to-number yas-text))}-3 *example3*))))
 
 ;; ----------------------------------------------------------------------------
 

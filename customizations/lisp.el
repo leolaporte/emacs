@@ -16,6 +16,12 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
+(straight-use-package 'treemacs)
+(require 'treemacs)
+
+(straight-use-package 'treemacs-projectile)
+(require 'treemacs-projectile)
+
 ;; Common Lisp support - btw I use sly
 (straight-use-package 'sly)
 (require 'sly)
@@ -95,6 +101,23 @@
 
 (add-hook 'sly-connected-hook 'aoc/setup-repl-output)
 
+;; Auto-complete
+;; https://github.com/auto-complete
+(straight-use-package 'auto-complete)
+(with-eval-after-load 'sly
+  (require 'auto-complete))
+
+(straight-use-package 'ac-sly)  ; add support for Sly
+(with-eval-after-load 'sly
+  (require 'ac-sly))
+
+(add-hook 'sly-mode-hook 'set-up-sly-ac)
+
+(eval-after-load 'auto-complete
+  '(add-to-list 'ac-modes 'sly-mrepl-mode))
+
+(global-auto-complete-mode t)
+
 ;; always split windows vertically
 ;; (I like the REPL on the right on most displays)
 (setq split-height-threshold nil)
@@ -111,15 +134,16 @@
 (set-face-foreground 'rainbow-delimiters-depth-5-face "#6cc")  ; cyan
 
 (set-face-foreground 'rainbow-delimiters-depth-6-face "#c6c")  ; magenta
- (set-face-foreground 'rainbow-delimiters-depth-7-face "#ccc")  ; light gray
- (set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
- (set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
+(set-face-foreground 'rainbow-delimiters-depth-7-face "#ccc")  ; light gray
+(set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
+(set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
 
 ;; Highlights matching parenthesis
 (show-paren-mode 1)
 
-;; Paredit for structured editing in Lisp source files only
-;; Note: This is enabled ONLY for lisp-mode (source files), not for REPL or SLY frames
+;; Paredit for structured editing in Lisp source files only Note: This
+;; is enabled ONLY for lisp-mode (source files), not for REPL or SLY
+;; frames
 (straight-use-package 'paredit)
 (require 'paredit)
 (add-hook 'lisp-mode-hook #'enable-paredit-mode)
