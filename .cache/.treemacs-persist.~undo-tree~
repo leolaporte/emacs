@@ -1,9 +1,0 @@
-(undo-tree-save-format-version . 1)
-"aea5696685b2ac35e6876167abfeffeffef93e3d"
-[nil nil nil nil (26896 6521 544617 0) 0 nil]
-([nil nil ((1 . 52) (t . -1)) nil (26896 6521 544615 0) 0 nil])
-([nil current ((1 . 52) ("* Default
-** 2024
- - path :: ~/Source/lisp/ec/2024
-" . -1) (t 26896 6521 545187 734000)) nil (26896 54455 634655 0) 0 nil])
-nil

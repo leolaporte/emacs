@@ -1,1 +1,0 @@
-/Users/leo/.emacs.d/straight/repos/seq/seq-pkg.el
