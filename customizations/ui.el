@@ -2,9 +2,6 @@
 ;; some user interface elements.
 ;; Léo Laporte Sun Nov 21 10:30:29 2021
 
-;; System specific window and font sizes
-;; specify system name with (system-name) - eval with Meta-:
-
 ;; set Alt-F10 to toggle full screen
 (global-set-key (kbd "A-<f10>") 'toggle-frame-fullscreen)
 

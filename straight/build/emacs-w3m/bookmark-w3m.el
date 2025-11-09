@@ -1,0 +1,1 @@
+/Users/leo/.emacs.d/straight/repos/emacs-w3m/bookmark-w3m.el

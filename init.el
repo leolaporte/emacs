@@ -11,14 +11,6 @@
 ;; and Mickey Petersen's excellent "Mastering Emacs" https://www.masteringemacs.org/
 ;; and various suggestions from various contribs at https://reddit.com/r/emacs
 
-;; Disable package.el in favor of straight.el
-;; This must be set before package.el is loaded
-(setq package-enable-at-startup nil)
-
-;; Increase garbage collection threshold during startup
-;; (Will be reset in init.el)
-(setq gc-cons-threshold most-positive-fixnum)
-
 ;; warn before opening giant files over 100MB
 (setq large-file-warning-threshold 100000000)
 

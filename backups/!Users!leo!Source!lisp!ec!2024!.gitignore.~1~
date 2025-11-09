@@ -1,0 +1,15 @@
+.*
+#*
+~*
+*~
+*#
+*.bak
+*.fasl
+*.FASL
+*.lisp-temp
+*.~undo-tree
+*sync-conflict*
+tmp
+template*
+*.txt
+.gitignore

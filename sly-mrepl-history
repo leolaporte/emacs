@@ -1,0 +1,2 @@
+(parse-common-gears *example3*)####
+(in-package :ec.2025.quest04)####
