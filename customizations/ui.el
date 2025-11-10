@@ -1,6 +1,7 @@
-;; These customizations change the way emacs looks and disable/enable
+;; These customizations change the way emacs looks and disable/enable  -*- lexical-binding: t; -*-
 ;; some user interface elements.
 ;; Léo Laporte Sun Nov 21 10:30:29 2021
+
 
 ;; set Alt-F10 to toggle full screen
 (global-set-key (kbd "A-<f10>") 'toggle-frame-fullscreen)

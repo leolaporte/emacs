@@ -1,5 +1,6 @@
-;; These customizations make it easier for you to navigate files,
+;; These customizations make it easier for you to navigate files,  -*- lexical-binding: t; -*-
 ;; switch buffers, and choose options from the minibuffer.
+
 
 ;; minor mode for Emacs that displays the key bindings following your currently entered incomplete command
 (straight-use-package 'which-key)

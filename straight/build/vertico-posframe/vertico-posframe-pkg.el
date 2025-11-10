@@ -1,0 +1,1 @@
+/Users/leo/.emacs.d/straight/repos/vertico-posframe/vertico-posframe-pkg.el

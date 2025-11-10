@@ -1,5 +1,6 @@
-;;;; Everybody Codes Helper Functions
+;;;; Everybody Codes Helper Functions  -*- lexical-binding: t; -*-
 ;;;; Leo Laporte - November 2025 (with help from Claude Code)
+
 
 ;; Quick function to create new EC quest file
 (defun ec/new-quest (year quest)
@@ -18,42 +19,42 @@ Uses yasnippet template from ~/.emacs.d/snippets/lisp-mode/ec-quest-new."
     (when (= (buffer-size) 0)
       (if (file-exists-p template-file)
           (let ((content (with-temp-buffer
-                          (insert-file-contents template-file)
-                          ;; Skip the yasnippet header (first 4 lines)
-                          (goto-char (point-min))
-                          (forward-line 4)
-                          (buffer-substring (point) (point-max)))))
+                           (insert-file-contents template-file)
+                           ;; Skip the yasnippet header (first 4 lines)
+                           (goto-char (point-min))
+                           (forward-line 4)
+                           (buffer-substring (point) (point-max)))))
             ;; Replace yasnippet fields in order: complex expressions first, then simple defaults
 
             ;; 1. Replace ${1:$(expression)} with year - match the elisp expression forms
             (setq content (replace-regexp-in-string
-                          "\\${1:\\$[^}]*}"
-                          (format "%d" year)
-                          content))
+                           "\\${1:\\$[^}]*}"
+                           (format "%d" year)
+                           content))
 
             ;; 2. Replace ${2:$(expression)} with zero-padded quest
             (setq content (replace-regexp-in-string
-                          "\\${2:\\$[^}]*}"
-                          quest-str
-                          content))
+                           "\\${2:\\$[^}]*}"
+                           quest-str
+                           content))
 
             ;; 3. Replace ${1:default} with year - simple default values
             (setq content (replace-regexp-in-string
-                          "\\${1:[0-9]+}"
-                          (format "%d" year)
-                          content))
+                           "\\${1:[0-9]+}"
+                           (format "%d" year)
+                           content))
 
             ;; 4. Replace ${2:default} with quest - simple default values
             (setq content (replace-regexp-in-string
-                          "\\${2:[0-9]+}"
-                          (format "%d" quest)
-                          content))
+                           "\\${2:[0-9]+}"
+                           (format "%d" quest)
+                           content))
 
             ;; 5. Replace backtick expressions for date
             (setq content (replace-regexp-in-string
-                          "`(format-time-string[^`]+)`"
-                          current-date
-                          content))
+                           "`(format-time-string[^`]+)`"
+                           current-date
+                           content))
 
             ;; 6. Remove the $0 cursor placeholder
             (setq content (replace-regexp-in-string "\\$0" "" content))

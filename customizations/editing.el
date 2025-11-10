@@ -1,4 +1,4 @@
-;; Customizations relating to editing a buffer.
+;; Customizations relating to editing a buffer.  -*- lexical-binding: t; -*-
 
 ;; spaces not tabs!
 (setq-default indent-tabs-mode nil)

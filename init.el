@@ -1,5 +1,6 @@
-;; emacs configuration
+;; emacs configuration  -*- lexical-binding: t; -*-
 ;; leo laporte, 8 Dec 2020
+
 ;; Updated on Framework Fri 19 Nov 2021 03:45:58 PM PST
 ;; Cleaned up Tue 23 Nov 2021 03:40:42 PM PST
 ;; reorganized and updated with the help of Claude Code 2 November 2025

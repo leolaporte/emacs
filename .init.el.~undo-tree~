@@ -1,0 +1,10 @@
+(undo-tree-save-format-version . 1)
+"2d592ad5b333c8972b7b0f06b6f3cb804409a033"
+[nil nil nil nil (26897 23269 307019 0) 0 nil]
+([nil nil ((51 . 53) (t 26897 22466 790565 473000)) nil (26897 23269 307019 0) 0 nil])
+([nil nil ((nil rear-nonsticky nil 81 . 82) (nil fontified nil 79 . 82) (nil fontified nil 78 . 79) (nil fontified nil 77 . 78) (nil fontified nil 59 . 77) (nil fontified nil 58 . 59) (nil fontified nil 55 . 58) (nil fontified nil 51 . 55) (51 . 82)) nil (26897 23269 307016 0) 0 nil])
+([nil nil ((#(";;; -*- lexical-binding: t; -*-" 0 4 (face font-lock-comment-delimiter-face fontified t) 4 31 (face font-lock-comment-face fontified t)) . 51) (undo-tree-id2 . -31) (undo-tree-id3 . -31) (undo-tree-id4 . -31) (undo-tree-id5 . -31) (undo-tree-id6 . -31) (undo-tree-id7 . -31) (undo-tree-id8 . -31) (undo-tree-id9 . -31) (t 26897 23269 307843 508000)) nil (26897 23650 812011 0) 0 nil])
+([nil nil ((#("
+" 0 1 (fontified t)) . 51) (undo-tree-id0 . 1) (undo-tree-id1 . -1)) nil (26897 23650 812008 0) 0 nil])
+([nil current ((28 . 49) (23 . 31)) nil (26897 23650 811999 0) 0 nil])
+nil

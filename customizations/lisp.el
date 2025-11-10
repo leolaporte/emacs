@@ -1,4 +1,4 @@
-;; Lisp specific packages
+;; Lisp specific packages  -*- lexical-binding: t; -*-
 ;; including sly and lispy
 ;; Leo Laporte 5 Sept 2023
 ;; see .emacs.d/keybindings.md for custom keybindings

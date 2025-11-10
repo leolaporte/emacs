@@ -1,4 +1,4 @@
-;; Miscellaneous extensions
+;; Miscellaneous extensions  -*- lexical-binding: t; -*-
 ;; Leo Laporte Tue 23 Nov 2021 03:32:38 PM PST
 
 ;; git integration

@@ -1,0 +1,1 @@
+/Users/leo/.emacs.d/straight/repos/queue/.github/PULL_REQUEST_TEMPLATE.md

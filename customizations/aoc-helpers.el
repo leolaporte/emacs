@@ -1,5 +1,6 @@
-;;;; Advent of Code Helper Functions and Configuration
+;;;; Advent of Code Helper Functions and Configuration  -*- lexical-binding: t; -*-
 ;;;; Leo Laporte - November 2025 (with help from Claude Code)
+
 
 ;; Configuration for AOC session cookie
 (defvar aoc/session-cookie-file "~/.aoc-session"

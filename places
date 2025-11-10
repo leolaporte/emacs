@@ -1,0 +1,16 @@
+;;; -*- coding: utf-8; mode: lisp-data -*-
+(("/Users/leo/.emacs.d/customizations/misc.el" . 198)
+ ("/Users/leo/.emacs.d/customizations/editing.el" . 74)
+ ("/Users/leo/.emacs.d/customizations/custom.el" . 99)
+ ("/Users/leo/.emacs.d/customizations/ec-helpers.el" . 64)
+ ("/Users/leo/.emacs.d/early-init.el" . 92)
+ ("/Users/leo/.emacs.d/init.el" . 49)
+ ("/Users/leo/.emacs.d/customizations/"
+  (dired-filename
+   . "/Users/leo/.emacs.d/customizations/aoc-helpers.el"))
+ ("/Users/leo/.emacs.d/customizations/aoc-helpers.el" . 81)
+ ("/Users/leo/.emacs.d/customizations/shell-integration.el" . 64)
+ ("/Users/leo/.emacs.d/customizations/ui.el" . 96)
+ ("/Users/leo/.emacs.d/customizations/completion.el" . 102)
+ ("/Users/leo/.emacs.d/customizations/lisp.el" . 52)
+ ("/Users/leo/.emacs.d/customizations/navigation.el" . 92))
