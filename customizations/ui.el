@@ -9,8 +9,28 @@
 ;; set default font and size
 (set-face-attribute 'default nil :family "Iosevka Nerd Font Mono" :height 220)
 
-;; open maximized
 (push '(fullscreen . maximized) default-frame-alist)
+
+;; rightsize window
+;; (setq initial-frame-alist '((top . 50) (left . 50)))
+
+;; (defun set-frame-size-according-to-resolution ()
+;;   (interactive)
+;;   (if window-system
+;;       (progn
+;;         ;; use 120 char wide window for largeish displays
+;;         ;; and smaller 80 column windows for smaller displays
+;;         ;; pick whatever numbers make sense for you
+;;         (if (> (display-pixel-width) 1280)
+;;             (add-to-list 'default-frame-alist (cons 'width 200))
+;;           (add-to-list 'default-frame-alist (cons 'width 120)))
+;;         ;; for the height, subtract a couple hundred pixels
+;;         ;; from the screen height (for panels, menubars and
+;;         ;; whatnot), then divide by the height of a char to
+;;         ;; get the height we want
+;;         (add-to-list 'default-frame-alist
+;;                      (cons 'height (/ (- (display-pixel-height) 120)
+;;                                       (frame-char-height)))))))
 
 ;;; use Modus Operandi high contrast theme - built-into Emacs >28.1
 ;;; https://protesilaos.com/emacs/modus-themes
