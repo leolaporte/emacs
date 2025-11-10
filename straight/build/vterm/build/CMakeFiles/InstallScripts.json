@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/Users/leo/.emacs.d/straight/build/vterm/build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

@@ -1,8 +1,0 @@
-(undo-tree-save-format-version . 1)
-"00de020c9c5e052295e6cb45361c8a5575a3c0b5"
-[nil nil nil nil (26897 23380 186857 0) 0 nil]
-([nil nil ((2544 . 2545) (2504 . 2505) (2447 . 2448) (2301 . 2302) (2254 . 2255) (2211 . 2212) (2047 . 2048) (2001 . 2002) (1958 . 1959) (1795 . 1796) (1758 . 1759) (1713 . 1714) (1555 . 1556) (1509 . 1510) (1464 . 1465) (1154 . 1155) (1110 . 1111) (1059 . 1060) (987 . 988) (923 . 924) (nil rear-nonsticky nil 132 . 133) (nil fontified nil 132 . 133) (nil fontified nil 131 . 132) (nil fontified nil 129 . 131) (nil fontified nil 128 . 129) (nil fontified nil 127 . 128) (nil fontified nil 109 . 127) (nil fontified nil 108 . 109) (nil fontified nil 105 . 108) (nil fontified nil 101 . 105) (101 . 133) (t 26897 22466 787832 127000)) nil (26897 23380 186854 0) 0 nil])
-([nil nil ((#(";" 0 1 (face font-lock-comment-delimiter-face fontified t)) . -101) (undo-tree-id0 . -1) (undo-tree-id1 . -1) (undo-tree-id2 . -1) (undo-tree-id3 . -1) 102 (t 26897 23380 187720 41000)) nil (26897 23443 197527 0) 0 nil])
-([nil nil ((#(";; -*- lexical-binding: t; -*-" 0 3 (face font-lock-comment-delimiter-face fontified t) 3 30 (face font-lock-comment-face fontified t)) . 101) (undo-tree-id0 . -30) (t 26897 23443 198480 186000)) nil (26897 23811 906865 0) 0 nil])
-([nil current ((43 . 64) (38 . 46)) nil (26897 23811 906857 0) 0 nil])
-nil

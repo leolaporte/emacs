@@ -1,1 +1,0 @@
-/Users/leo/.emacs.d/straight/repos/sly-asdf/slynk-asdf.lisp
