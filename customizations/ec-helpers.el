@@ -1,4 +1,6 @@
-;;;; Everybody Codes Helper Functions  -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t; -*-
+
+;;;; Everybody Codes Helper Functions
 ;;;; Leo Laporte - November 2025 (with help from Claude Code)
 
 

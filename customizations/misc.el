@@ -1,9 +1,11 @@
-;; Miscellaneous extensions  -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t; -*-
+
+;; Miscellaneous extensions
 ;; Leo Laporte Tue 23 Nov 2021 03:32:38 PM PST
 
 ;; git integration
 ;; https://magit.vc
-;; (straight-use-package 'magit)
+(straight-use-package 'magit)
 ;; (require 'magit)
 
 ;; notmuch email

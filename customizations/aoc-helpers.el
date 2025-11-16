@@ -1,4 +1,6 @@
-;;;; Advent of Code Helper Functions and Configuration  -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t; -*-
+
+;;;; Advent of Code Helper Functions and Configuration
 ;;;; Leo Laporte - November 2025 (with help from Claude Code)
 
 

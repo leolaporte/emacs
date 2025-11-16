@@ -1,4 +1,6 @@
-;; including some macOS specific mods  -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t; -*-
+
+;; including some macOS specific mods
 ;; modified to use  vterm - Léo 2/24/2
 
 ;; my preferred terminal emulator package - requires emacs built with module support

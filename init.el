@@ -1,4 +1,6 @@
-;; emacs configuration  -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t; -*-
+
+;; Main emacs configuration (calls other files in ./customizations/
 ;; leo laporte, 8 Dec 2020
 
 ;; Updated on Framework Fri 19 Nov 2021 03:45:58 PM PST
@@ -62,11 +64,11 @@
 ;; switch buffers, and choose options from the minibuffer.
 (load "navigation.el")
 
-;; For editing lisps
-(load "lisp.el")
-
 ;; Completion framework
 (load "completion.el")
+
+;; For editing lisps
+(load "lisp.el")
 
 ;; Hard-to-categorize customizations like Magit
 (load "misc.el")

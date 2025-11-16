@@ -1,4 +1,6 @@
-;;; Customizations using Emacs M-x Customize will automatically go here.  -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t; -*-
+
+;;; Customizations using Emacs M-x Customize will automatically go here.
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

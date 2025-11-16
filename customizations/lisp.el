@@ -1,10 +1,12 @@
-;; Lisp specific packages  -*- lexical-binding: t; -*-
+;; -*- lexical-binding: t; -*-
+
+;; Lisp specific packages
 ;; including sly and lispy
 ;; Leo Laporte 5 Sept 2023
 ;; see .emacs.d/keybindings.md for custom keybindings
 
 ;; First locate lisp package depending on OS
-(if (eq system-type 'darwin)                              ; macOS
+(if (eq system-type 'darwin)
     (setq inferior-lisp-program "/opt/homebrew/bin/sbcl") ;; MacOS
   (setq inferior-lisp-program "/usr/bin/sbcl")) ;; otherwise Linux
 
@@ -16,6 +18,7 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
+;; nice directory trees
 (straight-use-package 'treemacs)
 (require 'treemacs)
 
@@ -26,15 +29,19 @@
 (straight-use-package 'sly)
 (require 'sly)
 
+
 ;; Sly extensions for enhanced Common Lisp development
+(add-to-list 'sly-contribs 'sly-quicklisp 'append)
 (straight-use-package 'sly-quicklisp)
 (with-eval-after-load 'sly
   (require 'sly-quicklisp))
 
+(add-to-list 'sly-contribs 'sly-asdf 'append)
 (straight-use-package 'sly-asdf)
 (with-eval-after-load 'sly
   (require 'sly-asdf))
 
+(add-to-list 'sly-contribs 'sly-macrostep 'append)
 (straight-use-package 'sly-macrostep)
 (with-eval-after-load 'sly
   (require 'sly-macrostep))
@@ -141,12 +148,20 @@
 ;; Highlights matching parenthesis
 (show-paren-mode 1)
 
+;; Now you have a choice PAREDIT or LISPY - I go back and forth. Pick one:
+
 ;; Paredit for structured editing in Lisp source files only Note: This
 ;; is enabled ONLY for lisp-mode (source files), not for REPL or SLY
 ;; frames
+;; http://danmidwood.com/content/2014/11/21/animated-paredit.html
 (straight-use-package 'paredit)
 (require 'paredit)
 (add-hook 'lisp-mode-hook #'enable-paredit-mode)
+
+;; or use Lispy for a more vi single-key style
+;; (straight-use-package 'lispy)
+;; (require 'lispy)
+;; (add-hook 'lisp-mode-hook (lambda () (lispy-mode 1)))
 
 ;; eldoc-mode shows documentation in the minibuffer when writing code
 ;; http://www.emacswiki.org/emacs/ElDoc
