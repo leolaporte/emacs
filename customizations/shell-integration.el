@@ -4,14 +4,11 @@
 ;; modified to use  vterm - Léo 2/24/2
 
 ;; my preferred terminal emulator package - requires emacs built with module support
-(straight-use-package 'vterm)
-(require 'vterm)
+(use-package vterm)
 
-(when (memq window-system '(mac ns x))
-  "Set $MANPATH, $PATH and exec-path from your shell when executed in a GUI frame on OS X or Linux.
-   https://github.com/purcell/exec-path-from-shell"
-  (straight-use-package 'exec-path-from-shell) ; imports $PATH
-  (require 'exec-path-from-shell)
+(use-package exec-path-from-shell
+  :if (memq window-system '(mac ns x))
+  :config
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-envs '("PATH")))
 
@@ -19,8 +16,7 @@
 (if (eq system-type 'darwin) ; macOS
     (progn
       (setq explicit-shell-file-name "/opt/homebrew/bin/fish")
-      (straight-use-package 'osx-lib)                  ; mac specific utilities
-      (require 'osx-lib))
+      (use-package osx-lib))                  ; mac specific utilities
   (setq explicit-shell-filename "/usr/bin/fish"))                ; else Linux
 
 (setq shell-file-name "fish")

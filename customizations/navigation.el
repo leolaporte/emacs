@@ -5,9 +5,9 @@
 
 
 ;; minor mode for Emacs that displays the key bindings following your currently entered incomplete command
-(straight-use-package 'which-key)
-(require 'which-key)
-(which-key-mode)
+(use-package which-key
+  :config
+  (which-key-mode))
 
 ;; ;; ;; Hyperbole minor mode - M-Ret to click links https://www.gnu.org/software/hyperbole/
 ;; (straight-use-package 'hyperbole)
@@ -41,47 +41,37 @@
 (setq recentf-max-menu-items 40)
 
 ;; Use avy-mode to jump to words in buffer
-(straight-use-package 'avy)
-(require 'avy)
-(avy-setup-default)
-(global-set-key (kbd "C-c C-j") 'avy-resume)
-(global-set-key (kbd "C-:") 'avy-goto-char)
-(global-set-key (kbd "C-'") 'avy-goto-char-2)
-(global-set-key (kbd "M-g w") 'avy-goto-word-1)
-(global-set-key (kbd "M-j") 'avy-goto-char-timer)
+(use-package avy
+  :config
+  (avy-setup-default)
+  :bind (("C-c C-j" . avy-resume)
+         ("C-:" . avy-goto-char)
+         ("C-'" . avy-goto-char-2)
+         ("M-g w" . avy-goto-word-1)
+         ("M-j" . avy-goto-char-timer)))
 
 ;; a Collection of Ridiculously Useful eXtensions for Emacs
 ;; https://github.com/bbatsov/crux
 ;; see navigation.el for special crux keys
-(straight-use-package 'crux)
-(require 'crux)
-
-;; CRUX key remaps
-;; (global-set-key (kbd "C-c o") #'crux-open-with)
-
-(global-set-key (kbd "s-r") #'crux-recentf-ido-find-file)
-
-(global-set-key (kbd "C-k") #'crux-smart-kill-line)
-(global-set-key (kbd "C-<backspace>") #'crux-kill-line-backwards)
-(global-set-key (kbd "C-c f") #'crux-recentf-find-file)
-(global-set-key (kbd "C-c e") #'crux-eval-and-replace) ; evaluate e-lisp exp and replace with result
-(global-set-key (kbd "C-c I") #'crux-find-user-init-file)
-(global-set-key (kbd "C-c d") #'crux-duplicate-current-line-or-region)
-(global-set-key (kbd "C-c r") #'crux-rename-file-and-buffer)
-(global-set-key (kbd "C-c k") #'crux-kill-other-buffers)
-
-;; Crux remaps
-(global-set-key [(shift return)] #'crux-smart-open-line)
-(global-set-key [(control shift return)] #'crux-smart-open-line-above)
-(global-set-key [remap move-beginning-of-line] #'crux-move-beginning-of-line)
-(global-set-key [remap kill-whole-line] #'crux-kill-whole-line)
+(use-package crux
+  :bind (("s-r" . crux-recentf-ido-find-file)
+         ("C-k" . crux-smart-kill-line)
+         ("C-<backspace>" . crux-kill-line-backwards)
+         ("C-c f" . crux-recentf-find-file)
+         ("C-c e" . crux-eval-and-replace)
+         ("C-c I" . crux-find-user-init-file)
+         ("C-c d" . crux-duplicate-current-line-or-region)
+         ("C-c r" . crux-rename-file-and-buffer)
+         ("C-c k" . crux-kill-other-buffers)
+         ("<S-return>" . crux-smart-open-line)
+         ("<C-S-return>" . crux-smart-open-line-above)
+         ([remap move-beginning-of-line] . crux-move-beginning-of-line)
+         ([remap kill-whole-line] . crux-kill-whole-line)))
 
 ;; Increase the selected region by semantic units
 ;; https://github.com/magnars/expand-region.el
-(straight-use-package 'expand-region)
-;; bind to C-=
-(require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
+(use-package expand-region
+  :bind ("C-=" . er/expand-region))
 
 ;; Shows a list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)

@@ -10,28 +10,38 @@
 ;; set default font and size
 (set-face-attribute 'default nil :family "Iosevka Nerd Font Mono" :height 220)
 
-(push '(fullscreen . maximized) default-frame-alist)
+;; Remember and restore window position and size
+(defvar leo/frame-geometry-file
+  (expand-file-name "frame-geometry" user-emacs-directory)
+  "File to save frame geometry (position and size).")
 
-;; rightsize window
-;; (setq initial-frame-alist '((top . 50) (left . 50)))
+(defun leo/save-frame-geometry ()
+  "Save current frame geometry to file."
+  (when (display-graphic-p)
+    (let ((geometry (frame-parameters)))
+      (with-temp-file leo/frame-geometry-file
+        (print (list (cons 'left (frame-parameter nil 'left))
+                     (cons 'top (frame-parameter nil 'top))
+                     (cons 'width (frame-parameter nil 'width))
+                     (cons 'height (frame-parameter nil 'height)))
+               (current-buffer))))))
 
-;; (defun set-frame-size-according-to-resolution ()
-;;   (interactive)
-;;   (if window-system
-;;       (progn
-;;         ;; use 120 char wide window for largeish displays
-;;         ;; and smaller 80 column windows for smaller displays
-;;         ;; pick whatever numbers make sense for you
-;;         (if (> (display-pixel-width) 1280)
-;;             (add-to-list 'default-frame-alist (cons 'width 200))
-;;           (add-to-list 'default-frame-alist (cons 'width 120)))
-;;         ;; for the height, subtract a couple hundred pixels
-;;         ;; from the screen height (for panels, menubars and
-;;         ;; whatnot), then divide by the height of a char to
-;;         ;; get the height we want
-;;         (add-to-list 'default-frame-alist
-;;                      (cons 'height (/ (- (display-pixel-height) 120)
-;;                                       (frame-char-height)))))))
+(defun leo/restore-frame-geometry ()
+  "Restore frame geometry from file."
+  (when (and (display-graphic-p)
+             (file-exists-p leo/frame-geometry-file))
+    (with-temp-buffer
+      (insert-file-contents leo/frame-geometry-file)
+      (goto-char (point-min))
+      (let ((geometry (read (current-buffer))))
+        (when geometry
+          (modify-frame-parameters nil geometry))))))
+
+;; Save frame geometry on exit
+(add-hook 'kill-emacs-hook #'leo/save-frame-geometry)
+
+;; Restore frame geometry on startup (after frame is created)
+(add-hook 'after-init-hook #'leo/restore-frame-geometry)
 
 ;;; use Modus Operandi high contrast theme - built-into Emacs >28.1
 ;;; https://protesilaos.com/emacs/modus-themes
@@ -171,16 +181,13 @@
 (blink-cursor-mode 0)
 
 ;; full path in title bar
-(setq-default frame-title-format '(:eval (if buffer-file-name
-                                             (format "%s: %s" (buffer-name) buffer-file-name)
-                                           (buffer-name))))
+(setq-default frame-title-format
+              '(:eval (if buffer-file-name
+                          (format "%s: %s" (buffer-name) buffer-file-name)
+                        (buffer-name))))
 
 ;; don't pop up font menu
 (global-set-key (kbd "s-t") #'(lambda () (interactive)))
 
 ;; no bell
 (setq ring-bell-function 'ignore)
-
-;; golden-ratio for windows resizing
-;; (use-package golden-ratio
-;;   :init (golden-ratio-mode 1))

@@ -5,8 +5,20 @@
 
 ;; git integration
 ;; https://magit.vc
-(straight-use-package 'magit)
-;; (require 'magit)
+(use-package magit)
+
+;; Automatically byte-compile and native-compile Emacs Lisp files
+;; https://github.com/jamescherti/compile-angel.el
+(use-package compile-angel
+  :demand t
+  :custom
+  (compile-angel-verbose nil)  ; set to t for debugging
+  :config
+  ;; Exclude init files from automatic compilation to avoid recursion issues
+  (add-to-list 'compile-angel-excluded-files "/init.el")
+  (add-to-list 'compile-angel-excluded-files "/early-init.el")
+  ;; Enable automatic compilation on load
+  (compile-angel-on-load-mode 1))
 
 ;; notmuch email
 ;; (require 'notmuch)

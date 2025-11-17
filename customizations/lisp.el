@@ -1,8 +1,8 @@
 ;; -*- lexical-binding: t; -*-
 
 ;; Lisp specific packages
-;; including sly and lispy
-;; Leo Laporte 5 Sept 2023
+;; including sly paredit and lispy
+;; Leo Laporte 5 Sept 2023-17 Nov 2025
 ;; see .emacs.d/keybindings.md for custom keybindings
 
 ;; First locate lisp package depending on OS
@@ -10,41 +10,35 @@
     (setq inferior-lisp-program "/opt/homebrew/bin/sbcl") ;; MacOS
   (setq inferior-lisp-program "/usr/bin/sbcl")) ;; otherwise Linux
 
-;; project navigation
-;; projectile everywhere!
-(straight-use-package 'projectile)
-(require 'projectile)
-(projectile-global-mode)
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+;; project navigation -- projectile everywhere!
+(use-package projectile
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("C-c p" . projectile-command-map)))
 
 ;; nice directory trees
-(straight-use-package 'treemacs)
-(require 'treemacs)
+(use-package treemacs)
 
-(straight-use-package 'treemacs-projectile)
-(require 'treemacs-projectile)
+(use-package treemacs-projectile
+  :after (treemacs projectile))
 
 ;; Common Lisp support - btw I use sly
-(straight-use-package 'sly)
-(require 'sly)
-
+(use-package sly
+  :config
+  (add-to-list 'sly-contribs 'sly-quicklisp 'append)
+  (add-to-list 'sly-contribs 'sly-asdf 'append)
+  (add-to-list 'sly-contribs 'sly-macrostep 'append))
 
 ;; Sly extensions for enhanced Common Lisp development
-(add-to-list 'sly-contribs 'sly-quicklisp 'append)
-(straight-use-package 'sly-quicklisp)
-(with-eval-after-load 'sly
-  (require 'sly-quicklisp))
+(use-package sly-quicklisp
+  :after sly)
 
-(add-to-list 'sly-contribs 'sly-asdf 'append)
-(straight-use-package 'sly-asdf)
-(with-eval-after-load 'sly
-  (require 'sly-asdf))
+(use-package sly-asdf
+  :after sly)
 
-(add-to-list 'sly-contribs 'sly-macrostep 'append)
-(straight-use-package 'sly-macrostep)
-(with-eval-after-load 'sly
-  (require 'sly-macrostep))
+(use-package sly-macrostep
+  :after sly)
 
 ;; launch Sly whenever a lisp file is opened
 (add-hook 'sly-mode-hook
@@ -110,20 +104,14 @@
 
 ;; Auto-complete
 ;; https://github.com/auto-complete
-(straight-use-package 'auto-complete)
-(with-eval-after-load 'sly
-  (require 'auto-complete))
+(use-package auto-complete
+  :config
+  (global-auto-complete-mode t)
+  (add-to-list 'ac-modes 'sly-mrepl-mode))
 
-(straight-use-package 'ac-sly)  ; add support for Sly
-(with-eval-after-load 'sly
-  (require 'ac-sly))
-
-(add-hook 'sly-mode-hook 'set-up-sly-ac)
-
-(eval-after-load 'auto-complete
-  '(add-to-list 'ac-modes 'sly-mrepl-mode))
-
-(global-auto-complete-mode t)
+(use-package ac-sly
+  :after (auto-complete sly)
+  :hook (sly-mode . set-up-sly-ac))
 
 ;; always split windows vertically
 ;; (I like the REPL on the right on most displays)
@@ -131,37 +119,35 @@
 (setq split-width-threshold 0)
 
 ;; colorful parenthesis matching
-(straight-use-package 'rainbow-delimiters)
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
- (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
- (set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
- (set-face-foreground 'rainbow-delimiters-depth-3-face "#69f")  ; blue
- (set-face-foreground 'rainbow-delimiters-depth-4-face "#cc6")  ; yellow
-(set-face-foreground 'rainbow-delimiters-depth-5-face "#6cc")  ; cyan
-
-(set-face-foreground 'rainbow-delimiters-depth-6-face "#c6c")  ; magenta
-(set-face-foreground 'rainbow-delimiters-depth-7-face "#ccc")  ; light gray
-(set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
-(set-face-foreground 'rainbow-delimiters-depth-9-face "#666")  ; dark gray
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode)
+  :config
+  (set-face-foreground 'rainbow-delimiters-depth-1-face "#c66")  ; red
+  (set-face-foreground 'rainbow-delimiters-depth-2-face "#6c6")  ; green
+  (set-face-foreground 'rainbow-delimiters-depth-3-face "#69f")  ; blue
+  (set-face-foreground 'rainbow-delimiters-depth-4-face "#cc6")  ; yellow
+  (set-face-foreground 'rainbow-delimiters-depth-5-face "#6cc")  ; cyan
+  (set-face-foreground 'rainbow-delimiters-depth-6-face "#c6c")  ; magenta
+  (set-face-foreground 'rainbow-delimiters-depth-7-face "#ccc")  ; light gray
+  (set-face-foreground 'rainbow-delimiters-depth-8-face "#999")  ; medium gray
+  (set-face-foreground 'rainbow-delimiters-depth-9-face "#666")) ; dark gray
 
 ;; Highlights matching parenthesis
 (show-paren-mode 1)
 
-;; Now you have a choice PAREDIT or LISPY - I go back and forth. Pick one:
+;; Now you have a choice PAREDIT or LISPY - I go back and forth. Both
+;; can be installed without too much redundancy.
 
 ;; Paredit for structured editing in Lisp source files only Note: This
 ;; is enabled ONLY for lisp-mode (source files), not for REPL or SLY
 ;; frames
 ;; http://danmidwood.com/content/2014/11/21/animated-paredit.html
-(straight-use-package 'paredit)
-(require 'paredit)
-(add-hook 'lisp-mode-hook #'enable-paredit-mode)
+(use-package paredit
+  :hook (lisp-mode . enable-paredit-mode))
 
 ;; or use Lispy for a more vi single-key style
-;; (straight-use-package 'lispy)
-;; (require 'lispy)
-;; (add-hook 'lisp-mode-hook (lambda () (lispy-mode 1)))
+(use-package lispy
+  :hook (lisp-mode . lispy-mode))
 
 ;; eldoc-mode shows documentation in the minibuffer when writing code
 ;; http://www.emacswiki.org/emacs/ElDoc
@@ -170,20 +156,20 @@
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
 
 ;; Yasnippet for code templates (great for Advent of Code!)
-(straight-use-package 'yasnippet)
-(require 'yasnippet)
-(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-(yas-global-mode 1)
+(use-package yasnippet
+  :custom
+  (yas-snippet-dirs '("~/.emacs.d/snippets"))
+  :config
+  (yas-global-mode 1))
 
 ;; Common yasnippet snippet collection
-(straight-use-package 'yasnippet-snippets)
-(with-eval-after-load 'yasnippet
-  (require 'yasnippet-snippets))
+(use-package yasnippet-snippets
+  :after yasnippet)
 
 ;; use w3m for hyperspec lookup (C-c C-d C-h)
-(straight-use-package 'emacs-w3m)
-(defun hyperspec-lookup--hyperspec-lookup-w3m (orig-fun &rest args)
-  (let ((browse-url-browser-function 'w3m-browse-url))
-    (apply orig-fun args)))
-
-(advice-add 'hyperspec-lookup :around #'hyperspec-lookup--hyperspec-lookup-w3m)
+(use-package w3m
+  :config
+  (defun hyperspec-lookup--hyperspec-lookup-w3m (orig-fun &rest args)
+    (let ((browse-url-browser-function 'w3m-browse-url))
+      (apply orig-fun args)))
+  (advice-add 'hyperspec-lookup :around #'hyperspec-lookup--hyperspec-lookup-w3m))

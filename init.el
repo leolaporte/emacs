@@ -9,41 +9,43 @@
 
 ;; see .emacs.d/keybindings.md for custom keybindings
 
-;; Based on https://github.com/flyingmachine/emacs-for-clojure
-;; with additions from https://emacsredux.com/blog/2020/12/08/favorite-emacs-packages/
-;; and Mickey Petersen's excellent "Mastering Emacs" https://www.masteringemacs.org/
-;; and various suggestions from various contribs at https://reddit.com/r/emacs
+;; Based on https://github.com/flyingmachine/emacs-for-clojure with
+;; additions from
+;; https://emacsredux.com/blog/2020/12/08/favorite-emacs-packages/ and
+;; Mickey Petersen's excellent "Mastering Emacs"
+;; https://www.masteringemacs.org/ and various suggestions from
+;; various contribs at https://reddit.com/r/emacs and lately with
+;; considerable help in refactoring and optimization from Claude code!
+;; Really helpful. See Claude.md for more info.
 
 ;; warn before opening giant files over 100MB
 (setq large-file-warning-threshold 100000000)
 
-;; Define when to check for package modifications,
-;; for improved straight.el startup time.
-(setq straight-check-for-modifications '(check-on-save find-when-checking))
+;; Initialize package.el
+(require 'package)
 
-;; use straight.el for package installation
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name
-        "straight/repos/straight.el/bootstrap.el"
-        (or (bound-and-true-p straight-base-dir)
-            user-emacs-directory)))
-      (bootstrap-version 7))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+;; Add MELPA repository
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
-;; To update package repositories, run manually: M-x straight-pull-all
-;; or M-x straight-pull-package
+;; Initialize package system
+(package-initialize)
+
+;; Bootstrap use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; Enable use-package
+(require 'use-package)
+
+;; Ensure packages are installed by default
+(setq use-package-always-ensure t)
+
+;; To update packages, run: M-x package-list-packages, then U x
 
 ;;;;
-;; Customization
-;; All the installed packages are in these files, purely for organizational purposes
+;; Customization All the installed packages are in these files, purely
+;; for organizational purposes
 ;;;;
 
 ;; Store emacs's customizations elsewhere
@@ -55,7 +57,7 @@
 
 ;; These customizations change the way emacs looks and disable/enable
 ;; some user interface elements
-(load "ui.el")                          ;
+(load "ui.el")
 
 ;; These customizations make editing a bit nicer.
 (load "editing.el")

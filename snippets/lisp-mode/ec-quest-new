@@ -12,9 +12,6 @@
 ;; Prologue code for setup - same every day
 ;; ----------------------------------------------------------------------------
 
-;; I pre-load these in .sbclrc:
-;; (ql:quickload '(:fiveam :alexandria :iterate :cl-ppcre :trivia :serapeum :str))
-
 (defpackage :ec.${1:$(format "%d" (string-to-number yas-text))}.quest${2:$(format "%02d" (string-to-number yas-text))}
   (:use  #:cl :alexandria :iterate)
   (:local-nicknames
@@ -37,12 +34,14 @@
 (defparameter *data-file3* "~/cl/ec/${1:$(format "%d" (string-to-number yas-text))}/quest${2:$(format "%02d" (string-to-number yas-text))}/input3.txt"
   "Downloaded problem set")
 
-#| ----------------------------------------------------------------------------
---- Part One ---
+;; ----------------------------------------------------------------------------
+;;
+;;                                --- Part One ---
+;;
+;; LEO'S NOTES:
+;;
+;; ----------------------------------------------------------------------------
 
-LEO'S NOTES:
-
----------------------------------------------------------------------------- |#
 
 (defparameter *example1* )
 
@@ -53,12 +52,14 @@ LEO'S NOTES:
 (5a:test quest${2:$(format "%02d" (string-to-number yas-text))}-1-test
   (5a:is (= (quest${2:$(format "%02d" (string-to-number yas-text))}-1 *example1*))))
 
-#| ----------------------------------------------------------------------------
---- Part Two ---
 
-LEO'S NOTES:
+;; ----------------------------------------------------------------------------
+;;                                --- Part Two ---
+;;
+;; LEO'S NOTES:
+;;
+;; ----------------------------------------------------------------------------
 
----------------------------------------------------------------------------- |#
 
 (defparameter *example2* )
 
@@ -69,12 +70,13 @@ LEO'S NOTES:
 (5a:test quest${2:$(format "%02d" (string-to-number yas-text))}-2-test
   (5a:is (= (quest${2:$(format "%02d" (string-to-number yas-text))}-2 *example2*))))
 
-#| ----------------------------------------------------------------------------
---- Part Three ---
 
-LEO'S NOTES:
-
----------------------------------------------------------------------------- |#
+;; ----------------------------------------------------------------------------
+;;                              --- Part Three ---
+;;
+;; LEO'S NOTES:
+;;
+;; ----------------------------------------------------------------------------
 
 (defparameter *example3* )
 

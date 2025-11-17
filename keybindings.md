@@ -167,9 +167,11 @@ n
 
 ## Common Lisp / Sly
 
-### Paredit (Structural Editing)
+### Structural Editing: Paredit & Lispy
 
-Paredit is enabled in all Lisp modes. Key commands:
+**Note**: Both Paredit and Lispy are enabled in lisp-mode. They work together, with Lispy's single-key bindings active when the cursor is at special positions (before/after parentheses).
+
+#### Paredit (Traditional Key Bindings)
 
 | Keybinding | Command | Description |
 |------------|---------|-------------|
@@ -183,6 +185,42 @@ Paredit is enabled in all Lisp modes. Key commands:
 | `M-J` | `paredit-join-sexps` | Join two adjacent s-expressions |
 | `C-M-f` | `forward-sexp` | Move forward by s-expression |
 | `C-M-b` | `backward-sexp` | Move backward by s-expression |
+
+#### Lispy (Single-Key Bindings at Special Positions)
+
+Lispy bindings activate when cursor is before `(` or after `)` or when region is active:
+
+**Navigation:**
+| Key | Command | Description |
+|-----|---------|-------------|
+| `j` | `lispy-down` | Move down into nested lists |
+| `k` | `lispy-up` | Move up out of lists |
+| `h` | `lispy-left` | Move to previous sibling s-expression |
+| `l` | `lispy-right` | Move to next sibling s-expression |
+| `f` | `lispy-flow` | Step inside a list (move forward into expression) |
+| `[` / `]` | - | Jump to opening/closing parenthesis |
+
+**List Manipulation:**
+| Key | Command | Description |
+|-----|---------|-------------|
+| `>` | `lispy-slurp` | Slurp (pull next element into current list) |
+| `<` | `lispy-barf` | Barf (push last element out of current list) |
+| `r` | `lispy-raise` | Raise (replace parent with current s-expression) |
+| `c` | `lispy-clone` | Clone (duplicate current s-expression) |
+| `s` | `lispy-move-down` | Move s-expression down within parent |
+| `w` | `lispy-move-up` | Move s-expression up within parent |
+| `C` | `lispy-convolute` | Convolute (restructure nested expressions) |
+
+**Other Useful Commands:**
+| Key | Command | Description |
+|-----|---------|-------------|
+| `m` | `lispy-mark-list` | Mark the current list |
+| `e` | `lispy-eval` | Evaluate the current expression |
+| `a` | `lispy-ace-symbol` | Jump to symbol with ace-jump |
+| `q` | `lispy-ace-paren` | Jump to parenthesis with ace-jump |
+| `d` | `lispy-different` | Toggle between different bracket types |
+
+**Special Position**: Place cursor right after `)` or right before `(` to activate single-key bindings.
 
 ### Quick Evaluation (REPL-Driven Development)
 
@@ -316,5 +354,9 @@ Each section above references its source file:
 
 ---
 
-**Last Updated**: 2025-11-02
+**Last Updated**: 2025-11-17
 **Configuration Location**: `~/.emacs.d/`
+
+**Recent Changes**:
+- Added Lispy keybindings (single-key structural editing at special positions)
+- Note: Both Paredit and Lispy are now enabled in lisp-mode

@@ -16,30 +16,29 @@
 (global-set-key (kbd "<C-wheel-down>") 'ignore)
 
 ;; markdown mode
-(straight-use-package 'markdown-mode)
-(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-(add-hook 'markdown-mode-hook 'visual-line-mode)
-(add-hook 'text-mode-hook 'visual-line-mode)
+(use-package markdown-mode
+  :mode (("\\.markdown\\'" . markdown-mode)
+         ("\\.md\\'" . markdown-mode))
+  :hook ((markdown-mode . visual-line-mode)
+         (text-mode . visual-line-mode)))
 ;; Note: visual-line-mode removed from prog-mode for better performance
 
 ;; turn on agressive-indent-mode for all major modes
 ;; https://github.com/Malabarba/aggressive-indent-mode/blob/master/README.md
-(straight-use-package 'aggressive-indent)
-(require 'aggressive-indent)
-(global-aggressive-indent-mode 1)
-(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'python-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'markdown-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'yaml-mode)
-(add-to-list 'aggressive-indent-excluded-modes 'text-mode)
+(use-package aggressive-indent
+  :config
+  (global-aggressive-indent-mode 1)
+  (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'python-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'markdown-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'yaml-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'text-mode))
 
 ;; replaces emacs undo with a tree-based system
 ;;https://elpa.gnu.org/packages/undo-tree.html
-(straight-use-package 'undo-tree)
-(require 'undo-tree)
-(global-undo-tree-mode)
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode))
 
 ;; enable abbrev mode https://www.masteringemacs.org/article/correcting-typos-misspellings-abbrev
 ;; (setq-default abbrev-mode t)
