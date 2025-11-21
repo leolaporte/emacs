@@ -4,10 +4,10 @@
 
 ## Overview
 
-Leo's Emacs configuration optimized for Common Lisp development, with
-a focus on Advent of Code and competitive programming. Features
-automatic compilation, persistent window geometry, and a complete
-modern completion stack. Refactored with considerable help from Claude
+My personal Emacs yak shave optimized for Common Lisp development,
+with a focus on Advent of Code and Everybody.Codes. Features automatic
+compilation, persistent window geometry, and a complete modern
+completion stack. Refactored with considerable help from Claude
 Code. Requires Emacs version >29 for some features.
 
 ## Key Features
@@ -19,7 +19,8 @@ Code. Requires Emacs version >29 for some features.
 - **Structural Editing**: Choose from Paredit (traditional) and Lispy (vi-style single-key navigation) (I prefer Lispy these days.)
 - **Navigation**: Avy jump-to-char, Crux utilities, which-key discovery
 - **Git Integration**: Magit
-- **Terminal**: vterm with Fish shell
+- **Terminal**: vterm with Fish shell (e-shell for most simple shell
+  commands)
 - **Theme**: Modus Vivendi (dark)/Operandi (light) (toggle with F5) (requires Emacs 28+)
 - **Window Persistence**: Automatically remembers and restores window position/size, Sly REPL positioning
 
@@ -30,15 +31,16 @@ git clone https://github.com/leolaporte/emacs.git ~/.emacs.d
 emacs
 ```
 
-On first launch, all packages will be automatically installed from
+On first launch, all packages will be automatically built from
 MELPA. On Emacs 31 there are some warnings during compilation but they
-can be safely ignored. All .el files must support lexical scoping.
+can be safely ignored. All .el files must support lexical
+binding. (M-x elisp-enable-lexical-binding)
 
 ## Documentation
 
 - **CLAUDE.md** — Architecture, workflows, and guidance for AI assistants
 - **keybindings.md** — Comprehensive keybinding reference (360+
-  lines) - I try to keep this up to date with Claude's help
+  lines) - I keep this up to date with Claude's help
 - See `customizations/` directory for modular configuration files
 
 ## Advent of Code / Everybody Codes
@@ -47,7 +49,8 @@ Specialized helpers for competitive programming:
 - `C-c a n` — Create new AoC day with template
 - `C-c a 1/2/e` — Run part 1/2/example
 - `C-c e n` — Create new EC quest
-- Automatic input file downloading
+- Automatic input file downloading for AoC
+- Slowly adding YASnippets for boilerplate code
 - 45+ yasnippet templates for Common Lisp patterns
 
 ## Recent Updates
