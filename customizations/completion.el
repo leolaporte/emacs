@@ -153,6 +153,12 @@
       (consult-line query))))
 
 (use-package corfu
+  :custom
+  (corfu-auto t)                 ;; Enable auto completion
+  (corfu-auto-delay 0.1)         ;; Delay before showing popup (seconds)
+  (corfu-auto-prefix 2)          ;; Minimum prefix length to trigger
+  (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
+  (corfu-preselect 'prompt)      ;; Preselect the prompt
   :init
   (global-corfu-mode 1))
 

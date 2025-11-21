@@ -50,17 +50,20 @@
 (add-hook 'sly-mode-hook
           (lambda ()
             (setq-local completion-at-point-functions
-                        (list (cape-capf-super
-                               #'sly-complete-symbol
-                               #'cape-dabbrev
-                               #'cape-file)))))
+                        (list #'sly-complete-symbol
+                              #'cape-dabbrev
+                              #'cape-file))))
 
 (add-hook 'sly-mrepl-mode-hook
           (lambda ()
+            (corfu-mode 1)  ;; Explicitly enable Corfu in REPL
             (setq-local completion-at-point-functions
-                        (list (cape-capf-super
-                               #'sly-complete-symbol
-                               #'cape-dabbrev)))))
+                        (list #'sly-complete-symbol
+                              #'cape-dabbrev))))
+
+;; Ensure Sly uses completion-at-point for REPL
+(with-eval-after-load 'sly-mrepl
+  (define-key sly-mrepl-mode-map (kbd "TAB") #'completion-at-point))
 
 ;; Sly REPL enhancements
 (setq sly-complete-symbol-function 'sly-flex-completions) ; fuzzy completion
@@ -104,14 +107,14 @@
 
 ;; Auto-complete
 ;; https://github.com/auto-complete
-(use-package auto-complete
-  :config
-  (global-auto-complete-mode t)
-  (add-to-list 'ac-modes 'sly-mrepl-mode))
+;; (use-package auto-complete
+;;   :config
+;;   (global-auto-complete-mode t)
+;;   (add-to-list 'ac-modes 'sly-mrepl-mode))
 
-(use-package ac-sly
-  :after (auto-complete sly)
-  :hook (sly-mode . set-up-sly-ac))
+;; (use-package ac-sly
+;;   :after (auto-complete sly)
+;;   :hook (sly-mode . set-up-sly-ac))
 
 ;; always split windows vertically
 ;; (I like the REPL on the right on most displays)
@@ -142,8 +145,8 @@
 ;; is enabled ONLY for lisp-mode (source files), not for REPL or SLY
 ;; frames
 ;; http://danmidwood.com/content/2014/11/21/animated-paredit.html
-(use-package paredit
-  :hook (lisp-mode . enable-paredit-mode))
+;; (use-package paredit
+;;   :hook (lisp-mode . enable-paredit-mode))
 
 ;; or use Lispy for a more vi single-key style
 (use-package lispy
