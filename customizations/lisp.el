@@ -41,9 +41,14 @@
   :after sly)
 
 ;; launch Sly whenever a lisp file is opened
-(add-hook 'sly-mode-hook
+(defvar-local sly--auto-start-attempted nil
+  "Buffer-local flag to prevent recursive Sly startup attempts.")
+
+(add-hook 'lisp-mode-hook
 	  (lambda ()
-	    (unless (sly-connected-p)
+	    (unless (or sly--auto-start-attempted
+	                (sly-connected-p))
+	      (setq-local sly--auto-start-attempted t)
 	      (save-excursion (sly)))))
 
 ;; Enhanced Sly completion with corfu
