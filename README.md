@@ -19,7 +19,6 @@ Code. Requires Emacs version >29 for some features.
 - **Common Lisp**: Sly with quicklisp/asdf/macrostep extensions, auto-connect REPL
 - **Structural Editing**: Choose from Paredit (traditional) and Lispy (vi-style single-key navigation) (I prefer Lispy these days.)
 - **Navigation**: Avy jump-to-char, Crux utilities, which-key discovery
-- **Git Integration**: Magit
 - **Terminal**: vterm with Fish shell (e-shell for most simple shell
   commands)
 - **Theme**: Modus Vivendi (dark)/Operandi (light) (toggle with F5) (requires Emacs 28+)
@@ -85,7 +84,7 @@ Specialized helpers for competitive programming:
 │   ├── completion.el     # Vertico/Consult/Embark stack
 │   ├── lisp.el           # Sly, paredit, lispy, yasnippet
 │   ├── shell-integration.el  # vterm, Fish shell
-│   ├── misc.el           # Magit, compile-angel
+│   ├── misc.el           # compile-angel, QOL settings
 │   ├── aoc-helpers.el    # Advent of Code automation
 │   └── ec-helpers.el     # Everybody Codes automation
 └── snippets/lisp-mode/   # 45+ Common Lisp yasnippet templates
