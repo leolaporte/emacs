@@ -58,7 +58,7 @@
          ("C-k" . crux-smart-kill-line)
          ("C-<backspace>" . crux-kill-line-backwards)
          ("C-c f" . crux-recentf-find-file)
-         ("C-c e" . crux-eval-and-replace)
+         ("C-c C-e" . crux-eval-and-replace)  ;; Changed from C-c e to free up prefix for EC
          ("C-c I" . crux-find-user-init-file)
          ("C-c d" . crux-duplicate-current-line-or-region)
          ("C-c r" . crux-rename-file-and-buffer)

@@ -26,7 +26,7 @@ To get your session cookie:
                             (insert-file-contents session-cookie-file)
                             (string-trim (buffer-string)))))
          (url (format "https://adventofcode.com/%d/day/%d/input" year day))
-         (output-file (expand-file-name (format "~/cl/AOC/%d/Day_%02d/input.txt" year day))))
+         (output-file (expand-file-name (format "~/cl/AOC/%d/Day%02d/input.txt" year day))))
     (if (and session-cookie (not (string-empty-p session-cookie)))
         (let ((dir (file-name-directory output-file)))
           (unless (file-exists-p dir)
@@ -75,8 +75,8 @@ To get your session cookie:
 Uses yasnippet template from ~/.emacs.d/snippets/lisp-mode/aoc-day-new.
 Automatically downloads the input file from adventofcode.com if session cookie is configured."
   (interactive "nYear: \nnDay: ")
-  (let* ((dir (format "~/cl/AOC/%d/Day_%02d" year day))
-         (file (format "%s/Day_%02d.lisp" dir day))
+  (let* ((dir (format "~/cl/AOC/%d/Day%02d" year day))
+         (file (format "%s/Day%02d.lisp" dir day))
          (input-file (format "%s/input.txt" dir))
          (template-file (expand-file-name "~/.emacs.d/snippets/lisp-mode/aoc-day-new"))
          (day-str (format "%02d" day))
@@ -175,8 +175,11 @@ Automatically downloads the input file from adventofcode.com if session cookie i
         (message "Example result: %S" result)))))
 
 ;; Keybindings for AoC workflow
+;; C-c a n is global - can create new day from anywhere
+(global-set-key (kbd "C-c a n") 'aoc/new-day)
+
+;; These require a lisp buffer context
 (with-eval-after-load 'sly
   (define-key sly-mode-map (kbd "C-c a 1") 'aoc/run-part1)
   (define-key sly-mode-map (kbd "C-c a 2") 'aoc/run-part2)
-  (define-key sly-mode-map (kbd "C-c a e") 'aoc/run-example)
-  (define-key sly-mode-map (kbd "C-c a n") 'aoc/new-day))
+  (define-key sly-mode-map (kbd "C-c a e") 'aoc/run-example))

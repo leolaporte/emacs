@@ -96,8 +96,11 @@ Uses yasnippet template from ~/.emacs.d/snippets/lisp-mode/ec-quest-new."
   (ec/run-part 3))
 
 ;; Keybindings for EC workflow
+;; C-c e n is global - can create new quest from anywhere
+(global-set-key (kbd "C-c e n") 'ec/new-quest)
+
+;; These require a lisp buffer context
 (with-eval-after-load 'sly
   (define-key sly-mode-map (kbd "C-c e 1") 'ec/run-part1)
   (define-key sly-mode-map (kbd "C-c e 2") 'ec/run-part2)
-  (define-key sly-mode-map (kbd "C-c e 3") 'ec/run-part3)
-  (define-key sly-mode-map (kbd "C-c e n") 'ec/new-quest))
+  (define-key sly-mode-map (kbd "C-c e 3") 'ec/run-part3))

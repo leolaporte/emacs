@@ -121,6 +121,26 @@
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
 
+;; Set REPL to open with left window at 80 columns
+(with-eval-after-load 'sly-mrepl
+  (defun my/adjust-sly-window-width ()
+    "Make the non-REPL window exactly 80 columns wide."
+    (run-with-timer 0.1 nil
+                    (lambda ()
+                      (when-let* ((repl-buf (sly-mrepl--find-buffer))
+                                  (repl-window (get-buffer-window repl-buf)))
+                        (let ((source-window (previous-window repl-window)))
+                          (when (and source-window
+                                     (not (eq source-window repl-window)))
+                            (select-window source-window)
+                            (let* ((target-width 80)
+                                   (current-width (window-width))
+                                   (delta (- target-width current-width)))
+                              (when (> (abs delta) 0)
+                                (enlarge-window delta t)))))))))
+
+  (add-hook 'sly-mrepl-mode-hook #'my/adjust-sly-window-width))
+
 ;; colorful parenthesis matching
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode)
@@ -163,7 +183,8 @@
   :custom
   (yas-snippet-dirs '("~/.emacs.d/snippets"))
   :config
-  (yas-global-mode 1))
+  (yas-global-mode 1)
+  (define-key yas-minor-mode-map (kbd "C-c y") 'yas-expand))
 
 ;; Common yasnippet snippet collection
 (use-package yasnippet-snippets

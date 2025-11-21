@@ -32,7 +32,7 @@
 (declaim (optimize (debug 3)))       ; max debugging info
 ;; (declaim (optimize (speed 3))     ; max speed if needed
 
-(defparameter *data-file* "~/cl/AOC/${1:2025}/Day_${2:$(format "%02d" (string-to-number yas-text))}/input.txt"
+(defparameter *data-file* "~/cl/AOC/${1:2025}/Day${2:$(format "%02d" (string-to-number yas-text))}/input.txt"
   "Downloaded from the AoC problem set")
 
 #| ----------------------------------------------------------------------------

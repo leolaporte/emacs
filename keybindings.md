@@ -84,7 +84,7 @@ n
 
 | Keybinding | Command | Description |
 |------------|---------|-------------|
-| `C-c e` | `crux-eval-and-replace` | Evaluate Emacs Lisp expression and replace it with result |
+| `C-c C-e` | `crux-eval-and-replace` | Evaluate Emacs Lisp expression and replace it with result |
 
 ### macOS Specific
 
@@ -256,14 +256,27 @@ Sly automatically loads with these extensions enabled:
 
 | Keybinding | Command | Description |
 |------------|---------|-------------|
-| `C-c a n` | `aoc/new-day` | Create new AoC day in `~/cl/AOC/YEAR/Day_NN/Day_NN.lisp` |
-| `C-c a 1` | `aoc/run-part1` | Run `day_NN-1` with input.txt and show result |
-| `C-c a 2` | `aoc/run-part2` | Run `day_NN-2` with input.txt and show result |
-| `C-c a e` | `aoc/run-example` | Run `day_NN-1` with `*example*` data |
+| `C-c a n` | `aoc/new-day` | Create new AoC day in `~/cl/AOC/YEAR/DayNN/DayNN.lisp` (global) |
+| `C-c a 1` | `aoc/run-part1` | Run `day_NN-1` with input.txt and show result (in lisp buffer) |
+| `C-c a 2` | `aoc/run-part2` | Run `day_NN-2` with input.txt and show result (in lisp buffer) |
+| `C-c a e` | `aoc/run-example` | Run `day_NN-1` with `*example*` data (in lisp buffer) |
+
+### Everybody Codes Helpers
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-c e n` | `ec/new-quest` | Create new EC quest in `~/cl/EC/YEAR/questNN/qNN.lisp` (global) |
+| `C-c e 1` | `ec/run-part1` | Run part 1 with input1.txt (in lisp buffer) |
+| `C-c e 2` | `ec/run-part2` | Run part 2 with input2.txt (in lisp buffer) |
+| `C-c e 3` | `ec/run-part3` | Run part 3 with input3.txt (in lisp buffer) |
 
 ### Yasnippet (Code Templates)
 
-Type the snippet key and press `TAB` to expand:
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-c y` | `yas-expand` | Expand snippet at point |
+
+Type the snippet key and use `C-c y` to expand:
 
 | Snippet Key | Description |
 |------------|-------------|
