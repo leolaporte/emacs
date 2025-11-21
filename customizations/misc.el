@@ -5,7 +5,7 @@
 
 ;; git integration
 ;; https://magit.vc
-(use-package magit)
+;; (use-package magit)
 
 ;; Automatically byte-compile and native-compile Emacs Lisp files
 ;; https://github.com/jamescherti/compile-angel.el
