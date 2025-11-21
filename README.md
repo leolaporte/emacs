@@ -4,7 +4,11 @@
 
 ## Overview
 
-Modern Emacs configuration optimized for Common Lisp development, with a focus on Advent of Code and competitive programming. Features automatic compilation, persistent window geometry, and a complete modern completion stack.
+Leo's Emacs configuration optimized for Common Lisp development, with
+a focus on Advent of Code and competitive programming. Features
+automatic compilation, persistent window geometry, and a complete
+modern completion stack. Refactored with considerable help from Claude
+Code. Requires Emacs version >29 for some features.
 
 ## Key Features
 
@@ -12,12 +16,12 @@ Modern Emacs configuration optimized for Common Lisp development, with a focus o
 - **Performance**: Automatic byte and native compilation via compile-angel.el (2.5-5x speedup)
 - **Completion**: Modern stack with Vertico, Consult, Embark, Marginalia, Orderless, Corfu
 - **Common Lisp**: Sly with quicklisp/asdf/macrostep extensions, auto-connect REPL
-- **Structural Editing**: Both Paredit (traditional) and Lispy (vi-style single-key navigation)
+- **Structural Editing**: Choose from Paredit (traditional) and Lispy (vi-style single-key navigation) (I prefer Lispy these days.)
 - **Navigation**: Avy jump-to-char, Crux utilities, which-key discovery
 - **Git Integration**: Magit
 - **Terminal**: vterm with Fish shell
-- **Theme**: Modus Vivendi/Operandi (toggle with F5)
-- **Window Persistence**: Automatically remembers and restores window position/size
+- **Theme**: Modus Vivendi (dark)/Operandi (light) (toggle with F5) (requires Emacs 28+)
+- **Window Persistence**: Automatically remembers and restores window position/size, Sly REPL positioning
 
 ## Quick Start
 
@@ -26,12 +30,15 @@ git clone https://github.com/leolaporte/emacs.git ~/.emacs.d
 emacs
 ```
 
-On first launch, all packages will be automatically installed from MELPA.
+On first launch, all packages will be automatically installed from
+MELPA. On Emacs 31 there are some warnings during compilation but they
+can be safely ignored. All .el files must support lexical scoping.
 
 ## Documentation
 
 - **CLAUDE.md** — Architecture, workflows, and guidance for AI assistants
-- **keybindings.md** — Comprehensive keybinding reference (360+ lines)
+- **keybindings.md** — Comprehensive keybinding reference (360+
+  lines) - I try to keep this up to date with Claude's help
 - See `customizations/` directory for modular configuration files
 
 ## Advent of Code / Everybody Codes
@@ -46,11 +53,12 @@ Specialized helpers for competitive programming:
 ## Recent Updates
 
 ### 2025-11-17 Major Refactoring
-- Migrated from straight.el to use-package + package.el
+- Migrated from straight.el back to good ol' use-package + package.el
 - Added compile-angel.el for automatic compilation
 - Enabled native compilation (2.5-5x performance boost)
-- Added frame geometry persistence (remembers window position)
-- Enabled lispy-mode alongside paredit
+- Added frame geometry persistence (saves and restores window position
+  in a "frame-geometry" file in the .emacs directory )
+- Enabled lispy-mode alongside paredit (you can use both but Lispy is my preference)
 - Created comprehensive CLAUDE.md documentation
 - Updated all packages to use-package format
 - Freed 271MB by removing straight/ directory
