@@ -15,7 +15,7 @@ Code. Requires Emacs version >29 for some features.
 
 - **Package Management**: use-package with MELPA (migrated from straight.el Nov 2025)
 - **Performance**: Automatic byte and native compilation via compile-angel.el (2.5-5x speedup)
-- **Completion**: Modern stack with Vertico, Consult, Embark, Marginalia, Orderless, Corfu (thank you [minad](https://github.com/sponsors/minad))
+- **Completion**: Modern stack with Vertico, Consult, Embark, Marginalia, Orderless, Corfu (danke, [minad](https://github.com/sponsors/minad)!!)
 - **Common Lisp**: Sly with quicklisp/asdf/macrostep extensions, auto-connect REPL
 - **Structural Editing**: Choose from Paredit (traditional) and Lispy (vi-style single-key navigation) (I prefer Lispy these days.)
 - **Navigation**: Avy jump-to-char, Crux utilities, which-key discovery
