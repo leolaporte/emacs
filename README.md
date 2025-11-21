@@ -1,6 +1,7 @@
 # Leo Laporte's Emacs Configuration
 
-**2017-2025** — A constantly evolving work-in-progress, stolen from the best.
+**2017-2025** — A constantly evolving work-in-progress, ~~stolen~~
+borrowed from the best.
 
 ## Overview
 
