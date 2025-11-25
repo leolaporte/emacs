@@ -1,1 +1,0 @@
-/Users/leo/.emacs.d/elpaca/repos/corfu/corfu.el

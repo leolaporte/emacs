@@ -1,1 +1,0 @@
-/Users/leo/.emacs.d/elpaca/repos/exec-path-from-shell/exec-path-from-shell.el

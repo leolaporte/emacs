@@ -1,1 +1,0 @@
-/Users/leo/.emacs.d/elpaca/repos/rainbow-delimiters/rainbow-delimiters.el
