@@ -1,0 +1,1 @@
+/Users/leo/.emacs.d/elpaca/repos/treemacs/src/scripts/treemacs-count-mail.py

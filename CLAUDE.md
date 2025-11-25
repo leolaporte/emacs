@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is Leo Laporte's personal Emacs configuration (2017-2025), optimized for Common Lisp development with a focus on Advent of Code and Everybody Codes competitive programming. The configuration uses a modular architecture with dedicated files for different concerns and relies on straight.el for reproducible package management.
+This is Leo Laporte's personal Emacs configuration (2017-2025), optimized for Common Lisp development with a focus on Advent of Code and Everybody Codes competitive programming. The configuration uses a modular architecture with dedicated files for different concerns and relies on elpaca for fast, reproducible package management.
 
 ## Architecture
 
@@ -25,17 +25,20 @@ Configuration is split into focused modules loaded from `customizations/`:
 
 ### Load Order
 
-1. `early-init.el` - Sets GC threshold for faster startup
-2. `init.el` - Initializes package.el and use-package, loads customization modules in sequence
+1. `early-init.el` - Sets GC threshold for faster startup, disables package.el
+2. `init.el` - Bootstraps elpaca and use-package integration, loads customization modules in sequence
 3. All module files have lexical binding enabled
 
 ## Package Management
 
-Uses **use-package** with package.el (MELPA):
-- Update packages: `M-x package-list-packages`, then press `U` to mark upgrades, `x` to execute
-- Refresh package list: `M-x package-refresh-contents`
+Uses **elpaca** package manager with **use-package** integration:
+- Update packages: `M-x elpaca-update-all` or update specific package with `M-x elpaca-update`
+- Rebuild packages: `M-x elpaca-rebuild` (useful after elpaca updates)
+- Browse packages: `M-x elpaca-browse` (interactive package browser)
+- View package status: `M-x elpaca-manager` (shows installed packages and their status)
 - All packages are declared with `use-package` and installed automatically via `:ensure t` (set globally)
-- Package archives: GNU ELPA, NonGNU ELPA, MELPA
+- Packages are cloned from their source repositories (GitHub, GitLab, etc.) and built locally
+- Benefits: Faster startup, reproducible builds, easy to pin package versions, parallel installation
 
 ### Performance Optimization
 
@@ -128,8 +131,9 @@ See `keybindings.md` for comprehensive reference (320 lines).
 ### Testing Changes
 - Restart Emacs or `M-x eval-buffer` in the modified file
 - Check for errors in `*Messages*` buffer
-- For package issues: `M-x package-list-packages` then `U x` to update
-- Reinstall a package: `M-x package-reinstall`
+- For package issues: `M-x elpaca-manager` to view status, then use `M-x elpaca-update` to update
+- Rebuild a package: `M-x elpaca-rebuild` (select specific package)
+- Reinstall a package: `M-x elpaca-delete` then restart Emacs (elpaca will reinstall via `:ensure t`)
 
 ## File Organization Standards
 

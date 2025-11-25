@@ -1,0 +1,1 @@
+/Users/leo/.emacs.d/elpaca/repos/vertico-posframe/vertico-posframe.el

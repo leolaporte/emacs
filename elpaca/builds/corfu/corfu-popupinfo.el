@@ -1,0 +1,1 @@
+/Users/leo/.emacs.d/elpaca/repos/corfu/extensions/corfu-popupinfo.el

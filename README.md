@@ -13,7 +13,7 @@ Code. Requires Emacs version >29 for some features.
 
 ## Key Features
 
-- **Package Management**: use-package with MELPA (migrated from straight.el Nov 2025)
+- **Package Management**: elpaca with use-package integration (fast, reproducible, parallel installation)
 - **Performance**: Automatic byte and native compilation via compile-angel.el (2.5-5x speedup)
 - **Completion**: Modern stack with Vertico, Consult, Embark, Marginalia, Orderless, Corfu (danke, [minad](https://github.com/sponsors/minad)!!)
 - **Common Lisp**: Sly with quicklisp/asdf/macrostep extensions, auto-connect REPL
@@ -31,10 +31,10 @@ git clone https://github.com/leolaporte/emacs.git ~/.emacs.d
 emacs
 ```
 
-On first launch, all packages will be automatically built from
-MELPA. On Emacs 31 there are some warnings during compilation but they
-can be safely ignored. All .el files must support lexical
-binding. (M-x elisp-enable-lexical-binding)
+On first launch, elpaca will automatically clone and build all packages
+from their source repositories. On Emacs 31 there are some warnings
+during compilation but they can be safely ignored. All .el files must
+support lexical binding. (M-x elisp-enable-lexical-binding)
 
 ## Documentation
 
@@ -56,7 +56,7 @@ Specialized helpers for competitive programming:
 ## Recent Updates
 
 ### 2025-11-17 Major Refactoring
-- Migrated from straight.el back to good ol' use-package + package.el
+- Migrated from straight.el to elpaca package manager with use-package integration
 - Added compile-angel.el for automatic compilation
 - Enabled native compilation (2.5-5x performance boost)
 - Added frame geometry persistence (saves and restores window position
@@ -92,8 +92,11 @@ Specialized helpers for competitive programming:
 
 ## Package Management
 
-Update packages: `M-x package-list-packages` then `U x`
-Refresh package list: `M-x package-refresh-contents`
+- Update all packages: `M-x elpaca-update-all`
+- Update specific package: `M-x elpaca-update`
+- Browse packages: `M-x elpaca-browse`
+- View package status: `M-x elpaca-manager`
+- Rebuild package: `M-x elpaca-rebuild`
 
 ## License
 

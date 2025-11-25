@@ -175,6 +175,7 @@
 
 ;; or use Lispy for a more vi single-key style
 (use-package lispy
+  :ensure (:host github :repo "enzuru/lispy")
   :hook (lisp-mode . lispy-mode))
 
 ;; eldoc-mode shows documentation in the minibuffer when writing code

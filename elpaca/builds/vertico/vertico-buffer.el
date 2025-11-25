@@ -1,0 +1,1 @@
+/Users/leo/.emacs.d/elpaca/repos/vertico/extensions/vertico-buffer.el

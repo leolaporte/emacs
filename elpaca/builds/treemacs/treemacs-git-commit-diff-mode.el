@@ -1,0 +1,1 @@
+/Users/leo/.emacs.d/elpaca/repos/treemacs/src/elisp/treemacs-git-commit-diff-mode.el
