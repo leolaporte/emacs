@@ -12,6 +12,8 @@ This document provides a complete reference of all custom keybindings in Leo's E
 - [Project Management](#project-management)
 - [Shell & Terminal](#shell--terminal)
 - [Search & Replace](#search--replace)
+- [Window Management](#window-management)
+- [Git (Magit)](#git-magit)
 
 ---
 
@@ -167,24 +169,9 @@ n
 
 ## Common Lisp / Sly
 
-### Structural Editing: Paredit & Lispy
+### Structural Editing: Lispy
 
-**Note**: Both Paredit and Lispy are enabled in lisp-mode. They work together, with Lispy's single-key bindings active when the cursor is at special positions (before/after parentheses).
-
-#### Paredit (Traditional Key Bindings)
-
-| Keybinding | Command | Description |
-|------------|---------|-------------|
-| `C-)` | `paredit-forward-slurp-sexp` | Extend s-expression forward (include next form) |
-| `C-}` | `paredit-forward-barf-sexp` | Contract s-expression forward (exclude last form) |
-| `C-(` | `paredit-backward-slurp-sexp` | Extend s-expression backward |
-| `C-{` | `paredit-backward-barf-sexp` | Contract s-expression backward |
-| `M-s` | `paredit-splice-sexp` | Remove surrounding parentheses |
-| `M-(` | `paredit-wrap-round` | Wrap following s-expression in parens |
-| `M-S` | `paredit-split-sexp` | Split current s-expression |
-| `M-J` | `paredit-join-sexps` | Join two adjacent s-expressions |
-| `C-M-f` | `forward-sexp` | Move forward by s-expression |
-| `C-M-b` | `backward-sexp` | Move backward by s-expression |
+**Note**: Lispy is enabled in lisp-mode. Single-key bindings activate when the cursor is at special positions (before/after parentheses) or when a region is active.
 
 #### Lispy (Single-Key Bindings at Special Positions)
 
@@ -288,7 +275,7 @@ Type the snippet key and use `C-c y` to expand:
 
 **Note**: Sly automatically connects when opening a Common Lisp file (.lisp, .cl, .asd)
 
-**Source**: `customizations/lisp.el`, `customizations/aoc-helpers.el`
+**Source**: `customizations/lisp.el`, `customizations/aoc-helpers.el`, `customizations/ec-helpers.el`
 
 ---
 
@@ -339,15 +326,92 @@ See [Completion & Minibuffer → Consult](#consult-enhanced-commands) section ab
 
 ---
 
+## Window Management
+
+### Winner Mode
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-c <left>` | `winner-undo` | Undo window configuration changes |
+| `C-c <right>` | `winner-redo` | Redo window configuration changes |
+
+**Source**: Enabled globally in `customizations/ui.el`
+
+---
+
+## Git (Magit)
+
+### Main Interface
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-x g` | `magit-status` | Open Magit status buffer (main interface) |
+
+### Common Magit Commands (in magit-status buffer)
+
+Once in the Magit status buffer, use these single-key commands:
+
+**Staging/Unstaging:**
+| Key | Command | Description |
+|-----|---------|-------------|
+| `s` | Stage | Stage file or hunk at point |
+| `u` | Unstage | Unstage file or hunk at point |
+| `S` | Stage all | Stage all unstaged changes |
+| `U` | Unstage all | Unstage all staged changes |
+
+**Committing:**
+| Key | Command | Description |
+|-----|---------|-------------|
+| `c c` | Commit | Create a new commit |
+| `c a` | Amend | Amend the last commit |
+| `c e` | Extend | Extend the last commit (no message edit) |
+| `c w` | Reword | Reword the last commit message |
+
+**Branching:**
+| Key | Command | Description |
+|-----|---------|-------------|
+| `b b` | Checkout | Checkout a branch |
+| `b c` | Create | Create and checkout a new branch |
+| `b n` | Create from | Create new branch from selected branch |
+
+**Pushing/Pulling:**
+| Key | Command | Description |
+|-----|---------|-------------|
+| `P p` | Push | Push current branch to remote |
+| `P u` | Push -u | Push and set upstream |
+| `F p` | Pull | Pull from remote |
+| `f f` | Fetch | Fetch from remote |
+
+**Viewing:**
+| Key | Command | Description |
+|-----|---------|-------------|
+| `l l` | Log | View log for current branch |
+| `l o` | Log other | View log for another branch |
+| `d d` | Diff | Show diff for unstaged changes |
+| `d s` | Diff staged | Show diff for staged changes |
+| `TAB` | Toggle | Toggle visibility of file/hunk at point |
+
+**Other Operations:**
+| Key | Command | Description |
+|-----|---------|-------------|
+| `g` | Refresh | Refresh the status buffer |
+| `q` | Quit | Close the Magit buffer |
+| `?` | Help | Show command help |
+| `$` | Process | Show git process buffer |
+
+**Source**: `customizations/misc.el`
+
+---
+
 ## Additional Notes
 
 ### Modes with Special Keybindings
 
 - **which-key**: Displays available keybindings after you start typing a key sequence
 - **show-paren-mode**: Highlights matching parentheses
-- **winner-mode**: `C-c <left/right>` to undo/redo window configuration changes
 - **undo-tree**: `C-x u` opens visual undo tree
-- **aggressive-indent-mode**: Automatically indents code (excluded in text/markdown/yaml/html)
+- **aggressive-indent-mode**: Automatically indents code (excluded in text/markdown/yaml/html/python)
+- **compile-angel**: Automatically byte-compiles and native-compiles Elisp files for better performance
 
 ### Disabled Keybindings
 
@@ -367,9 +431,12 @@ Each section above references its source file:
 
 ---
 
-**Last Updated**: 2025-11-17
+**Last Updated**: 2025-11-30
 **Configuration Location**: `~/.emacs.d/`
 
 **Recent Changes**:
-- Added Lispy keybindings (single-key structural editing at special positions)
-- Note: Both Paredit and Lispy are now enabled in lisp-mode
+- Added Magit section with comprehensive keybindings reference
+- Removed Paredit documentation (not currently configured, only Lispy is active)
+- Added Winner-mode section for window configuration undo/redo
+- Added compile-angel to Additional Notes
+- Updated source references to include ec-helpers.el

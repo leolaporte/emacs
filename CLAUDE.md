@@ -15,12 +15,12 @@ Configuration is split into focused modules loaded from `customizations/`:
 - **ui.el** - Theme (Modus Vivendi/Operandi), fonts (Iosevka Nerd Font), visual settings
 - **editing.el** - Text manipulation, aggressive-indent, undo-tree, markdown support
 - **navigation.el** - Avy (jump-to-char), Crux utilities, windmove, which-key
-- **completion.el** - Modern completion stack (Vertico/Consult/Embark/Marginalia/Orderless/Corfu)
-- **lisp.el** - Common Lisp development with Sly, Paredit, Rainbow delimiters, auto-complete
-- **shell-integration.el** - vterm with Fish shell
+- **completion.el** - Modern completion stack (Vertico/Consult/Embark/Marginalia/Orderless/Corfu/Company)
+- **lisp.el** - Common Lisp development with Sly, Lispy, Rainbow delimiters, projectile, yasnippet
+- **shell-integration.el** - vterm with Fish shell, fish-mode for editing scripts
 - **aoc-helpers.el** - Advent of Code workflow automation
 - **ec-helpers.el** - Everybody Codes workflow automation
-- **misc.el** - Magit and other utilities
+- **misc.el** - Git integration (Magit), performance optimization (gcmh, compile-angel)
 - **custom.el** - Auto-generated customizations
 
 ### Load Order
@@ -42,6 +42,11 @@ Uses **elpaca** package manager with **use-package** integration:
 
 ### Performance Optimization
 
+**Garbage Collection** is optimized with gcmh (GC Magic Hack):
+- Automatic adjustment of GC threshold based on idle time
+- Reduces GC pauses during normal editing
+- Works alongside `early-init.el` GC threshold settings
+
 **compile-angel.el** automatically byte-compiles and native-compiles all Elisp files for better performance:
 - Byte-compilation: Creates `.elc` files for faster loading
 - Native-compilation: Creates `.eln` files (2.5-5x faster than byte-compiled)
@@ -53,9 +58,10 @@ Uses **elpaca** package manager with **use-package** integration:
 
 ### Sly Configuration
 - Automatically connects when opening `.lisp`, `.cl`, or `.asd` files
-- Extensions enabled: sly-quicklisp, sly-asdf, sly-macrostep, sly-stickers
+- Extensions enabled: sly-quicklisp, sly-asdf, sly-macrostep, sly-stickers, sly-repl-ansi-color, sly-named-readtables
 - HyperSpec lookup via w3m browser (in-Emacs)
-- Paredit for structural editing (slurp/barf with `C-)`, `C-}`, etc.)
+- Lispy for structural editing (single-key bindings at special positions)
+- Company-mode enabled in Sly REPL for completion (Corfu used in source buffers)
 
 ### Standard Libraries
 Leo's code typically uses these libraries with local nicknames:
@@ -103,12 +109,20 @@ Common packages: fiveam, iterate, cl-ppcre, trivia, serapeum, str
 ## Important Keybindings for Lisp Development
 
 - **Evaluate**: `C-c C-e` (last expr), `C-c C-f` (defun), `C-c C-b` (buffer)
-- **Paredit slurp/barf**: `C-)`, `C-}`, `C-(`, `C-{`
+- **Lispy navigation**: `j/k/h/l` at special positions (down/up/left/right in s-expressions)
+- **Lispy slurp/barf**: `>` (slurp), `<` (barf) at special positions
 - **Expand region**: `C-=` (expand by semantic units)
 - **Comment line**: `C-;`
 - **Smart line operations**: `Home` (smart beginning), `Shift-Return` (open below), `C-S-Return` (open above)
 
-See `keybindings.md` for comprehensive reference (320 lines).
+## Git Workflow (Magit)
+
+- **Open Magit**: `C-x g` (magit-status)
+- **In Magit buffer**: Single-key commands for staging (`s`), committing (`c c`), pushing (`P p`), pulling (`F p`)
+- **View help**: `?` in any Magit buffer shows available commands
+- **Configuration**: Opens in same window (except diffs) for minimal disruption
+
+See `keybindings.md` for comprehensive reference (440+ lines).
 
 ## Editing Emacs Configuration
 
@@ -146,7 +160,7 @@ See `keybindings.md` for comprehensive reference (320 lines).
 
 ### Everybody Codes
 ```
-~/cl/EC/YEAR/Quest_NN/
+~/cl/ec/YEAR/Quest_NN/
 ├── Quest_NN.lisp  # Main solution file
 ├── input1.txt     # Part 1 input
 ├── input2.txt     # Part 2 input
@@ -157,9 +171,10 @@ See `keybindings.md` for comprehensive reference (320 lines).
 
 - **Theme toggle**: `F5` switches between light/dark Modus themes
 - **Search**: Regex search is default (`C-s`), literal search is `C-M-s`
-- **Aggressive indent**: Enabled globally except in text/markdown/yaml/html/org modes
-- **Completion**: Vertico for minibuffer, Corfu for in-buffer
+- **Aggressive indent**: Enabled globally except in text/markdown/yaml/html/python modes
+- **Completion**: Vertico for minibuffer, Corfu for in-buffer, Company for Sly REPL
 - **Terminal**: vterm with Fish shell (`C-c t`)
+- **Git**: Magit integration (`C-x g`)
 - **macOS compatibility**: Clipboard integration, shell PATH loading via exec-path-from-shell
 
 ## Common Tasks
@@ -174,12 +189,18 @@ Move to `customizations/unused/` directory rather than deleting. Currently unuse
 
 ## Git Workflow
 
-- Main branch: `main`
-- Recent focus: Lexical bindings cleanup, AOC/EC helper automation
+- **Primary interface**: Magit (`C-x g` to open magit-status)
+- **Main branch**: `main`
+- **Workflow**: Use Magit for all Git operations (staging, committing, pushing, branching)
+- **Common operations**: `s` to stage, `c c` to commit, `P p` to push, `F p` to pull
+- **Recent focus**: Lexical bindings cleanup, AOC/EC helper automation, package management improvements
 - Configuration actively maintained and evolved
 
 ## Reference Files
 
-- **keybindings.md** - Comprehensive keybinding reference with descriptions and sources
+- **keybindings.md** - Comprehensive keybinding reference with descriptions and sources (440+ lines)
+- **CLAUDE.md** - This file - project instructions and architecture overview
 - **README.md** - Brief overview and history
 - **snippets/** - 45+ yasnippet templates for Common Lisp coding patterns
+
+**Important**: When making configuration changes, always update both CLAUDE.md and keybindings.md to keep documentation in sync.

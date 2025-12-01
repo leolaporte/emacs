@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 
 ;; Lisp specific packages
-;; including sly paredit and lispy
+;; including sly and lispy
 ;; Leo Laporte 5 Sept 2023-17 Nov 2025
 ;; see .emacs.d/keybindings.md for custom keybindings
 
@@ -28,7 +28,9 @@
   :config
   (add-to-list 'sly-contribs 'sly-quicklisp 'append)
   (add-to-list 'sly-contribs 'sly-asdf 'append)
-  (add-to-list 'sly-contribs 'sly-macrostep 'append))
+  (add-to-list 'sly-contribs 'sly-macrostep 'append)
+  (add-to-list 'sly-contribs 'sly-stickers 'append)
+  (add-to-list 'sly-contribs 'sly-repl-ansi-color 'append))
 
 ;; Sly extensions for enhanced Common Lisp development
 (use-package sly-quicklisp
@@ -38,6 +40,16 @@
   :after sly)
 
 (use-package sly-macrostep
+  :after sly)
+
+;; ANSI color support in REPL for colored output
+(use-package sly-repl-ansi-color
+  :after sly
+  :config
+  (push 'sly-repl-ansi-color sly-contribs))
+
+;; Named readtables support for better readtable handling
+(use-package sly-named-readtables
   :after sly)
 
 ;; launch Sly whenever a lisp file is opened
@@ -110,26 +122,15 @@
 
 (add-hook 'sly-connected-hook 'aoc/setup-repl-output)
 
-;; Auto-complete
-;; https://github.com/auto-complete
-;; (use-package auto-complete
-;;   :config
-;;   (global-auto-complete-mode t)
-;;   (add-to-list 'ac-modes 'sly-mrepl-mode))
-
-;; (use-package ac-sly
-;;   :after (auto-complete sly)
-;;   :hook (sly-mode . set-up-sly-ac))
-
 ;; always split windows vertically
 ;; (I like the REPL on the right on most displays)
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
 
-;; Set REPL to open with left window at 80 columns
+;; Set REPL to open with left window at 82 columns
 (with-eval-after-load 'sly-mrepl
   (defun my/adjust-sly-window-width ()
-    "Make the non-REPL window exactly 80 columns wide."
+    "Make the non-REPL window exactly 82 columns wide."
     (run-with-timer 0.1 nil
                     (lambda ()
                       (when-let* ((repl-buf (sly-mrepl--find-buffer))
@@ -138,7 +139,7 @@
                           (when (and source-window
                                      (not (eq source-window repl-window)))
                             (select-window source-window)
-                            (let* ((target-width 80)
+                            (let* ((target-width 83)
                                    (current-width (window-width))
                                    (delta (- target-width current-width)))
                               (when (> (abs delta) 0)
@@ -163,17 +164,7 @@
 ;; Highlights matching parenthesis
 (show-paren-mode 1)
 
-;; Now you have a choice PAREDIT or LISPY - I go back and forth. Both
-;; can be installed without too much redundancy.
-
-;; Paredit for structured editing in Lisp source files only Note: This
-;; is enabled ONLY for lisp-mode (source files), not for REPL or SLY
-;; frames
-;; http://danmidwood.com/content/2014/11/21/animated-paredit.html
-;; (use-package paredit
-;;   :hook (lisp-mode . enable-paredit-mode))
-
-;; or use Lispy for a more vi single-key style
+;; Lispy for structural editing in Lisp source files
 (use-package lispy
   :ensure (:host github :repo "enzuru/lispy")
   :hook (lisp-mode . lispy-mode))

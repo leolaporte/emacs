@@ -169,6 +169,16 @@
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file))
 
+;; Company mode - fallback completion for contexts where Corfu doesn't work
+(use-package company
+  :hook (sly-mrepl-mode . company-mode)
+  :custom
+  (company-idle-delay 0.1)
+  (company-minimum-prefix-length 2)
+  :config
+  ;; Don't interfere with Corfu in regular buffers
+  (setq company-global-modes '(not prog-mode text-mode)))
+
 ;;; https://with-emacs.com/posts/tutorials/customize-completion-at-point/
 (autoload 'ffap-file-at-point "ffap")
 (add-hook 'completion-at-point-functions

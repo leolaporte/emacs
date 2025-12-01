@@ -6,11 +6,14 @@
 ;; my preferred terminal emulator package - requires emacs built with module support
 (use-package vterm)
 
+;; Major mode for editing Fish shell scripts
+(use-package fish-mode)
+
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns x))
   :config
   (exec-path-from-shell-initialize)
-  (exec-path-from-shell-copy-envs '("PATH")))
+  (exec-path-from-shell-copy-envs '("PATH" "MANPATH" "JAVA_HOME" "GOPATH")))
 
 ;; set up system specific parameters
 (if (eq system-type 'darwin) ; macOS

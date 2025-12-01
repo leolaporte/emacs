@@ -13,10 +13,10 @@
 ;; additions from
 ;; https://emacsredux.com/blog/2020/12/08/favorite-emacs-packages/ and
 ;; Mickey Petersen's excellent "Mastering Emacs"
-;; https://www.masteringemacs.org/ and various suggestions from
-;; various contribs at https://reddit.com/r/emacs and lately with
-;; considerable help in refactoring and optimization from Claude code!
-;; Really helpful. See Claude.md for more info.
+;; https://www.masteringemacs.org/ and suggestions from various
+;; contribs at https://reddit.com/r/emacs and lately with considerable
+;; help in refactoring and optimization from Claude code!  Really
+;; helpful. See Claude.md for more info.
 
 ;; warn before opening giant files over 100MB
 (setq large-file-warning-threshold 100000000)

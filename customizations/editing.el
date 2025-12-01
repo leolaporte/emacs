@@ -55,14 +55,6 @@
         try-complete-lisp-symbol-partially
         try-complete-lisp-symbol))
 
-;; Yasnippet
-;; Textmate style template expansion
-;; https://github.com/joaotavora/yasnippet
-
-;; (straight-use-package 'yasnippet)
-;; (require 'yasnippet)
-;; (yas-global-mode 1)
-
 ;; Highlight current line
 (global-hl-line-mode 1)
 
@@ -115,13 +107,6 @@
   (mark-whole-buffer)
   (untabify (region-beginning) (region-end))
   (keyboard-quit))
-
-;; fix weird os x kill error
-;; (defun ns-get-pasteboard ()
-;;   "Returns the value of the pasteboard, or nil for unsupported formats."
-;;   (condition-case nil
-;;       (ns-get-selection-internal 'CLIPBOARD)
-;;     (quit nil)))
 
 ;; These settings relate to how emacs interacts with your operating system
 (setq ;; makes killing/yanking interact with the clipboard
