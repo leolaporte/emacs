@@ -12,17 +12,13 @@
 ;; Prologue code for setup - same every day
 ;; ----------------------------------------------------------------------------
 
-;; Already loaded in .sbclrc... uncomment to run on your computer
-;; (ql:quickload
-;;   '(:fiveam :iterate :alexandria :cl-ppcre :trivia :serapeum :str))
-
 (defpackage :aoc.${1:$(format "%d" (string-to-number yas-text))}.day${2:$(format "%02d" (string-to-number yas-text))}
   (:use :cl :alexandria :iterate)      ; no prefix for these libraries
   (:local-nicknames                    ; short prefixes for these
    (:re :cl-ppcre)                     ; regex
    (:5a :fiveam)                       ; test framework
    (:sr :serapeum)                     ; CL extensions
-   (:tr :trivia)))                      ; pattern matching
+   (:tr :trivia)))                     ; pattern matching
 
 (in-package :aoc.${1:$(format "%d" (string-to-number yas-text))}.day${2:$(format "%02d" (string-to-number yas-text))})
 
@@ -35,35 +31,38 @@
 (defparameter *data-file* "~/cl/AOC/${1:2025}/Day${2:$(format "%02d" (string-to-number yas-text))}/input.txt"
   "Downloaded from the AoC problem set")
 
-#| ----------------------------------------------------------------------------
---- Part One ---
+;; ----------------------------------------------------------------------------
+;;
+;;                              --- Part One ---
+;;
+;; LEO'S NOTES:
+;;
+;; ----------------------------------------------------------------------------
 
-LEO'S NOTES:
+(defparameter *example* (list ))
 
----------------------------------------------------------------------------- |#
-
-(defparameter *example* )
-
-(defun day${2:$(format "%02d" (string-to-number yas-text))}-1
-  nil
+(sr:-> day${2:$(format "%02d" (string-to-number yas-text))}-1 (list) number)
+(defun day${2:$(format "%02d" (string-to-number yas-text))}-1 (input)
+  0
   )
 
 (5a:test day${2:$(format "%02d" (string-to-number yas-text))}-1-test
-  (5a:is (= (day${2:$(format "%02d" (string-to-number yas-text))}-1 *example*))))
+  (5a:is (= 0 (day${2:$(format "%02d" (string-to-number yas-text))}-1 *example*))))
 
-#| ----------------------------------------------------------------------------
---- Part Two --
+;; ----------------------------------------------------------------------------
+;;                              --- Part Two --
+;;
+;; LEO'S NOTES:
+;;
+;; ----------------------------------------------------------------------------
 
-LEO'S NOTES:
-
----------------------------------------------------------------------------- |#
-
-(defun day${2:$(format "%02d" (string-to-number yas-text))}-2
-  nil
+(sr:-> day${2:$(format "%02d" (string-to-number yas-text))}-2 (list) number)
+(defun day${2:$(format "%02d" (string-to-number yas-text))}-2 (input)
+  0
   )
 
 (5a:test day${2:$(format "%02d" (string-to-number yas-text))}-2-test
-  (5a:is (= (day${2:$(format "%02d" (string-to-number yas-text))}-2 *example*))))
+  (5a:is (= 0 (day${2:$(format "%02d" (string-to-number yas-text))}-2 *example*))))
 
 ;; ----------------------------------------------------------------------------
 
@@ -75,5 +74,5 @@ LEO'S NOTES:
 ;;	      (day${2:$(format "%02d" (string-to-number yas-text))}-2 (uiop:read-file-lines *data-file*))))
 
 ;; ----------------------------------------------------------------------------
-;; Timings with SBCL on a Framework Desktop w/ AMD AI Max+ 395, 128GB RAM
+;; Timings with SBCL on a 2023 MacBook Pro M3 Max with 64GB RAM and Tahoe 26.1
 ;; ----------------------------------------------------------------------------

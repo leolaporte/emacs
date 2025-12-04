@@ -5,6 +5,9 @@
 ;; spaces not tabs!
 (setq-default indent-tabs-mode nil)
 
+;; Set fill-column to 80 characters
+(setq-default fill-column 80)
+
 ;; Setup nice scrolling for Emacs 28
 (setq scroll-margin 0)
 (setq scroll-conservatively 100000)

@@ -35,7 +35,7 @@ To get your session cookie:
           (message "Saving to: %s" output-file)
           ;; Use a temp buffer to capture curl output
           (let* ((temp-buffer (generate-new-buffer " *aoc-download*"))
-                 (command (format "curl -f -b 'session=%s' '%s' 2>&1"
+                 (command (format "curl -f -s -S --no-progress-meter -b 'session=%s' '%s'"
                                 session-cookie url))
                  (exit-code (call-process-shell-command command nil temp-buffer)))
             (if (= exit-code 0)

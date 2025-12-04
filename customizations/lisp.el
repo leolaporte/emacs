@@ -127,10 +127,10 @@
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
 
-;; Set REPL to open with left window at 82 columns
+;; Set REPL to open with left window at 83 columns
 (with-eval-after-load 'sly-mrepl
   (defun my/adjust-sly-window-width ()
-    "Make the non-REPL window exactly 82 columns wide."
+    "Make the non-REPL window exactly 83 columns wide."
     (run-with-timer 0.1 nil
                     (lambda ()
                       (when-let* ((repl-buf (sly-mrepl--find-buffer))
