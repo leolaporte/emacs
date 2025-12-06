@@ -8,6 +8,7 @@ This document provides a complete reference of all custom keybindings in Leo's E
 - [Editing](#editing)
 - [Completion & Minibuffer](#completion--minibuffer)
 - [File & Buffer Management](#file--buffer-management)
+- [Org-Mode & Literate Programming](#org-mode--literate-programming)
 - [Common Lisp / Sly](#common-lisp--sly)
 - [Project Management](#project-management)
 - [Shell & Terminal](#shell--terminal)
@@ -88,6 +89,23 @@ n
 |------------|---------|-------------|
 | `C-c C-e` | `crux-eval-and-replace` | Evaluate Emacs Lisp expression and replace it with result |
 
+### Undo Tree
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-x u` | `undo-tree-visualize` | Open visual undo tree navigator |
+| `C-_` / `C-/` | `undo-tree-undo` | Undo (standard) |
+| `M-_` / `C-?` | `undo-tree-redo` | Redo |
+
+**In undo-tree-visualizer:**
+| Key | Description |
+|-----|-------------|
+| `p` / `n` | Move up/down in tree |
+| `b` / `f` | Move left/right between branches |
+| `t` | Toggle timestamps |
+| `d` | Toggle diff display |
+| `q` | Quit visualizer |
+
 ### macOS Specific
 
 | Keybinding | Command | Description |
@@ -141,6 +159,21 @@ n
 |------------|---------|-------------|
 | `C-o` (in minibuffer) | `marginalia-cycle` | Cycle through annotation styles |
 
+### Corfu (In-Buffer Completion)
+
+Corfu provides auto-completion popups in buffers. It auto-activates after typing 2+ characters.
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `TAB` | `corfu-next` | Select next candidate in popup |
+| `S-TAB` | `corfu-previous` | Select previous candidate in popup |
+| `RET` | `corfu-insert` | Insert selected candidate |
+| `M-n` / `M-p` | `corfu-next/previous` | Alternative navigation in popup |
+| `C-g` | `corfu-quit` | Dismiss completion popup |
+| `M-SPC` | `corfu-insert-separator` | Insert orderless separator for filtering |
+
+**Note**: Corfu auto-completes with a 0.1s delay after typing 2+ characters. Cape provides additional completion backends (file paths, dabbrev).
+
 **Source**: `customizations/completion.el`
 
 ---
@@ -164,6 +197,135 @@ n
 | `C-c k` | `crux-kill-other-buffers` | Kill all buffers except current one |
 
 **Source**: `customizations/navigation.el`
+
+---
+
+## Org-Mode & Literate Programming
+
+### Core Org-Mode Commands
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-c l` | `org-store-link` | Store a link to the current location |
+| `C-c A` | `org-agenda` | Open org agenda (uppercase A to avoid conflict with AOC) |
+| `C-c c` | `org-capture` | Capture a note/task |
+
+### Source Block Editing (Org-Babel)
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-c C-c` | `org-ctrl-c-ctrl-c` | Execute code block at point / toggle checkbox / evaluate table |
+| `C-c '` | `org-edit-special` | Edit source block in dedicated buffer with full language mode |
+| `C-c s` | `leo/insert-lisp-src-block` | Quick insert Common Lisp source block |
+
+### Org-Babel Code Block Management
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-c C-v t` | `org-babel-tangle` | Extract (tangle) code blocks to source files |
+| `M-x org-babel-detangle` | `org-babel-detangle` | Sync changes from tangled file back to org file (reverse tangle) |
+| `C-c C-v e` | `org-babel-execute-src-block` | Execute code block at point |
+| `C-c C-v b` | `org-babel-execute-buffer` | Execute all code blocks in buffer |
+| `C-c C-v C-s` | `org-babel-execute-subtree` | Execute all code blocks in current subtree |
+| `C-c C-v d` | `org-babel-demarcate-block` | Split current code block at point |
+| `C-c C-v v` | `org-babel-expand-src-block` | Expand code block (show all variables/noweb references) |
+| `C-c C-v i` | `org-babel-view-src-block-info` | View information about current code block |
+| `C-c C-v k` | `org-babel-remove-result` | Clear/remove results from code block |
+| `C-c C-v n` | `org-babel-next-src-block` | Jump to next source block |
+| `C-c C-v p` | `org-babel-previous-src-block` | Jump to previous source block |
+| `C-c C-v g` | `org-babel-goto-named-src-block` | Jump to a named source block |
+| `C-c C-v u` | `org-babel-goto-named-result` | Jump to a named result |
+| `C-c C-v h` | `org-babel-describe-bindings` | Show all org-babel keybindings |
+| `C-c C-v l` | `org-babel-load-in-session` | Load code block in session (evaluate without showing result) |
+| `C-c C-v a` | `org-babel-sha1-hash` | Show hash of code block (useful for caching) |
+| `C-c C-v x` | `org-babel-do-key-sequence-in-edit-buffer` | Execute key sequence as if in edit buffer |
+
+### Navigation & Folding
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `TAB` | `org-cycle` | Cycle visibility of current heading (folded → children → subtree) |
+| `S-TAB` | `org-global-cycle` | Cycle visibility of entire buffer |
+| `C-c C-n` | `org-next-visible-heading` | Move to next heading |
+| `C-c C-p` | `org-previous-visible-heading` | Move to previous heading |
+| `C-c C-f` | `org-forward-heading-same-level` | Move to next heading at same level |
+| `C-c C-b` | `org-backward-heading-same-level` | Move to previous heading at same level |
+| `C-c C-u` | `org-up-element` | Move up to parent heading |
+
+### Structure Editing
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `M-RET` | `org-meta-return` | Insert new heading/item at same level |
+| `M-S-RET` | `org-insert-todo-heading` | Insert new TODO heading |
+| `M-<left/right>` | `org-promote/demote-subtree` | Change heading level |
+| `M-S-<left/right>` | `org-promote/demote-element` | Change element level (heading without subtree) |
+| `M-<up/down>` | `org-move-subtree-up/down` | Move subtree up or down |
+
+### Lists & Checkboxes
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-c C-c` | (checkbox context) | Toggle checkbox state [ ] → [X] → [ ] |
+| `C-c -` | `org-ctrl-c-minus` | Cycle list type (- → + → * → 1. → 1) ) |
+| `S-<left/right>` | (checkbox context) | Cycle checkbox state |
+
+### Template Expansion (org-tempo)
+
+**Note:** org-tempo is enabled for easy block creation with `<X TAB` shortcuts.
+
+| Template | Expansion | Description |
+|----------|-----------|-------------|
+| `<s TAB` | `#+begin_src ... #+end_src` | Generic source block (prompts for language) |
+| `<sl TAB` | Common Lisp source block | Lisp source block with `:results output :exports both` (custom) |
+| `<e TAB` | `#+begin_example ... #+end_example` | Example block (literal text, no syntax highlighting) |
+| `<q TAB` | `#+begin_quote ... #+end_quote` | Quote block |
+| `<v TAB` | `#+begin_verse ... #+end_verse` | Verse block (for poetry) |
+| `<c TAB` | `#+begin_center ... #+end_center` | Centered text |
+| `<C TAB` | `#+begin_comment ... #+end_comment` | Comment block |
+| `<l TAB` | `#+begin_export latex ... #+end_export` | LaTeX export block |
+| `<L TAB` | `#+latex: ` | Single-line LaTeX directive |
+| `<h TAB` | `#+begin_export html ... #+end_export` | HTML export block |
+| `<H TAB` | `#+html: ` | Single-line HTML directive |
+| `<a TAB` | `#+begin_export ascii ... #+end_export` | ASCII export block |
+| `<A TAB` | `#+ascii: ` | Single-line ASCII directive |
+| `<i TAB` | `#+index: ` | Index entry |
+| `<I TAB` | `#+include: ` | Include file directive |
+
+### Export
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-c C-e` | `org-export-dispatch` | Open export dispatcher menu |
+| `C-c C-e h h` | Export to HTML | Export current org file to HTML |
+| `C-c C-e h o` | Export to HTML and open | Export to HTML and open in browser |
+| `C-c C-e l p` | Export to PDF | Export to PDF via LaTeX |
+
+### Special Modes
+
+**Source Edit Buffer** (when editing with `C-c '`):
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-c '` | `org-edit-src-exit` | Finish editing and return to org buffer |
+| `C-c C-k` | `org-edit-src-abort` | Abort editing and discard changes |
+
+**Notes:**
+- org-tempo is enabled for easy template expansion (`<s TAB`, `<e TAB`, etc.)
+- org-auto-tangle-mode automatically tangles files on save when `#+auto_tangle: t` is in the file header
+- **Common Lisp specific configuration:**
+  - Enabled languages: Common Lisp (lisp), Emacs Lisp, and Python
+  - `org-babel-lisp-eval-fn #'sly-eval` ensures Sly is used (not SLIME)
+  - Default header args for lisp blocks: `:results output :exports both :eval yes`
+  - All lisp code blocks share the same Sly session for persistent state
+- No separate ob-sly package required - ob-lisp.el supports both SLIME and Sly
+- No confirmation is required before evaluating code blocks (set via `org-confirm-babel-evaluate nil`)
+- Link comments are added to tangled files (`:comments link` default) for bidirectional sync
+- Directories are created automatically when tangling (`:mkdirp yes` default)
+- Use `org-babel-detangle` to sync changes from tangled files back to org source
+- Mixed-pitch-mode provides variable-width fonts for prose while keeping code monospace
+- Org-bullets provides prettier bullet characters (◉ ○ ●)
+
+**Source**: `customizations/org-mode.el`
 
 ---
 
@@ -225,6 +387,18 @@ Lispy bindings activate when cursor is before `(` or after `)` or when region is
 |------------|---------|-------------|
 | `C-c C-s` | `sly-stickers-dwim` | Place/remove debug sticker (shows values inline) |
 
+### Sly REPL (sly-mrepl-mode)
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `TAB` | `completion-at-point` | Complete symbol at point (with Corfu popup) |
+| `C-c C-z` | `sly-mrepl` | Switch to REPL buffer from source buffer |
+| `C-c C-c` | `sly-interrupt` | Interrupt current evaluation |
+| `C-c C-o` | `sly-mrepl-clear-recent-output` | Clear most recent output |
+| `M-p` / `M-n` | `sly-mrepl-previous/next-input` | Navigate REPL history |
+| `C-c M-o` | `sly-mrepl-clear-repl` | Clear entire REPL buffer |
+| `,` | `sly-mrepl-shortcut` | Enter REPL shortcut (type `,help` for list) |
+
 ### Sly Extensions
 
 Sly automatically loads with these extensions enabled:
@@ -233,20 +407,37 @@ Sly automatically loads with these extensions enabled:
 - **sly-macrostep**: `M-x macrostep-expand` for interactive macro expansion
 - **sly-stickers**: Interactive debugging - place stickers to see values as code executes
 
-### HyperSpec Lookup
+### Navigation & Definition Lookup
 
 | Keybinding | Command | Description |
 |------------|---------|-------------|
+| `M-.` | `sly-edit-definition` | Jump to definition of symbol at point |
+| `M-,` | `sly-pop-find-definition-stack` | Return from definition lookup |
+| `C-c C-z` | `sly-mrepl` | Switch between source buffer and REPL |
+| `C-c C-k` | `sly-compile-and-load-file` | Compile and load current file |
+| `C-c C-c` | `sly-compile-defun` | Compile defun at point |
+
+### Documentation & Help
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-c C-d d` | `sly-describe-symbol` | Describe symbol at point |
+| `C-c C-d a` | `sly-apropos` | Search for symbols matching pattern |
+| `C-c C-d p` | `sly-apropos-package` | List symbols in package |
 | `C-c C-d C-h` | `sly-hyperspec-lookup` | Look up symbol in Common Lisp HyperSpec (opens in w3m) |
+| `C-c C-d ~` | `sly-hyperspec-lookup-format` | Look up format directive in HyperSpec |
 
 ### Advent of Code Helpers
 
 | Keybinding | Command | Description |
 |------------|---------|-------------|
-| `C-c a n` | `aoc/new-day` | Create new AoC day in `~/cl/AOC/YEAR/DayNN/DayNN.lisp` (global) |
+| `C-c a n` | `aoc/new-day` | Create new AoC day in `~/cl/AOC/YEAR/DayNN/DayNN.lisp` (traditional .lisp file, global) |
+| `C-c a o` | `aoc/new-day-org` | Create new AoC day in `~/cl/AOC/YEAR/DayNN/DayNN.org` (literate programming with org-babel, global) |
 | `C-c a 1` | `aoc/run-part1` | Run `day_NN-1` with input.txt and show result (in lisp buffer) |
 | `C-c a 2` | `aoc/run-part2` | Run `day_NN-2` with input.txt and show result (in lisp buffer) |
 | `C-c a e` | `aoc/run-example` | Run `day_NN-1` with `*example*` data (in lisp buffer) |
+
+**Note:** Both `C-c a n` and `C-c a o` automatically download the input file from adventofcode.com if you have a session cookie configured in `~/.aoc-session`.
 
 ### Everybody Codes Helpers
 
@@ -298,15 +489,57 @@ Common projectile commands (after `C-c p`):
 | `C-c p r` | `projectile-replace` | Replace in project |
 | `C-c p k` | `projectile-kill-buffers` | Kill all project buffers |
 
+### Treemacs (File Tree Sidebar)
+
+Launch treemacs with `M-x treemacs`. Default keybindings in treemacs buffer:
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `M-0` | `treemacs-select-window` | Jump to treemacs window from anywhere |
+| `?` | `treemacs-common-helpful-hydra` | Show help with available commands |
+| `TAB` | `treemacs-TAB-action` | Expand/collapse directory at point |
+| `RET` | `treemacs-RET-action` | Open file or expand directory |
+| `q` | `treemacs-quit` | Hide treemacs window |
+| `o a` | `treemacs-visit-node-ace` | Open file using ace-jump |
+| `o h` | `treemacs-visit-node-in-most-recently-used-window` | Open in last used window |
+| `r` | `treemacs-rename-file` | Rename file at point |
+| `c f` | `treemacs-create-file` | Create new file |
+| `c d` | `treemacs-create-dir` | Create new directory |
+| `d` | `treemacs-delete-file` | Delete file/directory at point |
+| `P` | `treemacs-peek-mode` | Toggle peek mode (preview files) |
+| `w` | `treemacs-set-width` | Set treemacs window width |
+
+**Note**: treemacs-projectile is also installed for project integration.
+
 **Source**: `customizations/lisp.el`
 
 ---
 
 ## Shell & Terminal
 
+### Launching Terminal
+
 | Keybinding | Command | Description |
 |------------|---------|-------------|
 | `C-c t` | `visit-term-buffer` | Open or switch to vterm terminal buffer |
+
+### vterm Buffer Keybindings
+
+| Keybinding | Command | Description |
+|------------|---------|-------------|
+| `C-c C-t` | `vterm-copy-mode` | Toggle copy mode (for selecting/copying text) |
+| `C-\` | `vterm-send-next-key` | Send next key literally to terminal |
+| `C-c C-c` | `vterm-send-C-c` | Send Ctrl-C to terminal |
+| `C-c C-z` | `vterm-undo` | Undo in vterm |
+| `C-y` | `vterm-yank` | Paste from kill ring |
+| `M-y` | `vterm-yank-pop` | Cycle through kill ring |
+
+**In vterm copy mode:**
+| Key | Description |
+|-----|-------------|
+| `SPC` | Start/end selection |
+| `y` | Copy selection and exit copy mode |
+| `q` | Exit copy mode |
 
 **Note**: vterm is configured to use Fish shell
 
@@ -409,7 +642,7 @@ Once in the Magit status buffer, use these single-key commands:
 
 - **which-key**: Displays available keybindings after you start typing a key sequence
 - **show-paren-mode**: Highlights matching parentheses
-- **undo-tree**: `C-x u` opens visual undo tree
+- **undo-tree**: Visual undo/redo (see Undo Tree section in Editing)
 - **aggressive-indent-mode**: Automatically indents code (excluded in text/markdown/yaml/html/python)
 - **compile-angel**: Automatically byte-compiles and native-compiles Elisp files for better performance
 
@@ -431,12 +664,17 @@ Each section above references its source file:
 
 ---
 
-**Last Updated**: 2025-11-30
+**Last Updated**: 2025-12-05
 **Configuration Location**: `~/.emacs.d/`
 
 **Recent Changes**:
+- Added Sly REPL keybindings (TAB completion, history navigation, shortcuts)
+- Added Sly navigation/definition lookup keybindings (M-., M-,, C-c C-z, etc.)
+- Added Sly documentation/help keybindings (C-c C-d prefix)
+- Added Corfu in-buffer completion keybindings section
+- Added Treemacs file tree sidebar keybindings
+- Added Undo Tree keybindings with visualizer commands
+- Added vterm keybindings (copy mode, sending keys, etc.)
+- Expanded org-babel keybindings with navigation and result management
+- Fixed enabled babel languages note (added Python)
 - Added Magit section with comprehensive keybindings reference
-- Removed Paredit documentation (not currently configured, only Lispy is active)
-- Added Winner-mode section for window configuration undo/redo
-- Added compile-angel to Additional Notes
-- Updated source references to include ec-helpers.el
